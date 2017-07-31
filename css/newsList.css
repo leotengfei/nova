@@ -167,6 +167,11 @@ a{
 #newsList_mid div.media{
     margin-top:10px;
 }
+#newsList_mid:after{
+    content:'';
+    display:block;
+    clear:both;
+}
 
 
 /*新加canvas*/
@@ -179,6 +184,9 @@ a{
     position:absolute;
     top:0;
     left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
     background-color: rgba(0,0,0,.5);
 }
 
