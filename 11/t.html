@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>双11团报日，岂止5折</title>
+<style>
+body{
+    font-family:"Microsoft YaHei","Fjalla One",sans-serif;
+    padding: 0;
+    margin: 0 auto;
+    position: absolute;
+    width: 480px;
+    background-color:#2f3032;
+    background-image:url(bg_1.png);
+    background-repeat:repeat;
+}
+#span_a{
+    color: #f60;
+    font-size: 36px;
+}
+#ptime p{
+    font-size: 48px;
+    color: #fff;
+}
+.ppl{
+    max-width: 480px;
+    width: 100%;
+    margin: 0 auto;
+}
+.ppl img{
+    width: 360px;
+}
+div{
+    text-align: center;
+}
+</style>
+</head>
+
+<body>
+<script language="javascript"> 
+<!-- 
+//document.write(""); 
+function show_date_time(){ 
+window.setTimeout("show_date_time()", 1); 
+BirthDay=new Date("11-11-2016");//设置日期 
+today=new Date(); 
+timeold=(BirthDay.getTime()-today.getTime()); 
+sectimeold=timeold/1000 
+secondsold=Math.floor(sectimeold); 
+msPerDay=24*60*60*1000 
+e_daysold=timeold/msPerDay 
+daysold=Math.floor(e_daysold); 
+e_hrsold=(e_daysold-daysold)*24; 
+hrsold=Math.floor(e_hrsold); 
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=Math.floor((e_hrsold-hrsold)*60); 
+e_seconds = (e_minsold-minsold)*60;
+seconds=Math.floor((e_minsold-minsold)*60); 
+ms = e_seconds-seconds;
+ms = new String(ms)
+ms = ms.substr(2,2);
+document.getElementById("span_a").innerHTML=daysold+"天 "+(hrsold<10?'0'+hrsold:hrsold)+"小时 "+(minsold<10?'0'+minsold:minsold)+"分 "+(seconds<10?'0'+seconds:seconds)+"秒 "+ms;
+} 
+show_date_time(); 
+//--> 
+</script>
+</head>
+<body onload="show_date_time();">
+
+<div id="ppl"><img src="logoloukong.png" width="400"></div>
+
+<div id="ptime">
+<p>双11团报日，岂止5折</p>
+<span id="span_a" ></span>
+</div>
+</body>
+</html>

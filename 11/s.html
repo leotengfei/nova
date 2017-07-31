@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>无线星空高考倒计时</title>
+<style>
+html{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family:"Microsoft YaHei","Fjalla One",sans-serif;
+    padding: 0;
+    margin: 0;
+}
+#fnTimeCountDown span{
+    font-size: 36px;
+    line-height: 48px;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+#fnTimeCountDown{
+    font-size: 36px;
+    line-height: 48px;
+    color: #23C4FF;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #06f;
+    width: 480px;
+}
+div{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+div p{
+    color: #fff;
+    font-size: 60px;
+    margin: 0;
+    padding: 0;
+}
+</style>
+</head>
+
+<body style="background-color:#0F475B;">
+<div style="text-align:center; width:100%; background-color:#fff; padding:50px 0;"><img src="logo.png" width="100%"></div>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript">
+    $.extend($.fn,{
+        fnTimeCountDown:function(d){
+            this.each(function(){
+                var $this = $(this);
+                var o = {
+                    hm: $this.find(".hm"),
+                    sec: $this.find(".sec"),
+                    mini: $this.find(".mini"),
+                    hour: $this.find(".hour"),
+                    day: $this.find(".day"),
+                    month:$this.find(".month"),
+                    year: $this.find(".year")
+                };
+                var f = {
+                    haomiao: function(n){
+                        if(n < 10)return "00" + n.toString();
+                        if(n < 100)return "0" + n.toString();
+                        return n.toString();
+                    },
+                    zero: function(n){
+                        var _n = parseInt(n, 10);//解析字符串,返回整数
+                        if(_n > 0){
+                            if(_n <= 9){
+                                _n = "0" + _n
+                            }
+                            return String(_n);
+                        }else{
+                            return "00";
+                        }
+                    },
+                    dv: function(){
+                        var _d = $this.data("end") || d;
+                        var now = new Date(),
+                            endDate = new Date(_d);
+                        //现在将来秒差值
+                        //alert(future.getTimezoneOffset());
+                        var dur = (endDate - now.getTime()) / 1000 , mss = endDate - now.getTime() ,pms = {
+                            hm:"000",
+                            sec: "00",
+                            mini: "00",
+                            hour: "00",
+                            day: "0",
+                            month: "00",
+                            year: "0"
+                        };
+                        if(mss > 0){
+                            pms.hm = f.haomiao(mss % 1000);
+                            pms.sec = f.zero(dur % 60);
+                            pms.mini = Math.floor((dur / 60)) > 0? f.zero(Math.floor((dur / 60)) % 60) : "00";
+                            pms.hour = Math.floor((dur / 3600)) > 0? f.zero(Math.floor((dur / 3600)) % 24) : "00";
+                            pms.day = Math.floor((dur / 86400)) > 0? f.zero(Math.floor((dur / 86400)) % 30) : "00";
+                            //pms.day = 228;
+                            //月份，以实际平均每月秒数计算
+                            pms.month = Math.floor((dur / 2629744)) > 0? f.zero(Math.floor((dur / 2629744)) % 12) : "00";
+                            //年份，按按回归年365天5时48分46秒算
+                            pms.year = Math.floor((dur / 31556926)) > 0? Math.floor((dur / 31556926)) : "0";
+                        }else{
+                            pms.year=pms.month=pms.day=pms.hour=pms.mini=pms.sec="00";
+                            pms.hm = "00";
+                            //alert('结束了');
+                            return;
+                        }
+                        return pms;
+                    },
+                    ui: function(){
+                        if(o.hm){
+                            o.hm.html(f.dv().hm);
+                        }
+                        if(o.sec){
+                            o.sec.html(f.dv().sec);
+                        }
+                        if(o.mini){
+                            o.mini.html(f.dv().mini);
+                        }
+                        if(o.hour){
+                            o.hour.html(f.dv().hour);
+                        }
+                        if(o.day){
+                            o.day.html(f.dv().day);
+                        }
+                        if(o.month){
+                            o.month.html(f.dv().month);
+                        }
+                        if(o.year){
+                            o.year.html(f.dv().year);
+                        }
+                        setTimeout(f.ui, 1);
+                    }
+                };
+                f.ui();
+            });
+        }
+    });
+</script>
+<div>
+    <img src="t.png">
+</div>
+<div>
+    <P>高考倒计时</P>
+    <div id="fnTimeCountDown" data-end="2016/11/11 00:00:00">
+        <!--<span class="month">00</span>月-->
+        <span class="day">0</span>天
+        <br />
+        <span class="hour">00</span>时
+        <span class="mini">00</span>分
+        <span class="sec">00</span>秒
+        <span class="hm">000</span>
+    </div>
+</div>
+<script type="text/javascript">
+    $("#fnTimeCountDown").fnTimeCountDown("2016/11/11 00:00:00");
+</script>
+
+</body>
+</html>

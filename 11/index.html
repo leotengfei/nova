@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>三人行，必有我师_无线星空团报送你清新苹果绿双层杯</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="http://7xisnn.com1.z0.glb.clouddn.com/cdnbootstrap.min.css" rel="stylesheet">
+	<style type="text/css">
+	body{
+		font-family: "Microsoft Yahei", SimSun, Arial, sans-serif;
+		background: url(img/bg.jpg);
+    background-attachment:fixed;
+		max-width: 480px;
+		margin: 0 auto;
+	}
+	#span_a{
+    	color: #f60;
+    	font-size: 36px;
+	}
+	ul{
+		list-style-type: none;
+		margin: 0 auto;
+		padding: 0;
+		padding-bottom: 70px;
+	}
+	ul li{	
+		display: inline-block;	
+		float: left;
+		margin: 20px 5%;
+		width: 40%;
+	}
+  #fnTimeCountDown span{
+    font-size: 32px;
+    line-height: 42px;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+  }
+  #fnTimeCountDown{
+    font-size: 32px;
+    line-height: 42px;
+    color: #FCECFF;
+    text-shadow:0 0 0.9em #B867C5,-0 -0 0.2em #B867C5;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+  }
+  p.tian{
+    font-size: 32px;
+    line-height: 42px;
+    color: #F5C0FF;
+  }
+  span.day{
+    font-size: 48px;
+    line-height: 58px;
+    color: #fff;
+  }
+  #wenzi h4,#wenzi h3{
+    color: #FCECFF;
+    text-shadow:0 0 0.9em #B867C5,-0 -0 0.2em #B867C5;}
+  p.ppwz span{
+    color: #ED8FFF;
+    text-shadow:0 0 0.9em #B867C5,-0 -0 0.2em #B867C5;
+    font-weight: bold;
+  }  
+  p.ppwz{
+    color: #F8D3FF;
+    text-shadow:0 0 0.9em #B867C5,-0 -0 0.2em #B867C5;
+  }  
+  a,a:visited{
+    color: #FCECFF;
+    text-shadow:0 0 0.9em #B867C5,-0 -0 0.2em #B867C5;
+  }
+  a:hover{
+    color: #FCECFF;
+    text-shadow:0 0 0.9em #B867C5,-0 -0 0.2em #B867C5;
+  }
+	</style>
+	
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?a6242ecb4a04a4c2398858f6f07fda4c";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript">
+    $.extend($.fn,{
+        fnTimeCountDown:function(d){
+            this.each(function(){
+                var $this = $(this);
+                var o = {
+                    hm: $this.find(".hm"),
+                    sec: $this.find(".sec"),
+                    mini: $this.find(".mini"),
+                    hour: $this.find(".hour"),
+                    day: $this.find(".day"),
+                    month:$this.find(".month"),
+                    year: $this.find(".year")
+                };
+                var f = {
+                    haomiao: function(n){
+                        if(n < 10)return "00" + n.toString();
+                        if(n < 100)return "0" + n.toString();
+                        return n.toString();
+                    },
+                    zero: function(n){
+                        var _n = parseInt(n, 10);//解析字符串,返回整数
+                        if(_n > 0){
+                            if(_n <= 9){
+                                _n = "0" + _n
+                            }
+                            return String(_n);
+                        }else{
+                            return "00";
+                        }
+                    },
+                    dv: function(){
+                        var _d = $this.data("end") || d;
+                        var now = new Date(),
+                            endDate = new Date(_d);
+                        //现在将来秒差值
+                        //alert(future.getTimezoneOffset());
+                        var dur = (endDate - now.getTime()) / 1000 , mss = endDate - now.getTime() ,pms = {
+                            hm:"000",
+                            sec: "00",
+                            mini: "00",
+                            hour: "00",
+                            day: "0",
+                            month: "00",
+                            year: "0"
+                        };
+                        if(mss > 0){
+                            pms.hm = f.haomiao(mss % 1000);
+                            pms.sec = f.zero(dur % 60);
+                            pms.mini = Math.floor((dur / 60)) > 0? f.zero(Math.floor((dur / 60)) % 60) : "00";
+                            pms.hour = Math.floor((dur / 3600)) > 0? f.zero(Math.floor((dur / 3600)) % 24) : "00";
+                            pms.day = Math.floor((dur / 86400)) > 0? f.zero(Math.floor((dur / 86400)) % 30) : "00";
+                            //pms.day = 228;
+                            //月份，以实际平均每月秒数计算
+                            pms.month = Math.floor((dur / 2629744)) > 0? f.zero(Math.floor((dur / 2629744)) % 12) : "00";
+                            //年份，按按回归年365天5时48分46秒算
+                            pms.year = Math.floor((dur / 31556926)) > 0? Math.floor((dur / 31556926)) : "0";
+                        }else{
+                            pms.year=pms.month=pms.day=pms.hour=pms.mini=pms.sec="00";
+                            pms.hm = "00";
+                            //alert('结束了');
+                            return;
+                        }
+                        return pms;
+                    },
+                    ui: function(){
+                        if(o.hm){
+                            o.hm.html(f.dv().hm);
+                        }
+                        if(o.sec){
+                            o.sec.html(f.dv().sec);
+                        }
+                        if(o.mini){
+                            o.mini.html(f.dv().mini);
+                        }
+                        if(o.hour){
+                            o.hour.html(f.dv().hour);
+                        }
+                        if(o.day){
+                            o.day.html(f.dv().day);
+                        }
+                        if(o.month){
+                            o.month.html(f.dv().month);
+                        }
+                        if(o.year){
+                            o.year.html(f.dv().year);
+                        }
+                        setTimeout(f.ui, 1);
+                    }
+                };
+                f.ui();
+            });
+        }
+    });
+</script>
+
+</head>
+<body onload="show_date_time();">
+
+<div style="width:100%">
+	<div style="margin:0 auto; width:100%; text-align:center; padding:10px;"><img src="img/logoloukong.png" width="70%" style="max-width:600px;"></div>
+  <img src="img/tt.png" width="100%" style="max-width:600px;margin-top:30px;">
+</div>
+
+<div style="width:90%; max-width:320px; margin:10px auto;">
+    <div id="fnTimeCountDown" data-end="2016/11/11 18:00:00">
+        <!--<span class="month">00</span>月-->
+        <p class="tian" align="center">双11优惠已经结束</p>
+        <!--<p class="tian" align="left" style="padding-left:10px;">
+        <span class="hour">00</span>时
+        <span class="mini">00</span>分
+        <span class="sec">00</span>秒
+        <span class="hm">000</span></p>-->
+    </div>
+</div>
+
+<script type="text/javascript">
+    $("#fnTimeCountDown").fnTimeCountDown("2016/11/11 18:00:00");
+</script>
+
+<div id="wenzi" style="width:100%">
+  <div style="margin:0 auto; width:90%; text-align:left; padding:10px;">
+    <h3>限双11当天报名</h3>
+    <!--<p class="ppwz">
+      <span>高三：</span>三科优惠600元<br />
+      <span>初三：</span>所有初三课程半价<br />
+      <span>初一/初二/高一/高二：</span>三科优惠400元，四科优惠700元<br />
+      <span>VIP 1对1课程：</span>买2送1，报100小时送50小时<br />
+    </p>-->
+    <p class="ppwz">*带着小伙伴一起拼单也能享受团购优惠哦~</p>
+    <p class="ppwz" style="text-align:center; font-size:12px; padding:1px 0; color:#fff;"><a href="http://wxxk.org/11/" target="_self">双11团购日，岂止5折</a> 029-84561188</p>
+    <p align="center">
+        <a class="btn btn-warning btn-small" href="http://wxxk.org/c/winc1.html">初中</a>
+        <a class="btn btn-warning btn-small" href="http://wxxk.org/c/wing3.html">高中</a>
+        <a class="btn btn-warning btn-small" href="http://wxxk.org/z/v2s1.html">VIP</a>
+    </p>
+  </div>
+</div>
+
+<!--
+<div style="bottom:5px; position:fixed; width:100%; max-width:480px;">
+<p class="ppwz" style="text-align:center; font-size:12px; padding:1px 0; color:#fff;"><a href="http://wxxk.org/11/" target="_self">双11团购日，岂止5折</a> 029-84561188</p>
+</div>
+-->
+</body>
+<script src="http://7xisnn.com1.z0.glb.clouddn.com/cdnjquery.min.js"></script>
+<script src="http://7xisnn.com1.z0.glb.clouddn.com/cdnbootstrap.min.js"></script>
+
+<!--baidu tongji百度统计开始-->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?a6242ecb4a04a4c2398858f6f07fda4c";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!--baidu tongji百度统计结束-->
+</html>

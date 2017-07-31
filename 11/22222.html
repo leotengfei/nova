@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无线星空高考倒计时</title>
+<style>
+body{
+    font-family:"Microsoft YaHei","Fjalla One",sans-serif;
+    padding: 0;
+    margin: 0 auto;
+    position: absolute;
+    width: 100%;
+    background-color:#2f3032;
+    background-image:url(bg_1.png);
+    background-repeat:repeat;
+}
+.pc400{
+    max-width: 480px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #999;
+}
+#fnTimeCountDown span{
+    font-size: 36px;
+    line-height: 42px;
+    color: #fff;
+}
+#fnTimeCountDown{
+    font-size: 36px;
+    line-height: 42px;
+    color: #23C4FF;
+}
+div{
+    text-align: center;
+}
+#ppl{
+    width: 100%;
+    padding: 10px 0;
+    margin: 0 auto;
+}
+#ppl img{
+    width: 65%;
+}
+div p{
+    color: #fff;
+    font-size: 60px;
+}
+</style>
+<script type="text/javascript">
+    function getRTime(){
+        var EndTime= new Date('2016/11/11 00:00:00'); //截止时间 前端路上 http://www.51xuediannao.com/qd63/
+        var NowTime = new Date();
+        var t =EndTime.getTime() - NowTime.getTime();
+        /*var d=Math.floor(t/1000/60/60/24);
+        t-=d*(1000*60*60*24);
+        var h=Math.floor(t/1000/60/60);
+        t-=h*60*60*1000;
+        var m=Math.floor(t/1000/60);
+        t-=m*60*1000;
+        var s=Math.floor(t/1000);*/
+
+        var d=Math.floor(t/1000/60/60/24);
+        var h=Math.floor(t/1000/60/60%24);
+        var m=Math.floor(t/1000/60%60);
+        var s=Math.floor(t/1000%60);
+
+        document.getElementById("t_d").innerHTML = d + "天";
+        document.getElementById("t_h").innerHTML = h + "时";
+        document.getElementById("t_m").innerHTML = m + "分";
+        document.getElementById("t_s").innerHTML = s + "秒";
+    }
+    setInterval(getRTime,1000);
+    </script>
+
+</head>
+
+<body>
+<div class="pc400">
+    <div id="ppl"><img src="logoloukong.png"></div>
+    <div>
+        <P>高考倒计时</P>
+        <div id="CountMsg" class="HotDate">
+            <span id="t_d">00天</span>
+            <span id="t_h">00时</span>
+            <span id="t_m">00分</span>
+            <span id="t_s">00秒</span>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
