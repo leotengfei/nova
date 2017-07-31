@@ -205,7 +205,6 @@ $(function () {
 	var modalH=parseInt($('#newsList_mid').css('width'));
 	myModal.width=modalW;
 	myModal.height=modalH;
-	console.log("模态框"+modalH);
 	var ctx=myModal.getContext('2d');
 	var pic=new Image();
 	pic.src='../images/canvas.png';
