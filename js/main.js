@@ -29,7 +29,6 @@ $(document).ready(function(){
   });
 });
 //newsListҳ页面js
-
 $(function () {
 	sessionStorage['classify']='all';
 	sessionStorage['direction']='all';
@@ -66,6 +65,7 @@ $(function () {
 						`;
 				}
 				$('#newsList_mid>ul.media-list').html(html);
+				$('#myModal').css('display','none');
 			}
 		});
 	};
@@ -96,6 +96,7 @@ $(function () {
 				html+=`<button class="btn btn-small">下一页&gt;</button>`;
 				var btns=$(html);
 				$('#newsList_mid>p').html(btns);
+				$('#myModal').css('display','none');
 			}
 		})
 	};
@@ -108,6 +109,7 @@ $(function () {
 		sessionStorage['pageNum']=1;
 		createLis('政策','all',1);
 		createBtns('政策','all');
+		$('#myModal').css('display','inline-block');
 	});
 //	教育点击发送的请求
 	$('#newsList_left>:nth-child(2)').click(function () {
@@ -116,6 +118,7 @@ $(function () {
 		sessionStorage['pageNum']=1;
 		createLis('教育','all',1);
 		createBtns('教育','all');
+		$('#myModal').css('display','inline-block');
 	});
 	//	考试点击发送的请求
 	$('#newsList_left>:nth-child(3)').click(function () {
@@ -124,9 +127,11 @@ $(function () {
 		sessionStorage['pageNum']=1;
 		createLis('考试','all',1);
 		createBtns('考试','all');
+		$('#myModal').css('display','inline-block');
 	});
 //	分页按钮点击事件
 	$('#newsList_mid>p').on('click','button', function (e) {
+		$('#myModal').css('display','inline-block');
 		var num=e.target.innerHTML;
 		if(num==="&lt;上一页"){ //点击上一页按钮时的事件
 			sessionStorage['pageNum']--;
@@ -190,13 +195,17 @@ $(function () {
 			$('#newsList_mid>p>:last-child').css("display","none");
 		}
 
-	})
+	});
 
-//模态框 canvas
+});
+
+$(function () {
+	//模态框 canvas
 	var modalW=parseInt($('#newsList_mid>ul').css('width'));
-	var modalH=840;
+	var modalH=parseInt($('#newsList_mid').css('width'));
 	myModal.width=modalW;
 	myModal.height=modalH;
+	console.log("模态框"+modalH);
 	var ctx=myModal.getContext('2d');
 	var pic=new Image();
 	pic.src='../images/canvas.png';
@@ -205,6 +214,10 @@ $(function () {
 		setInterval(function(){
 			ctx.save();
 			ctx.clearRect(0,0,modalW,modalH);
+			ctx.font='40px simSun';
+			ctx.textBaseline = 'alphabetic';
+			ctx.fillStyle = '#2dcc70';
+			ctx.fillText( '加载中...', 40,50 );
 			ctx.translate(modalW/2,modalH/2);
 			ctx.rotate(2*deg*Math.PI/180);
 			ctx.drawImage(pic,-modalW/2,-modalW/2,modalW,modalW);
