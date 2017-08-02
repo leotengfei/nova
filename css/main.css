@@ -23,6 +23,35 @@ ul.faq li span.number{display:block;float:left;width:50px;height:50px;line-heigh
 ul.faq li>div{margin-left:70px}
 ul.faq li>div h3{margin-top:0}#error{text-align:center;margin-top:150px;margin-bottom:150px}
 #logo{cursor: pointer;}
+#newsRightpad{
+	width: 30px;
+	border:1px solid #18a6d4;
+	border-radius: 5px 0 0 5px;
+	background-color: #18a6d4;
+	color: #fff;
+	font-size: 18px;
+	height: 90px;
+	overflow: hidden;
+	position: fixed;
+	top: 40%;
+	right: -4px;
+	z-index: 9999;
+	padding:8px 0 8px 7px;
+	line-height: 22px;
+	cursor: pointer;
+	-webkit-transition: all .3s linear;
+    transition: all .2s linear;
+}
+#newsRightpad:hover{
+	-webkit-box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    /*-webkit-transform: translate3d(0, -2px, 0);
+    transform: translate3d(0, -2px, 0);*/
+	background-color:#fff;
+	border:1px solid #06f;
+	color: #18a6d4;
+	padding:8px 0 8px 7px;
+}
 .pc1{
 	border:1px solid #eee;
 	border-radius:5px;

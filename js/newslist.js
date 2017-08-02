@@ -186,13 +186,14 @@ $(function () {
         setInterval(function(){
             ctx.save();
             ctx.clearRect(0,0,modalW,modalH);
-            ctx.font='40px simSun';
+            ctx.font='40px yaHei';
             ctx.textBaseline = 'alphabetic';
-            ctx.fillStyle = '#2dcc70';
-            ctx.fillText( '加载中...', 40,50 );
+            ctx.fillStyle = '#999';
             ctx.translate(modalW/2,modalH/2);
             ctx.rotate(2*deg*Math.PI/180);
             ctx.drawImage(pic,-modalW/2,-modalW/2,modalW,modalW);
+            ctx.rotate(-2*deg*Math.PI/180);
+            ctx.fillText( 'Loading...', -85,0 );
             ctx.restore();
             deg+=1;
         },50);

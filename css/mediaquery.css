@@ -1,9 +1,9 @@
 /*初一到高一表格的响应式 c1-c3  g1-g3*/
 @media screen and (max-width:480px) {
-    #g1 table>tbody>tr>:nth-child(5){
+    #g1 table tr>:nth-child(5){
         display:none;
     }
-    #g1 table>tbody>tr>td:nth-child(6){
+    #g1 table tr>td:nth-child(6){
         display:none;
     }
 }
