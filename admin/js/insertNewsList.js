@@ -40,6 +40,8 @@ function refresh(pageNum){
 						`;
         }
         $('ul.media-list').html(html);
+			var w=(pageNum/totalPage)*100;
+			$('div.progress>div.progress-bar').css('width',w+'%');
     }
 });
 }
@@ -99,19 +101,21 @@ $(document).keydown(function(e){
 //删除功能
 $('#newslis').on('click','li>div.media-body>h4.media-heading>:first-child', function (e) {
 	e.preventDefault();
-	console.log("delete is clicked");
-	var nid=$(e.target).attr('href');
-	$.ajax({
-		type:'POST',
-		url:'data/newsdelete.php',
-		data:{nid:nid},
-		success: function (data) {
-			console.log(data);
-			refresh(pageNum);
-			$('#msg>strong').html('删除成功！');
-		}
+	if(confirm('确定要删除吗?')){
+		var nid=$(e.target).attr('href');
+		$.ajax({
+			type:'POST',
+			url:'data/newsdelete.php',
+			data:{nid:nid},
+			success: function (data) {
+				console.log(data);
+				refresh(pageNum);
+				$('#msg>strong').html('删除成功！');
+			}
 
-	})
+		})
+	}
+
 });
 
 //向上
@@ -122,7 +126,7 @@ $('div.btn-group-vertical>:first-child').click(function () {
 $('div.btn-group-vertical>:last-child').click(function () {
 	var pos=$('form').offset().top;
 	console.log(pos);
-	$("body,html").animate({scrollTop:pos},"slow");
+	$("body,html").animate({scrollTop:pos});
 });
 
 //总页码数
@@ -154,8 +158,6 @@ $('ul.pager').on('click','li>a',function (e) {
 		}
 	}
 	refresh(pageNum);
-	var w=(pageNum/totalPage)*100;
-	$('div.progress>div.progress-bar').css('width',w+'%');
 });
 
 
