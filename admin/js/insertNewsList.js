@@ -47,7 +47,7 @@ function refresh(pageNum){
 refresh(1);
 
 //提交功能
-$('#btn').click(function () {
+function tijiao(){
 	var date=$('#ndate').val();
 	var pub=$('input[name="pub"]:checked').val();
 	var classify=$('input[name="classify"]:checked').val();
@@ -66,17 +66,33 @@ $('#btn').click(function () {
 			imgUrl='kaoshi.jpg';
 			break;
 	}
-   $.ajax({
-	   type:'POST',
-	   url:'data/insert.php',
-	   data:{date:date,pub:pub,classify:classify,direction:direction,title:title,url:url,imgUrl:imgUrl},
-	   success: function (data) {
-		   console.log(data);
-		   refresh(pageNum);
-		   $('#msg>strong').html('添加成功！');
-	   }
+	$.ajax({
+		type:'POST',
+		url:'data/insert.php',
+		data:{date:date,pub:pub,classify:classify,direction:direction,title:title,url:url,imgUrl:imgUrl},
+		success: function (data) {
+			console.log(data);
+			refresh(pageNum);
+			$('#msg>strong').html('添加成功！');
+			$('#title').val("");
+			$('#url').val("");
+		}
 
-   })
+	})
+}
+
+$('#btn').click(function () {
+	tijiao();
+});
+//回车键提交功能
+$(document).keydown(function(e){
+	switch (e.keyCode)
+	{
+		case 13:e.preventDefault();
+			console.log(1);
+			tijiao();
+			break;
+	}
 });
 
 
@@ -141,3 +157,5 @@ $('ul.pager').on('click','li>a',function (e) {
 	var w=(pageNum/totalPage)*100;
 	$('div.progress>div.progress-bar').css('width',w+'%');
 });
+
+
