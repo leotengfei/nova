@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div.btn-group-vertical{
+            position: fixed;
+            top:50%;
+            right:0;
+        }
+    </style>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.min.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid bg-info">
+        <div class="navbar-header">
+            <p class="navbar-text">newsList新闻列表页提交管理页面</p>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <ul class="media-list" id="newslis">
+
+    </ul>
+
+
+    <div class="well">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="ndate" class="col-sm-2 control-label">日期</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" id="ndate" placeholder="日期格式请输入：年/月/日"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">公众号</label>
+                <div class="col-sm-10">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="pub"  value="西安尖子生" >
+                            西安尖子生
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="pub"  value="小升初专网" >
+                            小升初专网
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">类别</label>
+                <div class="col-sm-10">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="classify" value="教育"/>
+                            教育
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="classify" value="考试"/>
+                            考试
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="classify" value="政策"/>
+                            政策
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">方向</label>
+                <div class="col-sm-10">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="direction" value="小学"/>
+                            小学
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="direction" value="初中"/>
+                            初中
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="direction" value="高中"/>
+                            高中
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="direction" value="中考"/>
+                            中考
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="direction" value="高考"/>
+                            高考
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="direction" value="中学"/>
+                            中学
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="direction" value="中小学"/>
+                            中小学
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="direction" value="小升初"/>
+                            小升初
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="direction" value="家庭"/>
+                            家庭
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="direction" value="家庭教育"/>
+                            家庭教育
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="direction" value="语文"/>
+                            语文
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="direction" value="英语"/>
+                            英语
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="direction" value="数学"/>
+                            数学
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">文章标题</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="title"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">文章路径</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="url"/>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="button" class="btn btn-success btn-lg" id="btn">提交</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div class="btn-group-vertical" role="group" aria-label="...">
+    <button type="button" class="btn btn-success glyphicon glyphicon-arrow-up"></button>
+    <button type="button" class="btn btn-warning glyphicon glyphicon-arrow-down"></button>
+</div>
+
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/insertNewsList.js"></script>
+</body>
+</html>
