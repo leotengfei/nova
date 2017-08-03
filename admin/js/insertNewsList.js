@@ -12,18 +12,20 @@
 	});
 
 //刷新页面
-function refresh(){
+function refresh(pageNum){
 		$.ajax({
-    type:"GET",
-    url:'data/select.php',
-    success:function(data){
-        var html='';
-        for(var i=0;i<data.length;i++){
-            html+=`
+    	type:"GET",
+		data:{pageNum:pageNum},
+    	url:'data/select.php',
+    	success:function(data){
+			data=data.reverse();
+        	var html='';
+        	for(var i=0;i<data.length;i++){
+            	html+=`
 					<li class="media">
 						<div class="media-body">
 							<h4 class="media-heading">
-								<a href="${data[i].nid}" class="btn btn-danger">删除</a><a href="${data[i].url}">
+								<a href="${data[i].nid}" class="btn btn-danger">删除</a><a href="${data[i].url}" target="_blank">
 									${data[i].title}
 								</a>
 							</h4>
@@ -42,7 +44,7 @@ function refresh(){
 });
 }
 
-refresh();
+refresh(1);
 
 //提交功能
 $('#btn').click(function () {
@@ -70,7 +72,8 @@ $('#btn').click(function () {
 	   data:{date:date,pub:pub,classify:classify,direction:direction,title:title,url:url,imgUrl:imgUrl},
 	   success: function (data) {
 		   console.log(data);
-		   refresh();
+		   refresh(pageNum);
+		   $('#msg>strong').html('添加成功！');
 	   }
 
    })
@@ -88,7 +91,8 @@ $('#newslis').on('click','li>div.media-body>h4.media-heading>:first-child', func
 		data:{nid:nid},
 		success: function (data) {
 			console.log(data);
-			refresh();
+			refresh(pageNum);
+			$('#msg>strong').html('删除成功！');
 		}
 
 	})
@@ -103,4 +107,37 @@ $('div.btn-group-vertical>:last-child').click(function () {
 	var pos=$('form').offset().top;
 	console.log(pos);
 	$("body,html").animate({scrollTop:pos},"slow");
+});
+
+//总页码数
+var totalPage=0;
+//当前页码数
+var pageNum=1;
+$.ajax({
+	type:'GET',
+	url:'data/page.php',
+	success: function (data) {
+		totalPage=data.page;
+	}
+});
+//分页
+$('ul.pager').on('click','li>a',function (e) {
+	e.preventDefault();
+	if($(e.target).html()==='上一页'){
+		if(pageNum>1){
+			pageNum--;
+		}else if(pageNum<=1){
+			pageNum=1;
+		}
+
+	}else if($(e.target).html()==='下一页'){
+		if(pageNum<totalPage){
+			pageNum++;
+		}else if(pageNum>=totalPage){
+			pageNum=totalPage;
+		}
+	}
+	refresh(pageNum);
+	var w=(pageNum/totalPage)*100;
+	$('div.progress>div.progress-bar').css('width',w+'%');
 });

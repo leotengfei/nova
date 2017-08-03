@@ -30,7 +30,21 @@
     <ul class="media-list" id="newslis">
 
     </ul>
-
+    <nav aria-label="...">
+        <ul class="pager">
+            <li><a href="">上一页</a></li>
+            <li><a href="">下一页</a></li>
+        </ul>
+    </nav>
+    <div class="progress">
+        <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" style="width: 0">
+        </div>
+    </div>
+    <div class="alert alert-warning alert-dismissible" role="alert" id="msg">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+        </button>
+        <strong>加载成功...</strong>
+    </div>
 
     <div class="well">
         <form class="form-horizontal">
@@ -129,12 +143,6 @@
                         <label>
                             <input type="radio" name="direction" value="小升初"/>
                             小升初
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="direction" value="家庭"/>
-                            家庭
                         </label>
                     </div>
                     <div class="radio">
