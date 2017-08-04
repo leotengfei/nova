@@ -18,12 +18,12 @@ $(function () {
                 for (var i = 0; i < data.length; i++) {
                     var shijian = data[i].gbegin + '-' + data[i].gend;
                     html += `
-               <tr>
-                    <td width="15%">${data[i].classname}</td>
-                    <td width="10%">${data[i].grade}${data[i].project}</td>
-                    <td width="15%">${deldate(data[i].gbegin)}</td>
-                    <td width="15%">${deldate(data[i].gend)}</td>
-                    <td width="10%">${data[i].gtime}</td>
+              <tr>
+                    <td width="20%">${data[i].classname}</td>
+                    <td width="15%">${data[i].grade}${data[i].project}</td>
+                    <td width="10%">${deldate(data[i].gbegin)}</td>
+                    <td width="10%">${deldate(data[i].gend)}</td>
+                    <td width="25%">${data[i].gtime}</td>
                     <td width="10%">${data[i].location}</td>
                     <td width="10%">${data[i].money}</td>
                </tr>

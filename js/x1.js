@@ -15,11 +15,11 @@ $(function () {
                 for (var i = 0; i < data.length; i++) {
                     html += `
                <tr>
-                    <td width="15%">${data[i].classnum}</td>
-                    <td width="10%">${data[i].classname}</td>
-                    <td width="15%">${data[i].gbegin}</td>
-                    <td width="15%">${data[i].gend}</td>
-                    <td width="10%">${data[i].gtime}</td>
+                    <td width="20%">${data[i].classnum}</td>
+                    <td width="17%">${data[i].classname}</td>
+                    <td width="10%">${data[i].gbegin}</td>
+                    <td width="10%">${data[i].gend}</td>
+                    <td width="25%">${data[i].gtime}</td>
                     <td width="10%">${data[i].location}</td>
                     <td width="10%">${data[i].money}</td>
                </tr>
@@ -29,6 +29,7 @@ $(function () {
             }
         });
     };
+
 
 
     //selectClass('g1bdj','一年级','北大街');
