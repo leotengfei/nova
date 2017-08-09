@@ -3,9 +3,9 @@ header("content-type:application/json;charset=utf-8");
 require('init.php');
 @$arr=$_REQUEST['arr'] or die('{"code":-2,"msg":"arr是必须的！"}');
 $arrlength=count($arr);
-$sql="TRUNCATE TABLE gaozhong";
+$sql="TRUNCATE TABLE chuzhong";
 mysqli_query($conn,$sql);
-$sql="INSERT INTO gaozhong VALUES";
+$sql="INSERT INTO chuzhong VALUES";
 for($x=0;$x<$arrlength;$x++){
 	$arr[$x]=json_decode($arr[$x],true);
 	//var_dump($arr[$x]);

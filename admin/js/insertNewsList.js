@@ -23,6 +23,7 @@ $('div.btn-group-vertical>:last-child').click(function () {
 });
 //侧边栏点击事件
 $('#asideLis').on('click','a', function (e) {
+	newarr=[];
 	e.preventDefault();
 	//console.log(e.target);
 	var containerId=$(e.target).attr('href');
@@ -186,9 +187,10 @@ $('ul.pager').on('click','li>a',function (e) {
 //**************************************************高中课表相关*********************************************
 
 //预览文件按钮绑定方法
-var newarr=[];
-function readAsText(){
-	var file = document.getElementById("file").files[0];
+var newarr;
+function readAsText(fileId,tabId){
+	newarr=[];
+	var file = document.getElementById(fileId).files[0];
 	var reader = new FileReader();
 	//将文件以文本形式读入页面
 	reader.readAsText(file);
@@ -222,7 +224,7 @@ function readAsText(){
 			}
 			html+='</tr>'
 		}
-		$('#tab').html(html);
+		$('#'+tabId).html(html);
 	}
 }
 
@@ -236,9 +238,49 @@ $('#gaozhongSub').click(function () {
 		data:{arr:newarr},
 		dataType:'json',
 		success: function (data) {
+			console.log(data.msg);
 			alert(data.msg);
+		},
+		error: function (data) {
+			alert("请检查格式是否正确！");
 		}
-
 	})
 
+});
+
+
+//**************************************************初中课表相关*********************************************
+$('#chuzhongSub').click(function () {
+	//console.log(1);
+	//console.log(newarr);
+	$.ajax({
+		type:'POST',
+		url:'data/insertchuzhong.php',
+		data:{arr:newarr},
+		dataType:'json',
+		success: function (data) {
+			console.log(data.msg);
+			alert(data.msg);
+		},
+		error: function (data) {
+			alert("请检查格式是否正确！");
+		}
+	})
+});
+
+//**************************************************小学课表相关*********************************************
+$('#xiaoxueSub').click(function () {
+	$.ajax({
+		type:'POST',
+		url:'data/insertxiaoxue.php',
+		data:{arr:newarr},
+		dataType:'json',
+		success: function (data) {
+			console.log(data.msg);
+			alert(data.msg);
+		},
+		error: function (data) {
+			alert("请检查格式是否正确！");
+		}
+	})
 });

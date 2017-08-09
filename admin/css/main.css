@@ -1,3 +1,7 @@
+body{
+    background-color: #eee;
+}
+
 /*侧面上下按钮*/
 div.btn-group-vertical{
     position: fixed;

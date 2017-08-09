@@ -201,22 +201,43 @@
                 </div>
             </div>
             <!-- 高中课表更新-->
-            <div id="gaozhongContainer">
+            <div id="gaozhongContainer" style="display: none">
+                <div class="page-header">
+                    <h1>高中课表更新</h1>
+                </div>
                 <label>请选择一个文件：</label>
-                <input type="file" id="file"  class="btn btn-default btn-block"/>
-                <input type="button" class="btn btn-danger btn-block" value="读取文件(格式应为CVS文件)" onclick="readAsText()" />
+                <input type="file" id="fileG"  class="btn btn-default btn-block"/>
+                <input type="button" class="btn btn-danger btn-block" value="读取文件(格式应为CVS文件)" onclick="readAsText('fileG','tabG')" />
                 <button type="button" class="btn btn-success btn-block" id="gaozhongSub">确认提交</button>
-                <table id="tab" class="table table-bordered">
+                <table id="tabG" class="table table-bordered">
 
                 </table>
             </div>
             <!-- 初中课表更新-->
-            <div id="chuzhongContainer">
-                初中课表更新界面
+            <div id="chuzhongContainer"  style="display: none">
+                <div class="page-header">
+                    <h1>初中课表更新</h1>
+                </div>
+                <label>请选择一个文件：</label>
+                <input type="file" id="fileC"  class="btn btn-default btn-block"/>
+                <input type="button" class="btn btn-danger btn-block" value="读取文件(格式应为CVS文件)" onclick="readAsText('fileC','tabC')" />
+                <button type="button" class="btn btn-success btn-block" id="chuzhongSub">确认提交</button>
+                <table id="tabC" class="table table-bordered">
+
+                </table>
             </div>
             <!-- 小学课表更新-->
-            <div id="xiaoxueContainer">
-                小学课表更新界面
+            <div id="xiaoxueContainer"  style="display: none">
+                <div class="page-header">
+                    <h1>小学课表更新</h1>
+                </div>
+                <label>请选择一个文件：</label>
+                <input type="file" id="fileX"  class="btn btn-default btn-block"/>
+                <input type="button" class="btn btn-danger btn-block" value="读取文件(格式应为CVS文件)" onclick="readAsText('fileX','tabX')" />
+                <button type="button" class="btn btn-success btn-block" id="xiaoxueSub">确认提交</button>
+                <table id="tabX" class="table table-bordered">
+
+                </table>
             </div>
 
         </div>
