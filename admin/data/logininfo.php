@@ -1,5 +1,5 @@
 <?php
-header('Content-Type: application/json');
+header("content-type:application/json;charset=utf-8");
 session_start();
 @$output['uname'] = $_SESSION['loginUname'];
 @$output['uid'] = $_SESSION['loginUid'];

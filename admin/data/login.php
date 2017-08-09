@@ -1,5 +1,5 @@
 <?php
-header('Content-Type: application/json');
+header("content-type:application/json;charset=utf-8");
 
 $n = $_REQUEST['uname'];
 $p = $_REQUEST['upwd'];

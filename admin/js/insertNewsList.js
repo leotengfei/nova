@@ -11,6 +11,29 @@
 		}
 	});
 
+//向上
+$('div.btn-group-vertical>:first-child').click(function () {
+	$("body,html").animate({scrollTop:0},"slow");
+});
+//向下
+$('div.btn-group-vertical>:last-child').click(function () {
+	var pos=document.body.scrollHeight;
+	//console.log(pos);
+	$("body,html").animate({scrollTop:pos});
+});
+//侧边栏点击事件
+$('#asideLis').on('click','a', function (e) {
+	e.preventDefault();
+	//console.log(e.target);
+	var containerId=$(e.target).attr('href');
+	//console.log(containerId);
+	$('#newsContainer').parent().children().css('display','none');
+	$(containerId).css('display','block');
+
+});
+
+
+//*************************************************新闻列表更新界面****************************
 //刷新页面
 function refresh(pageNum){
 		$.ajax({
@@ -73,9 +96,13 @@ function tijiao(){
 		url:'data/insert.php',
 		data:{date:date,pub:pub,classify:classify,direction:direction,title:title,url:url,imgUrl:imgUrl},
 		success: function (data) {
-			console.log(data);
+			//console.log(data);
 			refresh(pageNum);
-			$('#msg>strong').html('添加成功！');
+			$('#msg').css('display','block');
+			$('#msg>div>strong').html('添加成功！');
+			setTimeout(function () {
+				$('#msg').css('display','none');
+			},2000);
 			$('#title').val("");
 			$('#url').val("");
 		}
@@ -108,9 +135,13 @@ $('#newslis').on('click','li>div.media-body>h4.media-heading>:first-child', func
 			url:'data/newsdelete.php',
 			data:{nid:nid},
 			success: function (data) {
-				console.log(data);
+				//console.log(data);
 				refresh(pageNum);
-				$('#msg>strong').html('删除成功！');
+				$('#msg').css('display','block');
+				$('#msg>div>strong').html('删除成功！');
+				setTimeout(function () {
+					$('#msg').css('display','none');
+				},2000);
 			}
 
 		})
@@ -118,16 +149,7 @@ $('#newslis').on('click','li>div.media-body>h4.media-heading>:first-child', func
 
 });
 
-//向上
-$('div.btn-group-vertical>:first-child').click(function () {
-	$("body,html").animate({scrollTop:0},"slow");
-});
-//向下
-$('div.btn-group-vertical>:last-child').click(function () {
-	var pos=$('form').offset().top;
-	console.log(pos);
-	$("body,html").animate({scrollTop:pos});
-});
+
 
 //总页码数
 var totalPage=0;
@@ -161,3 +183,62 @@ $('ul.pager').on('click','li>a',function (e) {
 });
 
 
+//**************************************************高中课表相关*********************************************
+
+//预览文件按钮绑定方法
+var newarr=[];
+function readAsText(){
+	var file = document.getElementById("file").files[0];
+	var reader = new FileReader();
+	//将文件以文本形式读入页面
+	reader.readAsText(file);
+	reader.onload=function(f){
+		var result=document.getElementById("result");
+		//显示文件
+		var arr=this.result.split("\r\n");
+// 去除字符串末尾的回车产生的空值；
+		arr.pop();
+		for(var i=0;i<arr.length;i++){
+			arr[i]=arr[i].split(',');
+			var obj={};
+			for(var j=0;j<arr[i].length;j++){
+				obj[arr[0][j]]=arr[i][j];
+			}
+			obj=JSON.stringify(obj);
+			newarr.push(obj);
+		}
+//   去除表头产生的无用对象
+		newarr.shift();
+
+		//console.log(newarr);
+
+		var html='';
+		for(var i=0;i<arr.length;i++){
+			html+='<tr>';
+			for(var j=0;j<arr[i].length;j++){
+				html+=`
+                    <td>${arr[i][j]}</td>
+                `;
+			}
+			html+='</tr>'
+		}
+		$('#tab').html(html);
+	}
+}
+
+
+$('#gaozhongSub').click(function () {
+	//console.log(1);
+	//console.log(newarr);
+	$.ajax({
+		type:'POST',
+		url:'data/insertgaozhong.php',
+		data:{arr:newarr},
+		dataType:'json',
+		success: function (data) {
+			alert(data.msg);
+		}
+
+	})
+
+});

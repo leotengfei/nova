@@ -3,4 +3,3 @@ CREATE TABLE adminuser(
   uname VARCHAR(32) NOT NULL DEFAULT '',
   upwd VARCHAR(32) NOT NULL DEFAULT ''
 );
-INSERT INTO adminuser VALUES(1, 'wxxk', 'w333');

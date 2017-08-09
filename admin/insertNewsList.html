@@ -4,15 +4,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     <meta http-equiv="x-ua-compatible" content="IE=edge">
     <meta charset="UTF-8">
-    <title></title>
-    <style>
-        div.btn-group-vertical{
-            position: fixed;
-            top:50%;
-            right:0;
-        }
-    </style>
+    <title>管理界面</title>
     <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
     <!--[if lt IE 9]>
         <script src="js/html5shiv.min.js"></script>
         <script src="js/respond.min.js"></script>
@@ -22,173 +16,212 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid bg-info">
         <div class="navbar-header">
-            <p class="navbar-text">newsList新闻列表页提交管理页面</p>
+            <p class="navbar-text">管理界面</p>
         </div>
     </div>
 </nav>
-<div class="container">
-    <ul class="media-list" id="newslis">
-
-    </ul>
-    <nav aria-label="...">
-        <ul class="pager">
-            <li><a href="">上一页</a></li>
-            <li><a href="">下一页</a></li>
-        </ul>
-    </nav>
-    <div class="progress">
-        <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" style="width: 0">
+<!--进度条-->
+<div class="progress" id="myprog">
+        <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" style="width: 1%">
         </div>
     </div>
-    <div class="alert alert-info alert-dismissible" role="alert" id="msg">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
-        </button>
+<!--弹出框-->
+<div class="container" id="msg">
+    <div class="alert alert-danger" role="alert">
         <strong>加载成功...</strong>
     </div>
+</div>
+<!--页面主体-->
+<div class="container">
+    <div class="row">
+        <!--左侧边栏-->
+        <div class="col-md-3 col-xs-12">
+            <div class="list-group" id="asideLis">
+                <a href="#newsContainer" type="button" class="list-group-item list-group-item-info">新闻列表</a>
+                <a href="#gaozhongContainer" type="button" class="list-group-item list-group-item-info">高中课表</a>
+                <a href="#chuzhongContainer" type="button" class="list-group-item list-group-item-info">初中课表</a>
+                <a href="#xiaoxueContainer" type="button" class="list-group-item list-group-item-info">小学课表</a>
+            </div>
+        </div>
+        <!-- 右侧主要内容-->
+        <div class="col-md-9 col-xs-12">
+            <!-- 新闻列表-->
+            <div id="newsContainer">
+                <ul class="media-list" id="newslis">
 
-    <div class="well">
-        <form class="form-horizontal">
-            <div class="form-group">
-                <label for="ndate" class="col-sm-2 control-label">日期</label>
-                <div class="col-sm-10">
-                    <input type="date" class="form-control" id="ndate" placeholder="日期格式请输入：年/月/日"/>
+                </ul>
+                <nav aria-label="...">
+                    <ul class="pager">
+                        <li><a href="">上一页</a></li>
+                        <li><a href="">下一页</a></li>
+                    </ul>
+                </nav>
+                <div class="well">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="ndate" class="col-sm-2 control-label">日期</label>
+                            <div class="col-sm-10">
+                                <input type="date" class="form-control" id="ndate" placeholder="日期格式请输入：年/月/日"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">公众号</label>
+                            <div class="col-sm-10">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="pub"  value="西安尖子生" >
+                                        西安尖子生
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="pub"  value="小升初专网" >
+                                        小升初专网
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">类别</label>
+                            <div class="col-sm-10">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="classify" value="教育"/>
+                                        教育
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="classify" value="考试"/>
+                                        考试
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="classify" value="政策"/>
+                                        政策
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">方向</label>
+                            <div class="col-sm-10">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="direction" value="小学"/>
+                                        小学
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="direction" value="初中"/>
+                                        初中
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="direction" value="高中"/>
+                                        高中
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="direction" value="中考"/>
+                                        中考
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="direction" value="高考"/>
+                                        高考
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="direction" value="中学"/>
+                                        中学
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="direction" value="中小学"/>
+                                        中小学
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="direction" value="小升初"/>
+                                        小升初
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="direction" value="家庭教育"/>
+                                        家庭教育
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="direction" value="语文"/>
+                                        语文
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="direction" value="英语"/>
+                                        英语
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="direction" value="数学"/>
+                                        数学
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">文章标题</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="title"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">文章路径</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="url"/>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-success btn-lg" id="btn">提交</button>
+                        </div>
+
+                    </form>
                 </div>
             </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">公众号</label>
-                <div class="col-sm-10">
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="pub"  value="西安尖子生" >
-                            西安尖子生
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="pub"  value="小升初专网" >
-                            小升初专网
-                        </label>
-                    </div>
-                </div>
+            <!-- 高中课表更新-->
+            <div id="gaozhongContainer">
+                <label>请选择一个文件：</label>
+                <input type="file" id="file"  class="btn btn-default btn-block"/>
+                <input type="button" class="btn btn-danger btn-block" value="读取文件(格式应为CVS文件)" onclick="readAsText()" />
+                <button type="button" class="btn btn-success btn-block" id="gaozhongSub">确认提交</button>
+                <table id="tab" class="table table-bordered">
+
+                </table>
             </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">类别</label>
-                <div class="col-sm-10">
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="classify" value="教育"/>
-                            教育
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="classify" value="考试"/>
-                            考试
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="classify" value="政策"/>
-                            政策
-                        </label>
-                    </div>
-                </div>
+            <!-- 初中课表更新-->
+            <div id="chuzhongContainer">
+                初中课表更新界面
             </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">方向</label>
-                <div class="col-sm-10">
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="direction" value="小学"/>
-                            小学
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="direction" value="初中"/>
-                            初中
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="direction" value="高中"/>
-                            高中
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="direction" value="中考"/>
-                            中考
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="direction" value="高考"/>
-                            高考
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="direction" value="中学"/>
-                            中学
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="direction" value="中小学"/>
-                            中小学
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="direction" value="小升初"/>
-                            小升初
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="direction" value="家庭教育"/>
-                            家庭教育
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="direction" value="语文"/>
-                            语文
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="direction" value="英语"/>
-                            英语
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="direction" value="数学"/>
-                            数学
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">文章标题</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="title"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">文章路径</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="url"/>
-                </div>
-            </div>
-            <div class="text-center">
-                <button type="button" class="btn btn-success btn-lg" id="btn">提交</button>
+            <!-- 小学课表更新-->
+            <div id="xiaoxueContainer">
+                小学课表更新界面
             </div>
 
-        </form>
+        </div>
     </div>
+
 </div>
 
 <div class="btn-group-vertical" role="group" aria-label="...">

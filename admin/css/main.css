@@ -1,0 +1,23 @@
+/*侧面上下按钮*/
+div.btn-group-vertical{
+    position: fixed;
+    top:50%;
+    right:0;
+}
+/*进度条*/
+
+#myprog{
+    width:100%;
+    position:fixed;
+    top:0;
+    height:10px;
+    z-index: 99;
+}
+#msg{
+    display: none;
+    position: fixed;
+    width:70%;
+    top:10px;
+    left:26%;
+    z-index: 99;
+}
