@@ -25,7 +25,7 @@ $(function () {
                </tr>
                `;
                 }
-                $('#'+tabId+'>div>div>table').append(html);
+                $('#'+tabId+'>div>div>table td:contains("即将上新...") ').parent().replaceWith(html);
             }
         });
     };
