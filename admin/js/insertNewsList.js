@@ -114,16 +114,16 @@ function tijiao(){
 $('#btn').click(function () {
 	tijiao();
 });
-//回车键提交功能
-$(document).keydown(function(e){
-	switch (e.keyCode)
-	{
-		case 13:e.preventDefault();
-			console.log(1);
-			tijiao();
-			break;
-	}
-});
+////回车键提交功能
+//$(document).keydown(function(e){
+//	switch (e.keyCode)
+//	{
+//		case 13:e.preventDefault();
+//			console.log(1);
+//			tijiao();
+//			break;
+//	}
+//});
 
 
 //删除功能
@@ -283,4 +283,87 @@ $('#xiaoxueSub').click(function () {
 			alert("请检查格式是否正确！");
 		}
 	})
+});
+
+//*******************************************教师信息添加***********************************************************
+//教师页面加载事件
+$("#asideLis>a:contains('教师信息管理')").click(function () {
+	//console.log(1);
+	//查询教师方法
+	var selectTeacher=function(tname){
+		$.ajax({
+			type:'POST',
+			data:{tname:tname},
+			url:'data/selectTeacher.php',
+			success: function (data) {
+				//console.log(data);
+				var html="";
+				for(var i=0;i<data.length;i++){
+					html+=`
+				<div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <img src="../images/m3.jpg" title='${data[i].introduction}' >
+                            <div class="caption">
+                                <h3>${data[i].tname}</h3>
+                                <p>${data[i].grade}${data[i].subject}</p>
+                                <p>
+                                    <a href="${data[i].tid}" class="btn btn-danger" role="button">删除</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+				`;
+				}
+				$('#teacherList').html(html);
+
+			}
+		})
+	};
+
+
+	//查询全部教师
+	$('#searchAllTeacher').click(function () {
+		selectTeacher('all');
+		sessionStorage['teacher']='all';
+	});
+	//搜索教师
+	$('#searchTeacher').click(function () {
+		var kw=$(this).parent().prev().val();
+		selectTeacher(kw);
+		sessionStorage['teacher']=kw;
+	});
+	//	删除教师信息
+	$('#teacherList').on('click','div.caption>p>a', function (e) {
+		e.preventDefault();
+		//console.log("点击删除！");
+		var tid=$(e.target).attr('href');
+		console.log(tid);
+		if(confirm('确定要删除吗？')){
+			$.ajax({
+				type:'GET',
+				data:{tid:tid},
+				url:'data/teacherDelete.php',
+				success: function (data) {
+					console.log(data);
+					selectTeacher(sessionStorage['teacher']);
+				}
+			});
+		}
+	})
+
+
+//	提交教师信息
+	$('#btn-teach').click(function () {
+		var tname=$('#tname').val();
+		var job=$('#job').val();
+		var teachtitle=$('#teachtitle').val();
+		var photo_sm=$('#photo_sm').val();
+		var photo_lg=$('#photo_lg').val();
+		var introduction=$('#introduction').val();
+		var ivideo=$('#ivideo').val();
+		var grade=$('#grade').val();
+		var subject=$('#subject').val();
+		console.log(tname,job,teachtitle,photo_sm,photo_lg,introduction,ivideo,grade,subject);
+	})
+
 });

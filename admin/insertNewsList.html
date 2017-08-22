@@ -41,6 +41,7 @@
                 <a href="#gaozhongContainer" type="button" class="list-group-item list-group-item-info">高中课表</a>
                 <a href="#chuzhongContainer" type="button" class="list-group-item list-group-item-info">初中课表</a>
                 <a href="#xiaoxueContainer" type="button" class="list-group-item list-group-item-info">小学课表</a>
+                <a href="#teacherContainer" type="button" class="list-group-item list-group-item-info">教师信息管理</a>
             </div>
         </div>
         <!-- 右侧主要内容-->
@@ -239,7 +240,110 @@
 
                 </table>
             </div>
+            <!-- 教师信息管理-->
+            <div id="teacherContainer" style="display: none">
+                <div class="page-header">
+                    <h1>教师信息管理</h1>
+                </div>
+                <!-- 搜索框-->
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="请输入要查询教师姓名...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" id="searchTeacher">搜索</button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <button type="button" class="btn btn-success" id="searchAllTeacher">查询全部教师</button>
+                    </div>
+                </div>
+                <!-- 显示列表-->
+                <div class="row" id="teacherList">
 
+                </div>
+                <!-- 添加页面-->
+                <div class="well">
+                    <h3 class="text-center">教师信息添加</h3>
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="tname" class="col-sm-2 control-label">姓名</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="tname" placeholder="请输入姓名..." required/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">职位</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" placeholder="请输入职位..." id="job"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">头衔</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" placeholder="请输入头衔..." id="teachtitle"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">小图(教师列表页用图)</label>
+                            <div class="col-sm-10">
+                                <input type="file" class="form-control" id="photo_sm"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">大图(个人主页用图)</label>
+                            <div class="col-sm-10">
+                                <input type="file" class="form-control" id="photo_lg"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">简介</label>
+                            <div class="col-sm-10">
+                                <textarea name="" id="introduction" cols="30" rows="10" class="form-control"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">介绍视频链接(教师主页)</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="ivideo"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">年级</label>
+                            <div class="col-sm-10">
+                                <select name="grade" id="grade">
+                                    <option value="0">—请选择—</option>
+                                    <option value="高考">高考</option>
+                                    <option value="中考">中考</option>
+                                    <option value="小学">小学</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">学科</label>
+                            <div class="col-sm-10">
+                                <select name="subject" id="subject">
+                                    <option value="0">—请选择—</option>
+                                    <option value="数学">数学</option>
+                                    <option value="语文">语文</option>
+                                    <option value="英语">英语</option>
+                                    <option value="物理">物理</option>
+                                    <option value="化学">化学</option>
+                                    <option value="生物">生物</option>
+                                    <option value="地理">地理</option>
+                                    <option value="政治">政治</option>
+                                    <option value="文综">文综</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-success btn-lg" id="btn-teach">提交</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -250,7 +354,7 @@
     <button type="button" class="btn btn-warning glyphicon glyphicon-arrow-down"></button>
 </div>
 
-<script src="js/jquery-1.11.3.js"></script>
+<script src="js/jquery-3.2.1.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/insertNewsList.js"></script>
 </body>

@@ -25,3 +25,9 @@ div.btn-group-vertical{
     left:26%;
     z-index: 99;
 }
+
+/**************教师信息管理页面********************/
+
+#teacherContainer>div.row{
+    margin-bottom:10px;
+}

@@ -18,12 +18,12 @@ $(function () {
                 for(var i=0;i<data.length;i++){
                     html+=`
 					<li class="media">
-						<a class="pull-left" href="${data[i].url}">
+						<a class="pull-left" href="${data[i].url}" target="_blank">
 							<img class="media-object img-rounded" src="../images/${data[i].imgUrl}">
 						</a>
 						<div class="media-body">
 							<h4 class="media-heading">
-								<a href="${data[i].url}">
+								<a href="${data[i].url}" target="_blank">
 									${data[i].title}
 								</a>
 							</h4>
