@@ -364,6 +364,10 @@ $("#asideLis>a:contains('教师信息管理')").click(function () {
 		var grade=$('#grade').val();
 		var subject=$('#subject').val();
 		console.log(tname,job,teachtitle,photo_sm,photo_lg,introduction,ivideo,grade,subject);
+		$.ajax({
+			type:"POST",
+
+		})
 	})
 
 });

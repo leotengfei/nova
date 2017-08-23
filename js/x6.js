@@ -40,7 +40,7 @@ $(function () {
     //selectClass('g1wn','六年级','渭南');
     //selectClass('g1pc','六年级','蒲城');
     selectClass('g1bj2','六年级','宝鸡');
-    //selectClass('g1xy','六年级','咸阳');
+    selectClass('g1xy','六年级','咸阳');
     //selectClass('g1hh','六年级','黄河');
     //selectClass('g1yl','六年级','阎良');
     selectClass('g1fp','六年级','富平');
