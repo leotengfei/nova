@@ -431,5 +431,25 @@ section.ptitle2{
 .leftnav{display: none;}
 .mapnav{display: block;}
  }
+/*侧面广告样式x1-x6*/
+.right-ads{
+	width: 30px;
+	border: 1px solid #fff;
+	border-radius: 5px 0 0 5px;
+	background-color: #18a6d4;
+	color: #fff;
+	font-size: 18px;
+	height: 90px;
+	overflow: hidden;
+	position: fixed;
+	top: 60%;
+	right: -4px;
+	z-index: 9999;
+	padding: 8px 0 8px 7px;
+	line-height: 22px;
+	cursor: pointer;
+	-webkit-transition: all .3s linear;
+	transition: all .2s linear;
+}
 
 
