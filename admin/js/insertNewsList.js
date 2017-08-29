@@ -6,7 +6,7 @@
 		url: 'data/logininfo.php',
 		success: function(result){
 			if(result.uname===null||result.uid===null){
-				location.href='index.html';
+				location.href='ac1.html';
 			}
 		}
 	});
