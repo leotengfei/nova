@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <title>给老师的一封信</title>
+    <script src="js/flexible.js"></script>
+    <link rel="stylesheet" href="css/index.css"/>
+</head>
+<body>
+    <!--音乐 Start-->
+    <aside id="music" class="music-rotate">
+        <audio id="audio" src="http://ovqkwdw8s.bkt.clouddn.com/music.mp3" autoplay loop type="audio/mpeg"></audio>
+    </aside>
+    <!--音乐 End-->
+    <!--加载效果 Start-->
+    <div class="ui-loading-wrap" id="loading">
+        <i class="ui-loading"></i>
+        <p>加载中...</p>
+    </div>
+    <!--加载效果 End-->
+    <!--第一屏 Start-->
+    <section class="section" id="first" style="display:none">
+        <img src="img/blank.gif" data-src="img/slogan.png" class="slogan"/>
+        <div>
+            <div>
+                <img src="img/blank.gif" data-src="img/teacher.png" class=" father-img"/>
+                <p id="tips"></p>
+            </div>
+            <div class="inputarea">
+                <ul>
+                    <li>
+                        <span>名&nbsp;&nbsp;字：</span><input id="sname" type="text" placeholder="请输入你的名字..." required class="form-control"/>
+                    </li>
+                    <li>
+                        <span>手机号: </span><input id="stel" type="text" placeholder="请输入手机号..." required class="form-control"/>
+                    </li>
+                    <li>
+                        <span>老&nbsp;&nbsp;师：</span><input id="tname" type="text" placeholder="敬爱的XX老师..." required class="form-control"/>
+                    </li>
+                    <li>
+                        <textarea name="msg" id="msg" cols="30" rows="5" placeholder="写给老师的话..." required class="form-control"></textarea>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <button type="button" id="btnGenerate" class="btn-large-x" data-track="生成给老师的一封信">
+            <input id="upload" name="upload" type="file" accept="image/*" onfocus="this.blur()"/>
+            生成给老师的一封信
+        </button>
+    </section>
+    <!--第一屏 End-->
+    <!--第二屏 Start-->
+    <section class="section section-top" style="display:none" id="second">
+        <h6 class="h6">拖拽进行照片编辑</h6>
+        <div class="frame" id="frame">
+            <img src="img/blank.gif" data-src="img/word.png" class="word" id="word"/>
+            <img src="img/blank.gif" id="frameImg" class="frame-img"/>
+        </div>
+        <div class="ui-justify">
+            <button type="button" id="btnConfirm" class="btn-middle" data-track="确认">预览</button>
+            <button type="button" id="btnRotate" class="btn-middle">旋转</button>
+            <button type="button" id="btnCancel" class="btn-middle" data-track="取消">取消</button>
+        </div>
+        <div style="height: 100px;position: relative">
+            <form action="">
+            字体颜色：
+             <span class="radioHead" style="background-color:#fff "></span>
+            <input type="radio" name="fColor" value="#fff" class="radioControl" checked/>
+             <span class="radioHead" style="background-color:#000 "></span>
+            <input type="radio" name="fColor" value="#000"  class="radioControl"/>
+                <span class="radioHead" style="background-color:#F2E73D "></span>
+                <input type="radio" name="fColor" value="#F2E73D"  class="radioControl"/>
+                <span class="radioHead" style="background-color:#3AD900 "></span>
+                <input type="radio" name="fColor" value="#3AD900"  class="radioControl"/>
+                <br/>
+            背景风格：
+              <span class="radioHead"  style="background-color:rgb(0,0,0) "></span>
+            <input type="radio" name="cColor" value="rgba(0,0,0,.3)" class="radioControl" checked/>
+                <span class="radioHead"  style="background-color:rgb(32,137,156) "></span>
+            <input type="radio" name="cColor" value="rgba(32,137,156,.2)" class="radioControl"/>
+                <span class="radioHead"  style="background-color:rgb(38,93,176) "></span>
+            <input type="radio" name="cColor" value="rgba(38,93,176,.2)" class="radioControl"/>
+
+                <br/>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <span class="radioHead"  style="background-color:rgb(91,176,157) "></span>
+            <input type="radio" name="cColor" value="rgba(91,176,157,.2)" class="radioControl"/>
+                <span class="radioHead"  style="background-color:rgb(253,212,127) "></span>
+            <input type="radio" name="cColor" value="rgba(253,212,127,.3)" class="radioControl"/>
+                <span class="radioHead"  style="background-color:rgb(238,115,99) "></span>
+                <input type="radio" name="cColor" value="rgba(238,115,99,.1)" class="radioControl"/>
+            </form>
+        </div>
+
+    </section>
+    <!--第二屏 End-->
+    <!--第三屏 Start-->
+    <section class="section section-top2" style="display: none" id="third">
+        <div class="frame">
+            <img src="img/blank.gif" class="db-img" id="compose"/>
+        </div>
+        <div class="ui-justify">
+            <button type="button" id="btnShare" class="btn-large" data-track="分享现在">
+                <h1>分享现在</h1>
+                <h2>朋友圈晒书信</h2>
+            </button>
+            <button type="button" id="btnBack" class="btn-large">
+                <h1>回到过去</h1>
+                <h2>重新上传背景图片</h2>
+            </button>
+        </div>
+    </section>
+    <!--第三屏 End-->
+    <!--底部花纹 Start-->
+    <footer class="footer">
+    </footer>
+    <!--底部花纹 End-->
+    <!--弹出框 Start-->
+    <aside class="dialog" style="display: none" id="dialog">
+        <p>长按图片即可将图片保存至手机</p>
+        <button type="button" class="btn-large-x">我知道了</button>
+    </aside>
+    <!--弹出框 End-->
+    <script src="build/js/touch.js"></script>
+    <script src="build/js/hidpi-canvas.js"></script>
+    <script src="build/js/index.bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/lottery.css"/>
+    <title></title>
+</head>
+<body>
+<h1>无线星空</h1>
+<h5>抽奖</h5>
+<button id="bt" disabled>没有抽奖机会啦...</button>
+<br>
+<br>
+<canvas id="c1"></canvas>
+<div class="mymodol" id="mymodal1">
+    <div class="mymodol-body">
+        <h3>请输入电话号码</h3>
+        <input type="text" placeholder="请输入电话号码..." id="lottery-tel"/>
+        <br/>
+        <button type="button" id="btn-confirm">确定</button>
+        <h4 id="tips"></h4>
+    </div>
+</div>
+<div class="mymodol" id="mymodal2" style="display: none">
+    <div class="mymodol-body">
+        <h3>感谢您的参与！</h3>
+        <h4></h4>
+    </div>
+</div>
+<div>
+    <ul id="awardstulist">
+    </ul>
+</div>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/lottery.js"></script>
+</body>
+</html>

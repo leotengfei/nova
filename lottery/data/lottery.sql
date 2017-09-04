@@ -1,0 +1,24 @@
+SET NAMES UTF8;
+/*资格列表*/
+CREATE TABLE lotterylist(
+    lid INT PRIMARY KEY AUTO_INCREMENT,
+    stel VARCHAR(32) NOT NULL DEFAULT '',
+    sname VARCHAR(10) NOT NULL DEFAULT '',
+    count INT NOT NULL DEFAULT 0
+);
+/*奖池*/
+CREATE TABLE awardpool(
+    aid INT PRIMARY KEY AUTO_INCREMENT,
+    firstprize INT NOT NULL DEFAULT 0,
+    secondprize INT NOT NULL DEFAULT 0,
+    thirdprize INT NOT NULL DEFAULT 0,
+     luckprize INT NOT NULL DEFAULT 0
+);
+INSERT INTO awardpool VALUES(null,1,2,3,20);
+/*获奖列表*/
+CREATE TABLE awardStuList(
+    sid INT PRIMARY KEY AUTO_INCREMENT,
+    stel VARCHAR(32) NOT NULL DEFAULT '',
+    sname VARCHAR(10) NOT NULL DEFAULT '',
+    awardName VARCHAR(30) NOT NULL DEFAULT ''
+);
