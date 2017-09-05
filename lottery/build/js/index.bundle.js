@@ -302,6 +302,7 @@
 	 * 生成海报
 	 */
 	function generatePoster() {
+		"use strict";
 	    var canvas = document.createElement('canvas');
 	    canvas.width = $frame.width();//CSS中定义了画布是580
 	    canvas.height = $frame.height();
