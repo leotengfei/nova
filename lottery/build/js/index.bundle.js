@@ -185,6 +185,12 @@
 	        }
 	        generatePoster();
 	    });
+		document.getElementById("btnConfirm").addEventListener("click", function (e) {
+			if(!startLoading()) {
+				return;
+			}
+			generatePoster();
+		});
 
 	    /**
 	     * 图片旋转
@@ -225,6 +231,43 @@
 
 	        img.src = $frameImg.attr('src');
 	    });
+		document.getElementById("btnRotate").addEventListener("click", function (e) {
+			if(!startLoading()) {
+				return;
+			}
+			direction++;
+			if(direction > 3) {
+				direction = 0;
+			}
+			if(rotates[direction]) {
+				$frameImg.data('width', rotates[direction].width);
+				$frameImg.data('height', rotates[direction].height);
+				$frameImg.attr('src', rotates[direction].src);
+				endLoading();
+				return;
+			}
+
+			//生成一张新图片 不能直接用$frameImg会出现变形
+			var img = new Image();
+			img.onload = function() {
+				var width = $frameImg.data('height'),
+					height = $frameImg.data('width');
+				//此处图片需跨域
+				var src = poster.filterImage(this, width, height, 90);
+				var realImg = new Image();
+				realImg.onload = function() {
+					rotates[direction] = {src:src, width:width, height:height, image:realImg};//缓存
+					$frameImg.data('width', width);
+					$frameImg.data('height', height);
+					$frameImg.attr('src', realImg.src);
+					endLoading();
+				};
+				realImg.src = src;
+			};
+
+			img.src = $frameImg.attr('src');
+		});
+
 
 	    /**
 	     * 微信端与APP端不同分享逻辑
@@ -233,6 +276,9 @@
 	        //微信端弹出提示信息
 	        $dialog.show().addClass('zoomIn');
 	    });
+		document.getElementById("btnShare").addEventListener("click", function (e) {
+			$dialog.show().addClass('zoomIn');
+		});
 
 	    /**
 	     * 弹出层中的按钮
@@ -241,6 +287,10 @@
 	        e.preventDefault();
 	        $dialog.hide().removeClass('zoomIn');
 	    });
+		document.getElementById("dialog").addEventListener("click", function (e) {
+			e.preventDefault();
+			$dialog.hide().removeClass('zoomIn');
+		});
 
 	    function initParam() {
 	        $first.show();
@@ -255,6 +305,10 @@
 	        $third.hide();
 	        initParam();
 	    });
+		document.getElementById("btnBack").addEventListener("click", function (e) {
+			$third.hide();
+			initParam();
+		});
 
 	    /**
 	     * 取消
@@ -263,6 +317,11 @@
 	        $second.hide();
 	        initParam();
 	    });
+		//***************兼容性
+		document.getElementById("btnCancel").addEventListener("click", function (e) {
+			$second.hide();
+			initParam();
+		})
 	});
 
 	/**
@@ -302,7 +361,6 @@
 	 * 生成海报
 	 */
 	function generatePoster() {
-		"use strict";
 	    var canvas = document.createElement('canvas');
 	    canvas.width = $frame.width();//CSS中定义了画布是580
 	    canvas.height = $frame.height();
@@ -346,7 +404,7 @@
 		var lastSubStrIndex= 0;
 		var initY=fSize*11;
 		var lHeight=fSize;
-		for(let i=0;i<txtMsg.length;i++){
+		for(var i=0;i<txtMsg.length;i++){
 			lineWidth+=ctx.measureText(txtMsg[i]).width;
 			//console.log("文字宽度"+lineWidth+" ;canvasWidth："+$frame.width());
 			if(lineWidth>($frame.width()-fSize*12)){//减去initX,防止边界出现的问题
