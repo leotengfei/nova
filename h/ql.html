@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>发现你的潜力，赢取千元大奖_无线星空教育</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="http://7xisnn.com1.z0.glb.clouddn.com/cdnbootstrap.min.css" rel="stylesheet">
+	<style type="text/css">
+	body{
+		font-family: "Microsoft Yahei", SimSun, Arial, sans-serif;
+		text-shadow: none;
+		text-shadow:none; text-transform:none; text-decoration:none;
+		background-color: #eee;
+	}
+	h3{color: #1EACEE;}
+	ul{
+		list-style-type: none;
+		margin: 10 auto;
+		padding: 0;
+	}
+	ul li{	
+		display: inline-block;	
+		float: left;
+		margin: 20px 5%;
+		width: 40%;
+	}
+	</style>
+	<script type="text/javascript">
+	function checktest(){
+		var checkname = document.getElementById("name").value;
+		if(checkname == ""){
+			alert("姓名是不是忘了写 T_T"); 		
+		}else{
+			var form = document.getElementById("myForm");
+			//提交表单
+			form.submit();　
+		}
+	}
+	</script>
+</head>
+<body>
+
+<div style="width:100%">
+	<div style="margin:0 auto; width:100%; background-color:#18A3E3; text-align:center; padding:20px;"><img src="http://7xisnn.com1.z0.glb.clouddn.com/logo32.png" width="90%" style="max-width:600px;"></div>
+</div>
+<div style="width:100%">
+	<img src="http://7xisnn.com1.z0.glb.clouddn.com/816/tt.jpg" width="100%">
+</div>
+<div style="width:70%; max-width:320px; margin:40px auto;">
+	<h3 style="text-align:center">发现潜力 赢取大奖</h3>
+	<form id="myForm" action="ql2.php" method="get" target="_self" style="text-align:center;">
+		<div class="input-group" style="margin-top:20px;">
+      		<div class="input-group-addon" style="background-color:#1EACEE;border-color:#1EACEE; color:#fff;">姓名</div>
+      		<input type="text" class="form-control" id="name" name="name" style="border-color:#1EACEE;" placeholder="在这输入姓名">
+    	</div>
+    	<!--
+    	<div class="input-group" style="margin-top:20px;">
+      		<div class="input-group-addon" style="background-color:#1EACEE;border-color:#1EACEE; color:#fff;">手机</div>
+      		<input type="text" class="form-control" id="phone" name="phone" style="border-color:#1EACEE;" placeholder="家长手机">
+    	</div>
+    	-->
+    	<ul>
+    		<li>
+			<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal1" style="width:100%">说明</button>
+			</li>
+			<li>
+			<input type="button" class="btn btn-info" onclick="checktest()" value="发现潜力" style="width:100%">
+			</li>
+		</ul>
+	</form>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">发现潜力，赢取大奖</h4>
+      </div>
+      <div class="modal-body">
+      	<h4><strong>参加活动赢取1000元大奖</strong></h4>
+        <strong>1.发现潜力：</strong>输入姓名即可看到潜力。<br />
+        <strong>2.抽奖活动：</strong>您也可以转发朋友圈。<br />
+        <strong>3.中奖技巧：</strong>将朋友圈截图发回无线星空群或老师，即可获得抽奖资格。<br />
+        <strong>4.奖品说明：</strong>200元至1000元大奖随机出现。<br />
+        <strong>5.活动时间：</strong>即日起至2016年8月26日中午12:00（获奖名单将于8月26日晚进行公布）<br />
+        <strong>6.咨询电话：</strong>029-84561188<br />
+        <strong>7.特别说明：</strong>本活动最终解释权归无线星空所有。
+      </div>
+      <div class="modal-footer">
+        <!--<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>-->
+        <button type="button" class="btn btn-info" data-dismiss="modal">朕知道了</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div style="bottom:20px; position:absolute; width:100%;">
+	<div style="background-color:#81D8F2; border-radius:10px; width:80%; max-width:320px; height:22px; margin:0 auto;">
+		<p style="text-align:center; font-size:14px; padding:1px 0; color:#fff;">中小学名师教育 029-84561188</p>
+	</div>
+</div>
+</body>
+<script src="http://7xisnn.com1.z0.glb.clouddn.com/cdnjquery.min.js"></script>
+<script src="http://7xisnn.com1.z0.glb.clouddn.com/cdnbootstrap.min.js"></script>
+</html>
