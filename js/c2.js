@@ -47,7 +47,7 @@ $(function () {
     selectClass('g1xy','初二','咸阳');
     //selectClass('g1hh','初一','黄河');
     //selectClass('g1yl','初一','阎良');
-    //selectClass('g1fp','初一','富平');
+    selectClass('g1fp','初一','富平');
 
 
 
