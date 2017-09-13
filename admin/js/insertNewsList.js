@@ -320,12 +320,10 @@ $("#asideLis>a:contains('教师信息管理')").click(function () {
 		})
 	};
 
-
 	//查询全部教师
-	$('#searchAllTeacher').click(function () {
-		selectTeacher('all');
-		sessionStorage['teacher']='all';
-	});
+	selectTeacher('all');
+	sessionStorage['teacher']='all';
+
 	//搜索教师
 	$('#searchTeacher').click(function () {
 		var kw=$(this).parent().prev().val();
@@ -339,6 +337,7 @@ $("#asideLis>a:contains('教师信息管理')").click(function () {
 		var tid=$(e.target).attr('href');
 		console.log(tid);
 		if(confirm('确定要删除吗？')){
+			//删除数据库信息
 			$.ajax({
 				type:'GET',
 				data:{tid:tid},
@@ -348,26 +347,67 @@ $("#asideLis>a:contains('教师信息管理')").click(function () {
 					selectTeacher(sessionStorage['teacher']);
 				}
 			});
+		//	删除对应图片文件
+			$.ajax({
+				type:'POST',
+				url:'data/delete.php',
+				data:{photo_lg:photo_lg,photo_sm:photo_sm},
+				success: function (data) {
+					console.log(data);
+				}
+			});
+
+
+
 		}
-	})
+	});
 
 
 //	提交教师信息
 	$('#btn-teach').click(function () {
 		var tname=$('#tname').val();
-		var job=$('#job').val();
-		var teachtitle=$('#teachtitle').val();
-		var photo_sm=$('#photo_sm').val();
-		var photo_lg=$('#photo_lg').val();
-		var introduction=$('#introduction').val();
-		var ivideo=$('#ivideo').val();
 		var grade=$('#grade').val();
 		var subject=$('#subject').val();
-		console.log(tname,job,teachtitle,photo_sm,photo_lg,introduction,ivideo,grade,subject);
+		var photo_sm=$('#photo_sm').val();
+		var photo_lg=$('#photo_lg').val();
+
+		var introduction=$('#introduction').val();
+		//console.log(tname,photo_sm,photo_lg,introduction,grade,subject);
 		$.ajax({
 			type:"POST",
+			url:'data/insertTeacher.php',
+			data:{tname:tname,grade:grade,subject:subject,photo_sm:photo_sm,photo_lg:photo_lg,introduction:introduction},
+			success: function (data) {
+				console.log(data);
+			}
 
+		});
+	//上传图片
+		var fd = new FormData();
+		fd.append("photo_sm",$('#photo_sm')[0].files[0]);
+		fd.append("photo_lg",$('#photo_lg')[0].files[0]);
+		console.dir(fd);
+		$.ajax({
+			url:'data/upload.php',
+			type:'POST',
+			data:fd,
+			cache: false,
+			processData: false,
+			contentType: false,
+			success: function (data) {
+				$('#tname').val("");
+				$('#grade').val("0");
+				$('#subject').val("0");
+				$('#photo_sm').val("");
+				$('#photo_lg').val("");
+				$('#introduction').val("");
+				alert(data);
+				selectTeacher('all');
+				sessionStorage['teacher']='all';
+			}
 		})
+
+
 	})
 
 });
