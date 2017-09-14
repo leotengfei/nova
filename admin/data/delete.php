@@ -4,16 +4,11 @@
 	@$photo_sm=$_REQUEST['photo_sm'] or die('{"code":-4,"msg":"photo_sm是必须的！"}');
 	$photo_lg=iconv('UTF-8','GB2312',$photo_lg);
 	$photo_sm=iconv('UTF-8','GB2312',$photo_sm);
-	$result_lg=unlink("C:/xampp/htdocs/test/images/$photo_lg");
-	$result_sm=unlink("C:/xampp/htdocs/test/images/$photo_sm");
-	if($result_lg){
-		echo '{"code":1,"msg":"photo_lg删除成功！"}';
+	$result_lg=unlink("C:/xampp/htdocs/nova/images/$photo_lg");
+	$result_sm=unlink("C:/xampp/htdocs/nova/images/$photo_sm");
+	if($result_lg&&$result_sm){
+		echo '{"code":1,"msg":"删除成功！"}';
 	}else{
-		echo '{"code":-1,"msg":"photo_lg删除失败！"}';
-	}
-	if($result_sm){
-		echo '{"code":2,"msg":"photo_sm删除成功！"}';
-	}else{
-		echo '{"code":-2,"msg":"photo_sm删除失败！"}';
+		echo '{"code":-1,"msg":"删除失败！"}';
 	}
 ?>

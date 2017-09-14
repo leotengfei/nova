@@ -302,7 +302,7 @@ $("#asideLis>a:contains('教师信息管理')").click(function () {
 					html+=`
 				<div class="col-sm-6 col-md-4">
                         <div class="thumbnail">
-                            <img src="../images/m3.jpg" title='${data[i].introduction}' >
+                            <img src="../images/${data[i].photo_sm}" title='${data[i].introduction}' >
                             <div class="caption">
                                 <h3>${data[i].tname}</h3>
                                 <p>${data[i].grade}${data[i].subject}</p>
@@ -338,27 +338,29 @@ $("#asideLis>a:contains('教师信息管理')").click(function () {
 		console.log(tid);
 		if(confirm('确定要删除吗？')){
 			//删除数据库信息
+			console.log("确定删除");
 			$.ajax({
 				type:'GET',
 				data:{tid:tid},
 				url:'data/teacherDelete.php',
 				success: function (data) {
-					console.log(data);
-					selectTeacher(sessionStorage['teacher']);
+					console.log(data[0].photo_lg,data[0].photo_sm);
+					var photo_lg=data[0].photo_lg;
+					var photo_sm=data[0].photo_sm;
+						//删除对应图片文件
+						$.ajax({
+							type:'POST',
+							url:'data/delete.php',
+							data:{photo_lg:photo_lg,photo_sm:photo_sm},
+							success: function (data) {
+								console.log("删除对应图片成功"+data);
+								selectTeacher('all');
+								sessionStorage['teacher']='all';
+							}
+						});
+
 				}
 			});
-		//	删除对应图片文件
-			$.ajax({
-				type:'POST',
-				url:'data/delete.php',
-				data:{photo_lg:photo_lg,photo_sm:photo_sm},
-				success: function (data) {
-					console.log(data);
-				}
-			});
-
-
-
 		}
 	});
 
@@ -370,7 +372,10 @@ $("#asideLis>a:contains('教师信息管理')").click(function () {
 		var subject=$('#subject').val();
 		var photo_sm=$('#photo_sm').val();
 		var photo_lg=$('#photo_lg').val();
-
+		//console.log(photo_lg,photo_sm);
+		photo_sm=photo_sm.substr(photo_sm.lastIndexOf('\\')+1);
+		photo_lg=photo_lg.substr(photo_lg.lastIndexOf('\\')+1);
+		console.log(photo_lg,photo_sm);
 		var introduction=$('#introduction').val();
 		//console.log(tname,photo_sm,photo_lg,introduction,grade,subject);
 		$.ajax({

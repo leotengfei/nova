@@ -28,7 +28,7 @@ if(($_FILES[$key]['type']!='image/png')&&($_FILES[$key]['type']!='image/jpeg')){
 }
 //汉字编码方式修改为gbk有中文名称的文件才能上传成功
 $_FILES[$key]['name']=iconv('UTF-8','GB2312',$_FILES[$key]['name']);
-$upfile='C:\xampp\htdocs\test\images/'.$_FILES[$key]['name'];
+$upfile='C:\xampp\htdocs\nova\images/'.$_FILES[$key]['name'];
 //echo is_uploaded_file($_FILES[$key]['tmp_name']);
 if(is_uploaded_file($_FILES[$key]['tmp_name'])){
 	if(!move_uploaded_file($_FILES[$key]['tmp_name'],$upfile)){
