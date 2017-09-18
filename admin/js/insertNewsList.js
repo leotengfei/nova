@@ -413,6 +413,22 @@ $("#asideLis>a:contains('教师信息管理')").click(function () {
 		})
 
 
+	});
+
+//	校验图片名称是否重复
+	$('#photo_sm').change(function () {
+		console.log(1);
+		var photo_sm=$('#photo_sm').val();
+		photo_sm=photo_sm.substr(photo_sm.lastIndexOf('\\')+1);
+		$.ajax({
+			type:"POST",
+			url:'data/isExist.php',
+			data:{fileName:photo_sm},
+			success: function (data) {
+				console.log(data)
+			}
+
+		})
 	})
 
 });

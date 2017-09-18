@@ -1,4 +1,5 @@
 <?php
+//查询教师列表
 header("content-type:application/json;charset=utf-8;");
 require ('init.php');
 @$tname=$_REQUEST['tname'] or die('{"code":-2,"msg":"教师名称是必须的！"}');

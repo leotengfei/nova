@@ -1,4 +1,5 @@
 ﻿<?php
+//新闻列表删除功能
 	header("content-type:application/json;charset=utf-8");
 	@$nid=$_REQUEST['nid'] or die('{"code":-2,"msg":"nid是必须的"}');
 	require('init.php');

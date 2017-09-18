@@ -1,4 +1,5 @@
 <?php
+//登陆验证
 header("content-type:application/json;charset=utf-8");
 
 $n = $_REQUEST['uname'];

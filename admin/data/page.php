@@ -1,4 +1,5 @@
 <?php
+//分页的查询，总数
 	header("content-type:application/json;charset=utf-8");
 	require("init.php");
 	$sql="SELECT count(nid) FROM t_news";

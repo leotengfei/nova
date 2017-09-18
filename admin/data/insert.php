@@ -1,4 +1,5 @@
 ﻿<?php
+//课表更新相关
 	header("content-type:application/json;charset=utf-8");
 	@$date=$_REQUEST['date'] or die('{"code":-2,"msg":"date是必须的"}');
 	@$pub=$_REQUEST['pub'] or die('{"code":-3,"msg":"pub是必须的"}');

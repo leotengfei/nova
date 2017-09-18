@@ -1,4 +1,5 @@
 <?php
+//新闻列表分页的查询
 	header("content-type:application/json;charset=utf-8");
 	require('init.php');
 	@$pageNum=$_REQUEST['pageNum'] or die('{"code":-2,"msg":"pageNum是必须的"}');

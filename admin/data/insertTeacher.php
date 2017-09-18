@@ -1,4 +1,5 @@
 <?php
+//教师信息，添加到数据库
 header('content-type:application/json;charset=utf-8');
 require('init.php');
 @$tname=$_REQUEST['tname'] or die('{"code":-1;"msg":"tname是必须的"}');

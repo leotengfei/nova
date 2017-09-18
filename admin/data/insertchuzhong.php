@@ -1,4 +1,5 @@
 <?php
+//初中信息添加到数据库
 header("content-type:application/json;charset=utf-8");
 require('init.php');
 @$arr=$_REQUEST['arr'] or die('{"code":-2,"msg":"arr是必须的！"}');

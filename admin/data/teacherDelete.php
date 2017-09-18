@@ -1,4 +1,5 @@
 <?php
+//删除教师管理数据库信息
 header("content-type:application/json;charset=utf-8");
 require('init.php');
 @$tid=$_REQUEST['tid'] or die('{"code":-2,"msg":"tid是必须的！"}');
