@@ -372,6 +372,10 @@ $("#asideLis>a:contains('教师信息管理')").click(function () {
 		var subject=$('#subject').val();
 		var photo_sm=$('#photo_sm').val();
 		var photo_lg=$('#photo_lg').val();
+		//空值不能提交
+		if(tname==""||grade==""||subject==""||photo_sm==""||photo_lg==""){
+			return;
+		}
 		//console.log(photo_lg,photo_sm);
 		photo_sm=photo_sm.substr(photo_sm.lastIndexOf('\\')+1);
 		photo_lg=photo_lg.substr(photo_lg.lastIndexOf('\\')+1);
@@ -417,7 +421,7 @@ $("#asideLis>a:contains('教师信息管理')").click(function () {
 
 //	校验图片名称是否重复
 	$('#photo_sm').change(function () {
-		console.log(1);
+		//console.log(1);
 		var photo_sm=$('#photo_sm').val();
 		photo_sm=photo_sm.substr(photo_sm.lastIndexOf('\\')+1);
 		$.ajax({
@@ -425,7 +429,11 @@ $("#asideLis>a:contains('教师信息管理')").click(function () {
 			url:'data/isExist.php',
 			data:{fileName:photo_sm},
 			success: function (data) {
-				console.log(data)
+				console.log(data);
+				if(data==-1){
+					alert("该图片已存在，请勿重复上传，避免覆盖");
+					$('#photo_sm').val("");
+				}
 			}
 
 		})
