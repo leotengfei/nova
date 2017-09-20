@@ -437,6 +437,25 @@ $("#asideLis>a:contains('教师信息管理')").click(function () {
 			}
 
 		})
+	});
+
+	$('#photo_lg').change(function () {
+		//console.log(1);
+		var photo_lg=$('#photo_lg').val();
+		photo_lg=photo_lg.substr(photo_lg.lastIndexOf('\\')+1);
+		$.ajax({
+			type:"POST",
+			url:'data/isExist.php',
+			data:{fileName:photo_lg},
+			success: function (data) {
+				console.log(data);
+				if(data==-1){
+					alert("该图片已存在，请勿重复上传，避免覆盖");
+					$('#photo_lg').val("");
+				}
+			}
+
+		})
 	})
 
 });
