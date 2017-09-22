@@ -1,0 +1,221 @@
+body{
+    background-color: #FFFFFF;
+    background: url('../img/bg02.png');
+}
+#headerNav{
+    min-height: 90px;
+}
+#headerNav>div>div>button{
+    margin-top:32px;
+}
+#mainSection{
+    background-color: #fff;
+    padding:20px 0;
+    margin-top:-20px;
+}
+#bs-example-navbar-collapse-1{
+    margin-top:20px;
+}
+#bs-example-navbar-collapse-1>ul>li:first-child{
+    border-right: 1px solid #ddd;
+}
+#intro{
+    text-align: center;
+    margin-top:51px;
+    margin-bottom:51px;
+}
+#intro>div{
+    padding:15px;
+}
+.pennant {
+    margin: 0 0 4em 0;
+    position: relative;
+    display: inline-block;
+    width: 9em;
+    padding: 1.5em 0 0.5em 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.first>span{
+    background-color: #d52349;
+}
+.first>span:after{
+    content: '';
+    position: absolute;
+    bottom: -1.98em;
+    left: 0;
+    border-top: solid 2em #d52349;
+    border-left: solid 4.5em transparent;
+    border-right: solid 4.5em transparent;
+}
+.middle>span{
+    background-color: #000;
+}
+.middle>span:after{
+    content: '';
+    position: absolute;
+    bottom: -1.98em;
+    left: 0;
+    border-top: solid 2em #000;
+    border-left: solid 4.5em transparent;
+    border-right: solid 4.5em transparent;
+}
+.third>span{
+    background-color: #ddd;
+}
+.third>span:after{
+    content: '';
+    position: absolute;
+    bottom: -1.98em;
+    left: 0;
+    border-top: solid 2em #ddd;
+    border-left: solid 4.5em transparent;
+    border-right: solid 4.5em transparent;
+}
+.pennant span {
+    display: block;
+    margin: 0 auto;
+}
+.icon64 {
+    width: 64px;
+    height: 64px;
+    background-image: url('../img/icons64.png');
+    text-indent: -9999em;
+    margin:0 auto;
+}
+.icon64-1 {
+    background-position: 0 0;
+}
+.icon64-2 {
+    background-position: -64px 0;
+}
+.icon64-3 {
+    background-position: -128px 0;
+}
+.middle {
+    box-shadow: 16px 0px 0px 0px #fff, 17px 0px 0px 0px #ccc, -16px 0px 0px 0px #fff, -17px 0px 0px 0px #ccc, -16px -45px 0px 0px #fff, 16px -45px 0px 0px #fff, -16px 45px 0px 0px #fff, 16px 45px 0px 0px #fff, -16px 0px 45px 0px rgba(0,0,0,0.15), 16px 0px 45px 0px rgba(0,0,0,0.15);
+}
+
+/*楼层区域*/
+
+#teachers{
+    padding-top:88px;
+}
+.major {
+    position: relative;
+    text-align: center;
+    border-top: solid 1px #ccc;
+    top: 1em;
+    margin-bottom:30px;
+}
+.major h2 {
+    background: #f7f7f7 url('../img/bg02.png');
+    position: relative;
+    top: -0.65em;
+    display: inline;
+    margin: 0;
+    padding: 0 1em 0 1em;
+}
+
+#teachers>section{
+    margin-bottom:50px;
+}
+#teachers>section>div>div{
+    background-color: #fff;
+    padding:0 0 15px 0;
+}
+#teachers>section>div>div:hover{
+    box-shadow:10px 10px 5px #888888;
+    transition: all 0.5s;
+}
+
+#teachers>section>div>div>div{
+    padding:15px;
+}
+#teachers>section>div{
+    margin-top:5px;
+}
+#videoFooter .erweima{
+    width:120px;
+}
+#videoFooter>div.row:first-child{
+    padding-top:25px;
+    padding-bottom: 50px;
+    background-color: #232323;
+    color: #6F6F6F;
+}
+#videoFooter>div.row:first-child a{
+    color: #6F6F6F;
+}
+#videoFooter>div.row:first-child h4{
+    color:#fff;
+}
+#videoFooter>div.row:last-child{
+    padding-top:10px;
+    background-color: #333333;
+    color: #6F6F6F;
+}
+/*视频详情页图片上方播放按钮*/
+#videoDetail>div:first-child>p{
+    display: inline-block;
+    width:100%;
+}
+#videoDetail>div:first-child>p:after{
+    content:"";
+    display:block;
+    width:120px;
+    height:120px;
+    background: url("../img/play.png");
+    cursor:pointer;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+}
+.videoMsgPrice{
+    color:#fff;
+    background:url('../img/video_detail_bg.jpg') no-repeat;
+}
+.videoMsgPrice>b{
+    font-size:2.5em;
+}
+#videoDetail>div:last-child>ul>li{
+    padding:5px 15px;
+}
+
+/*视频简介*/
+#videoIntro{
+    margin-top:30px;
+    background-color: #fff;
+    padding:0;
+}
+#videoIntro>ul>li{
+    float:left;
+    width:50%;
+    text-align: center;
+    background-color: #F7F9FC;
+    padding:15px 15px;
+}
+#videoIntro>ul:after{
+    content: '';
+    display:block;
+    clear:both;
+}
+#videoIntro>ul>li{
+    border-top:2px solid transparent;
+    border-bottom:1px solid #ddd;
+}
+#videoIntro>ul>li:first-child{
+    border-right:1px solid #ddd;
+}
+#videoIntro>ul>li.active{
+    background-color:#fff ;
+    border-top:2px solid #04A0D1;
+    border-bottom:1px solid transparent;
+}
+#videoIntro>div{
+    padding:5px 15px;
+    display:none;
+}
