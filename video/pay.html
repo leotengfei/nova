@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/video.css"/>
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.min.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--引入公共头部-->
+<div id="header"></div>
+<div class="container">
+    <h2>确认订单信息</h2>
+    <ul class="list-unstyled" id="payList">
+        <!--<li>-->
+            <!--<h5>学员信息</h5>-->
+            <!--<div class="form-horizontal">-->
+                <!--<div class="form-group">-->
+                    <!--<label for="uname" class="col-sm-1 control-label">学员姓名</label>-->
+                    <!--<div class="col-sm-3">-->
+                        <!--<input type="text" class="form-control" id="uname" placeholder="姓名...">-->
+                    <!--</div>-->
+                    <!--<label class="control-label">请填写您的姓名，便于客服人员联系您，提供更好的服务</label>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</li>-->
+        <li id="payWay">
+            <h5>支付方式</h5>
+            <span class="active">支付宝</span>
+            <!--<span>微信</span>-->
+        </li>
+        <li>
+            <h5>课程清单</h5>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>课程名称</th>
+                        <th>价格</th>
+                    </tr>
+                </thead>
+                <tbody id="classList">
+                    <tr>
+                        <td>
+                            <img src="img/pic02.jpg" alt=""/>
+                            <span id="videoCname"></span>
+                        </td>
+                        <td>
+                            <span id="videoPrice"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </li>
+        <li class="text-right">
+            金额总计：￥<span id="totalPrice"></span>
+            <br/>
+            <br/>
+            <form name=alipayment  action=pagepay/pagepay.php method=post target="_blank">
+                <input type="hidden" id="WIDout_trade_no" name="WIDout_trade_no"/>
+                <input type="hidden" id="WIDsubject" name="WIDsubject"/>
+                <input type="hidden" id="WIDtotal_amount" name="WIDtotal_amount"/>
+                <input type="hidden" id="WIDbody" name="WIDbody"/>
+                <button class="btn btn-info" type="submit" style="text-align:center;" id="btnPay">付 款</button>
+            </form>
+        </li>
+    </ul>
+
+</div>
+
+
+
+<!--网站底部-->
+<div id="footer">
+</div>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/video.js"></script>
+<script src="js/pay.js"></script>
+<!--<script src="js/bootlint.js"></script>-->
+<!--<script>-->
+    <!--bootlint.showLintReportForCurrentDocument([]);-->
+<!--</script>-->
+</body>
+</html>

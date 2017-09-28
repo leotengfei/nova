@@ -109,7 +109,7 @@ body{
     margin-bottom:30px;
 }
 .major h2 {
-    background: #f7f7f7 url('../img/bg02.png');
+    background: #fdfdfd url('../img/bg02.png');
     position: relative;
     top: -0.65em;
     display: inline;
@@ -166,7 +166,6 @@ body{
     width:120px;
     height:120px;
     background: url("../img/play.png");
-    cursor:pointer;
     position:absolute;
     top:0;
     left:0;
@@ -183,6 +182,21 @@ body{
 }
 #videoDetail>div:last-child>ul>li{
     padding:5px 15px;
+}
+#chooseClass:after{
+    content:'';
+    display:block;
+    clear: both;
+}
+#chooseClass>li{
+    float:left;
+    padding:5px 10px;
+    border:1px solid #ddd;
+    cursor: pointer;
+}
+#chooseClass>li.active{
+    background:#5BC0DE;
+    color:#fff;
 }
 
 /*视频简介*/
@@ -219,3 +233,95 @@ body{
     padding:5px 15px;
     display:none;
 }
+#courIntro>ul>li{
+    border-radius: 5px;
+}
+#courIntro>ul>li:hover{
+    background-color: #5BC0DE;
+    color:#fff;
+    width:102%;
+    margin-left:-1%;
+    font-size:20px;
+    transition: background-color .3s;
+}
+
+
+/*登陆注册页面样式*/
+#loginMain{
+    background-color: #292943;
+    margin-top:-20px;
+}
+#loginBox{
+    width:350px;
+    min-height:360px;
+    background-color: #fff;
+    margin:0 auto;
+    margin-top:40px;
+}
+#loginBox>div:nth-child(2){
+    margin-top:50px;
+}
+#loginMsg{
+    color:red;
+}
+
+#loginTab{
+    margin:0;
+}
+#loginTab>div:first-child{
+    border-right:1px solid #ddd;
+}
+#loginTab>div.active{
+    color:#fff;
+    border-bottom:1px solid #4BB7D3;
+    background-color: #4BB7D3;
+}
+#loginTab>div{
+    padding:10px 0;
+    font-size:1.5em;
+    border-bottom:1px solid #ddd;
+}
+#loginBox>form{
+    width:80%;
+}
+#loginBox>form>button{
+    font-size:1.5em;
+    letter-spacing: 10px;
+}
+
+/*支付详情页*/
+#payList{
+    border:1px solid #ddd;
+    background-color: #fff;
+    padding:30px 20px;
+}
+#payList>li{
+    border-bottom:1px solid #ddd;
+    padding:20px 0;
+}
+#payWay>span{
+    border:1px solid #ddd;
+    padding:5px 10px;
+    margin-right:10px;
+    position:relative;
+}
+#payWay>span.active{
+    border:1px solid #5CBC67;
+    overflow: hidden;
+}
+#payWay>span.active:after{
+    content:"";
+    display:block;
+    background:url('../img/duihao.png') no-repeat;
+    width:18px;
+    height:18px;
+    position:absolute;
+    top:-9px;
+    right:-9px;
+    margin:auto;
+}
+#classList>tr>td>img{
+    width:100px;
+    margin-right:15px;
+}
+

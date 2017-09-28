@@ -14,7 +14,7 @@
 	<div class="m">
 		<video id="my-video" class="video-js" controls preload="auto" width="740" height="400"
 		   data-setup="{}">
-			<source src="http://7xisnn.com2.z0.glb.clouddn.com//2017jsgkfinal20170324.mp4" type="video/mp4">
+			<source src="http://124.116.190.34/xdispatch/7xisnn.com2.z0.glb.clouddn.com/2017101/%E7%94%9F%E7%89%A92-%E5%BC%A0%E6%A0%A9%E8%90%8C.mp4" type="video/mp4">
 			<!-- <source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm">
 			<source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg"> -->
 			<p class="vjs-no-js">
@@ -29,6 +29,26 @@
 				var myPlayer = this;
 				myPlayer.play();
 			});
+		</script>
+		<script language="javascript" type="text/javascript">
+			function nocontextmenu(){
+				event.cancelBubble = true;
+				event.returnValue = false;
+				return false;}
+			function norightclick(e){
+				if (window.Event){
+					if (e.which == 2 || e.which == 3)
+						return false;}
+				else
+				if (event.button == 2 || event.button == 3){
+					event.cancelBubble = true
+					event.returnValue = false;
+					return false;}
+			}
+			//禁止右键
+			document.oncontextmenu = nocontextmenu; // for IE5+
+			document.onmousedown = norightclick; // for all others
+
 		</script>
 	</div>
 
