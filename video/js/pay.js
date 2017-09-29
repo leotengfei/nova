@@ -83,17 +83,6 @@ $('#btnPay').click(function () {
                 console.log(data);
             }
         });
-
-//    给notify_url.php传参数
-    $.ajax({
-        type:'GET',
-        data:{uid:sessionStorage['uid'],utel:sessionStorage['utel'],cid:sessionStorage['cid']},
-        url:'pagepay/pagepay.php',
-        success: function (data) {
-            console.log(data);
-        }
-    })
-
 });
 
 
@@ -102,14 +91,14 @@ var timer = setInterval(function () {
     //console.log(0);
     $.ajax({
         type: "POST",
-        data: {WIDout_trade_no: sNow},
+        data: {uid:sessionStorage['uid'],cid:sessionStorage['cid']},
         url: 'data/isPayed.php',
         success: function (data) {
             //如果支付成功自动跳转会详情页；
             console.log(data);
-            //if(data==1){
-            //    location.href="detail.html";
-            //}
+            if(data.code==1){
+                location.href="detail.html";
+            }
         }
 
     })

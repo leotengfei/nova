@@ -46,9 +46,9 @@ if($result) {//验证成功
 	//交易状态
 	$trade_status = $_POST['trade_status'];
 
-	$WIDsubject=$_POST['WIDsubject'];
-	$WIDtotal_amount=$_POST['WIDtotal_amount'];
-	$WIDbody=$_POST['WIDbody'];
+	$WIDsubject=$_POST['subject'];
+	$WIDtotal_amount=$_POST['total_amount']*100;
+	$WIDbody=$_POST['body'];
 
 
     if($_POST['trade_status'] == 'TRADE_FINISHED') {

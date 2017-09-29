@@ -18,11 +18,6 @@ var isLanded= function () {
         }
     });
 };
-//判断是否已经付款
-var ispayed= function () {
-    return false;
-};
-
 //改变网站头部登陆信息
 $(function () {
     $.ajax({

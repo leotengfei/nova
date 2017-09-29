@@ -76,11 +76,19 @@ $('#viewVideo').click(function () {
                     location.href='login.html';
                 }else{
                     //判断是否已经付过款
-                    if(ispayed()){
-                        window.location.href='player.html';
-                    }else{
-                        window.location.href='pay.html';
-                    }
+                    $.ajax({
+                        type: "POST",
+                        data: {uid:sessionStorage['uid'],cid:sessionStorage['cid']},
+                        url: 'data/isPayed.php',
+                        success: function (data) {
+                            //如果支付成功自动跳转播放页；
+                            if(data.code==1){
+                                window.location.href='player.html';
+                            }else{
+                                window.location.href='pay.html';
+                            }
+                        }
+                    });
                 }
             }
         });
