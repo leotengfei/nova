@@ -16,6 +16,7 @@ $(function () {
            $('#videoPrice').html("￥"+fixNum(data[0].cPrice));
            $('#total').html(data[0].total);
            $('#videoDetailTeacher').html(data[0].teacher);
+           $('#dPageName').html(data[0].cname);
            var html='';
            html+=`<li class="active">1</li>`;
            for(var i=2;i<=data[0].total;i++){
