@@ -57,10 +57,58 @@ $('#videoIntro>ul>li:first-child').click(function () {
     $('#videoIntro>div').css('display','none');
     $('#courIntro').css('display','block');
 });
+var loadtime=0;
 $('#videoIntro>ul>li:nth-child(2)').click(function () {
     $(this).addClass('active').siblings().removeClass('active');
     $('#videoIntro>div').css('display','none');
     $('#teachIntro').css('display','block');
+    //发送ajax请求  获取老师信息
+    var teacherName=$('#videoDetailTeacher').html();
+    console.log(teacherName);
+    var arr=teacherName.split('、');
+    //console.log(arr);
+        //老师信息需要tname
+    if(loadtime===0){
+    for(var i=0;i<arr.length;i++){
+        var tname=arr[i];
+        loadtime++;
+        $.ajax({
+            type:"POST",
+            url:'data/videoPageTD.php',
+            data:{tname:tname},
+            success: function (data) {
+                //console.log(data);
+                var html=`
+                    <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">${data[0].tname}老师</h3>
+            </div>
+            <div class="panel-body">
+                <div class="media">
+                    <div class="media-left media-middle">
+                        <a href="#">
+                            <img class="media-object" src="../images/${data[0].photo_lg}" alt="...">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">${data[0].grade}${data[0].subject}名师</h4>
+                        <p>
+                            ${data[0].introduction}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+                `;
+                $('#teachIntro').append(html);
+            }
+        })
+    }
+    console.log(loadtime);
+    }
+
+
+
 });
 
 //点击跳转

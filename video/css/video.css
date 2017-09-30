@@ -248,6 +248,10 @@ body {
     transition: background-color .3s;
 }
 
+#teachIntro div.panel-body img{
+    width:100px;
+}
+
 
 /*登陆注册页面样式*/
 #loginMain{
