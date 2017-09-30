@@ -12,7 +12,7 @@ var isLanded= function () {
     $.ajax({
         url: 'data/logininfo.php',
         success: function(result){
-            if(result.utel===null||result.uid===null){
+            if(result.utel===null||result.uid===null||sessionStorage['uid']===undefined){
                 location.href='login.html';
             }
         }

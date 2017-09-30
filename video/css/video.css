@@ -1,6 +1,9 @@
-body{
+body {
     background-color: #FFFFFF;
     background: url('../img/bg02.png');
+}
+*{
+    font-family: "Microsoft Yahei", SimSun, Arial, sans-serif;!important;
 }
 #headerNav{
     min-height: 90px;
