@@ -27,7 +27,6 @@ $('#recent-works>div.container>ul>li div.links>a').click(function () {
                   <td width="10%">结课日期</td>
                   <td width="16%">上课时间</td>
                   <td width="10%">上课地点</td>
-                  <td width="10%">教师</td>
                   <td width="10%">学费</td>
                 </tr>
                 `;
@@ -49,7 +48,6 @@ $('#recent-works>div.container>ul>li div.links>a').click(function () {
                       <td width="16%">${data[i].gtime}</td>
                       <td width="10%">${data[i].location}</td>
                       <td width="10%">${data[i].money}</td>
-                      <td width="10%">${data[i].teacher}</td>
                 </tr>
                 `;
             }
