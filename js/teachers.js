@@ -3,20 +3,35 @@
  */
 
 //页面加载发送请求
-$.ajax({
-    type:"GET",
-    url:"../sql/selectTeacher.php",
-    success: function (data) {
-        var html="";
-        for(var i=2;i<data.length;i++){
-            html+=`
+
+//  老师数据实现滚动加载
+var isLoading = false;
+var isEnd = false;
+var triggerDistance = 200;
+var pageNum=1;
+
+function fetchData() {
+    var distance = portfolio.getBoundingClientRect().bottom - window.innerHeight;
+    //console.log(distance);
+    if ( !isLoading && !isEnd && distance < triggerDistance ) {
+        isLoading = true;
+        $.ajax({
+            type:"POST",
+            url:"../sql/selectTeacher.php",
+            data:{pageNum:pageNum},
+            success: function (data) {
+                var html="";
+                for(var i=0;i<data.length;i++){
+                    html+=`
                 <li>
                 <input type="hidden" value="${data[i].tid}"/>
                 <div class="preview">
                     <img alt=" " src="../images/${data[i].photo_sm}">
                     <div class="overlay">
+                        <span>更多介绍</span>
                     </div>
                     <div class="links">
+                        <input type="hidden" value="${data[i].grade}"/>
                         <a data-toggle="modal" href="#modal-teacher"></a>
                     </div>
                 </div>
@@ -26,18 +41,27 @@ $.ajax({
                 </div>
             </li>
             `;
-        }
-        $('#portfolio>ul').html(html);
+                }
+                $('#portfolio>ul').append(html);
+                isLoading = false;
+                pageNum++;
+                //console.log(data);
+                if(data.length===0){
+                    isEnd=true;
+                }
+            }
+        });
     }
-
-});
-
-
+}
+window.addEventListener('scroll', fetchData);
+fetchData();
 //老师li点击事件
 $('#portfolio').on("click","ul>li a", function (e) {
     $('#modal-teacher>div.modal-body').html("加载中...");
    var tid=$(e.target).parent().parent().prev().val();
     var tname=$(e.target).parent().parent().next().children().first().html();
+    var grade=$(e.target).prev().val();
+    //console.log(grade);
     //console.log(tid,tname);
     //获取教师详细信息
     $.ajax({
@@ -60,7 +84,7 @@ $('#portfolio').on("click","ul>li a", function (e) {
             $.ajax({
                 type:"POST",
                 url:"../sql/selectTeacherClass.php",
-                data:{tname:tname},
+                data:{tname:tname,grade:grade},
                 success: function (data) {
                     //console.log(data);
                     //改编数据格式
@@ -106,15 +130,8 @@ $('#portfolio').on("click","ul>li a", function (e) {
                     }
                     html+="</tbody></table>";
                     $('#modal-teacher>div.modal-body').append(html);
-
                 }
-
             })
-
-
         }
-
     });
-
-
 });
