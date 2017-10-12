@@ -24,7 +24,7 @@ $(function () {
                     <td width="10%">${deldate(data[i].gbegin)}</td>
                     <td width="10%">${deldate(data[i].gend)}</td>
                     <td width="25%">${data[i].gtime}</td>
-                    <td width="10%">${data[i].location}</td>
+                    <td width="10%">${data[i].teacher}</td>
                     <td width="10%">${data[i].money}</td>
                </tr>
                `;
