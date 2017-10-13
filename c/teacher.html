@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/sl-slide.css">
+    <link rel="stylesheet" href="../css/teacher.css"/>
 
     <script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 
@@ -107,11 +108,70 @@ filter:alpha(opacity=50);"><h1>名师介绍</h1>
             </div>
         </div>
     </section>
-    <!-- / .title -->     
+    <!-- / .title -->
+    <section id="portfolio" class="container main">
+        <div class="row-fluid">
+            <div class="span2">
+                    <ul class="unstyled" id="left-side">
+                        <li>
+                            <div class="input-append">
+                                <input class="span9" type="text" placeholder="搜索...">
+                                <button class="btn btn-success" type="button" id="search-btn">
+                                    <i class="icon-search"></i>
+                                </button>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="icon-book"></i>
+                            <span>高考</span>
+                            <b></b>
+                        </li>
+                        <li class="subLi">
+                            <ul class="unstyled">
+                                <li>数学</li>
+                                <li>语文</li>
+                                <li>英语</li>
+                                <li>物理</li>
+                                <li>化学</li>
+                                <li>生物</li>
+                                <li>文综</li>
+                                <li>政治</li>
+                                <li>历史</li>
+                                <li>地理</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <i class=" icon-leaf"></i>
+                            <span>中考</span>
+                            <b></b>
+                        </li>
+                        <li class="subLi">
+                            <ul class="unstyled">
+                                <li>数学</li>
+                                <li>语文</li>
+                                <li>英语</li>
+                                <li>物理</li>
+                                <li>化学</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <i class="icon-gift"></i>
+                            <span>小学</span>
+                            <b></b>
+                        </li>
+                        <li class="subLi">
+                            <ul class="unstyled">
+                                <!--<li>1</li>-->
+                            </ul>
+                        </li>
+                    </ul>
+            </div>
+            <div class="span10">
+                <ul class="gallery col-4" id="teacherList">
+                </ul>
+            </div>
+        </div>
 
-    <section id="portfolio" class="container main">    
-        <ul class="gallery col-4">
-        </ul>
         <div id="modal-teacher" class="modal hide fade">
             <a class="close-modal" href="javascript:;" data-dismiss="modal" aria-hidden="true" style="float:right; background-color:#2DCC70; color:#fff; padding:1px 5px;">&nbsp;X&nbsp;</a>
             <div class="modal-body">
@@ -172,62 +232,6 @@ filter:alpha(opacity=50);"><h1>名师介绍</h1>
 
 
 			<div class="span4"><img src="../images/qc.jpg" width="120" height="120" style="padding-top:20px;"></div>
-            
-            
-            <!--Archives
-            <div id="archives" class="span3">
-                <h4>ARCHIVES</h4>
-                <div>
-                    <ul class="arrow">
-                        <li><a href="#">December 2012 (1)</a></li>
-                        <li><a href="#">November 2012 (5)</a></li>
-                        <li><a href="#">October 2012 (8)</a></li>
-                        <li><a href="#">September 2012 (10)</a></li>
-                        <li><a href="#">August 2012 (29)</a></li>
-                        <li><a href="#">July 2012 (1)</a></li>
-                        <li><a href="#">June 2012 (31)</a></li>
-                    </ul>
-                </div>
-            </div>
-            End Archives-->
-			<!--
-            <div class="span3">
-                <h4>FLICKR GALLERY</h4>
-                <div class="row-fluid first">
-                    <ul class="thumbnails">
-                      <li class="span3">
-                        <a href="http://www.flickr.com/photos/76029035@N02/6829540293/" title="01 (254) by Victor1558, on Flickr"><img src="http://farm8.staticflickr.com/7003/6829540293_bd99363818_s.jpg" width="75" height="75" alt="01 (254)"></a>
-                    </li>
-                    <li class="span3">
-                        <a href="http://www.flickr.com/photos/76029035@N02/6829537417/" title="01 (196) by Victor1558, on Flickr"><img src="http://farm8.staticflickr.com/7013/6829537417_465d28e1db_s.jpg" width="75" height="75" alt="01 (196)"></a>
-                    </li>
-                    <li class="span3">
-                        <a href="http://www.flickr.com/photos/76029035@N02/6829527437/" title="01 (65) by Victor1558, on Flickr"><img src="http://farm8.staticflickr.com/7021/6829527437_88364c7ec4_s.jpg" width="75" height="75" alt="01 (65)"></a>
-                    </li>
-                    <li class="span3">
-                        <a href="http://www.flickr.com/photos/76029035@N02/6829524451/" title="01 (6) by Victor1558, on Flickr"><img src="http://farm8.staticflickr.com/7148/6829524451_a725793358_s.jpg" width="75" height="75" alt="01 (6)"></a>
-                    </li>
-                </ul>
-            </div>
-            <div class="row-fluid">
-                <ul class="thumbnails">
-                    <li class="span3">
-                        <a href="http://www.flickr.com/photos/76029035@N02/6829524451/" title="01 (6) by Victor1558, on Flickr"><img src="http://farm8.staticflickr.com/7148/6829524451_a725793358_s.jpg" width="75" height="75" alt="01 (6)"></a>
-                    </li>
-                    <li class="span3">
-                        <a href="http://www.flickr.com/photos/76029035@N02/6829540293/" title="01 (254) by Victor1558, on Flickr"><img src="http://farm8.staticflickr.com/7003/6829540293_bd99363818_s.jpg" width="75" height="75" alt="01 (254)"></a>
-                    </li>
-                    <li class="span3">
-                        <a href="http://www.flickr.com/photos/76029035@N02/6829537417/" title="01 (196) by Victor1558, on Flickr"><img src="http://farm8.staticflickr.com/7013/6829537417_465d28e1db_s.jpg" width="75" height="75" alt="01 (196)"></a>
-                    </li>
-                    <li class="span3">
-                        <a href="http://www.flickr.com/photos/76029035@N02/6829527437/" title="01 (65) by Victor1558, on Flickr"><img src="http://farm8.staticflickr.com/7021/6829527437_88364c7ec4_s.jpg" width="75" height="75" alt="01 (65)"></a>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-	-->
     </div>
     <!--/row-fluid-->
 </div>
@@ -244,29 +248,7 @@ filter:alpha(opacity=50);"><h1>名师介绍</h1>
                 <p style="text-align:center;">Copy Right &copy; 2016 无线星空教育</p>
 
             <!--/Copyright-->
-            
-    
-
-
-                <!--/links
-                <ul class="social pull-right">
-                    <li><a href="#"><i class="icon-facebook"></i></a></li>
-                    <li><a href="#"><i class="icon-twitter"></i></a></li>
-                    <li><a href="#"><i class="icon-pinterest"></i></a></li>
-                    <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                    <li><a href="#"><i class="icon-google-plus"></i></a></li>                       
-                    <li><a href="#"><i class="icon-youtube"></i></a></li>
-                    <li><a href="#"><i class="icon-tumblr"></i></a></li>                        
-                    <li><a href="#"><i class="icon-dribbble"></i></a></li>
-                    <li><a href="#"><i class="icon-rss"></i></a></li>
-                    <li><a href="#"><i class="icon-github-alt"></i></a></li>
-                    <li><a href="#"><i class="icon-instagram"></i></a></li>                   
-                </ul>
-                -->
             </div>
-
-            
-
             <div class="span1">
                 <a id="gototop" class="gototop pull-right" href="#"><i class="icon-angle-up"></i></a>
             </div>

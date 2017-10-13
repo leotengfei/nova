@@ -1,0 +1,56 @@
+/*名师介绍页面*/
+#left-side{
+    background-color: #34495E;
+    color:#fff;
+    text-align: center;
+    font-size: 2em;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+#left-side>li{
+    padding:10px 0;
+    border-top:1px solid #2C3E50;
+    cursor: pointer;
+}
+#left-side>li.subLi{
+    color:#000;
+    background-color: #93A7BC;
+    height:0;
+    overflow: hidden;
+    padding:0;
+}
+#left-side>li.active{
+    height:100%;
+}
+#left-side>li:first-child{
+    background-color: #5BB75B;
+    border:none;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+}
+#left-side>li:first-child>div>input{
+    box-shadow: 40px 40px 40px 40px #5BB75B inset;
+    color:#fff;
+}
+input::-webkit-input-placeholder {  color: #34495E; font-size: 1.5em;font-family: "Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif; }
+input:-moz-placeholder{ color:#34495E;  font-size: 1.5em;font-family: "Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;}
+input::-moz-placeholder{  color:#34495E;  font-size: 1.5em;font-family: "Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;}
+input:-ms-input-placeholder{  color:#34495E;  font-size: 1.5em;font-family: "Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;}
+#left-side>li>b{
+    display:inline-block;
+    background-color: #fff;
+    border-radius: 50%;
+    width:15px;
+    height:15px;
+}
+#left-side>li>span{
+    margin-left:5px;
+    margin-right:5px;
+}
+/*子选项的样式*/
+#left-side>li>ul>li{
+    padding:5px 0;
+    float:left;
+    width:50%;
+}

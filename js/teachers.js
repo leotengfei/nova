@@ -9,6 +9,8 @@ var isLoading = false;
 var isEnd = false;
 var triggerDistance = 200;
 var pageNum=1;
+var grade='all';
+var subject='all';
 
 function fetchData() {
     var distance = portfolio.getBoundingClientRect().bottom - window.innerHeight;
@@ -18,7 +20,7 @@ function fetchData() {
         $.ajax({
             type:"POST",
             url:"../sql/selectTeacher.php",
-            data:{pageNum:pageNum},
+            data:{pageNum:pageNum,grade:grade,subject:subject},
             success: function (data) {
                 var html="";
                 for(var i=0;i<data.length;i++){
@@ -42,7 +44,7 @@ function fetchData() {
             </li>
             `;
                 }
-                $('#portfolio>ul').append(html);
+                $('#teacherList').append(html);
                 isLoading = false;
                 pageNum++;
                 //console.log(data);
@@ -56,7 +58,7 @@ function fetchData() {
 window.addEventListener('scroll', fetchData);
 fetchData();
 //老师li点击事件
-$('#portfolio').on("click","ul>li a", function (e) {
+$('#teacherList').on("click","li a", function (e) {
     $('#modal-teacher>div.modal-body').html("加载中...");
    var tid=$(e.target).parent().parent().prev().val();
     var tname=$(e.target).parent().parent().next().children().first().html();
@@ -104,7 +106,6 @@ $('#portfolio').on("click","ul>li a", function (e) {
                         <td width="16%">上课时间</td>
                         <td width="10%">上课地点</td>
                         <td width="10%">学费</td>
-                        <td width="10%">教师</td>
                     </tr>`;
                     for(var i=0;i<data.length;i++){
                         html+=`
@@ -124,7 +125,6 @@ $('#portfolio').on("click","ul>li a", function (e) {
                     <td width="16%">${data[i].gtime}</td>
                     <td width="10%">${data[i].location}</td>
                     <td width="10%">${data[i].money}</td>
-                    <td width="10%">${data[i].teacher}</td>
                 </tr>
                         `;
                     }
@@ -134,4 +134,20 @@ $('#portfolio').on("click","ul>li a", function (e) {
             })
         }
     });
+});
+//侧边栏点击事件
+$('#left-side>li').click(function () {
+    pageNum=1;
+    isEnd = false;
+    isLoading=false;
+   $(this).next().toggleClass('active');
+    $(this).next().siblings().removeClass('active');
+    //console.log($(this).children('span').html());
+     grade=$(this).children('span').html();
+    //点中年级选项卡
+    if(grade!==undefined){
+        console.log(grade);
+        $('#teacherList').html('');
+        fetchData()
+    }
 });
