@@ -38,7 +38,7 @@ $(function () {
     selectClass('g1bdj','高考','北大街');
     selectClass('g1bj','高考','北郊');
     selectClass('g1ca','高考','长安');
-    selectClass('g1hh','高考','东区');
+    selectClass('g1hh','高考','黄河');
     //selectClass('g1jd','高考','交大');
     //selectClass('g1gx2','高考','高新');
     selectClass('g1tm','高考','土门');

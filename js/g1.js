@@ -38,7 +38,7 @@ $(function () {
     selectClass('g1bdj','高一','北大街');
     selectClass('g1bj','高一','北郊');
     selectClass('g1ca','高一','长安');
-    selectClass('g1hh','高一','东区');
+    selectClass('g1hh','高一','黄河');
     selectClass('g1jd','高一','交大');
     selectClass('g1gx2','高一','高新');
     selectClass('g1tm','高一','土门');
