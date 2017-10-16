@@ -4,12 +4,13 @@
 $('#recent-works>div.container>ul>li div.links>a').click(function () {
     //console.log($(this).next().val());
     var tname=$(this).next().val();
+    var grade=$(this).next().next().val();
     //console.log($(this).parent().parent().next().next().children('div.modal-body').children('table').html());
     var modalTable=$(this).parent().parent().next().next().children('div.modal-body').children('table');
     $.ajax({
         type:"POST",
         url:'sql/selectTeacherClass.php',
-        data:{tname:tname},
+        data:{tname:tname,grade:grade},
         success: function (data) {
             //console.log(data);
             //改编数据格式

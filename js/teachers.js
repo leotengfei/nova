@@ -146,8 +146,57 @@ $('#left-side>li').click(function () {
      grade=$(this).children('span').html();
     //点中年级选项卡
     if(grade!==undefined){
-        console.log(grade);
+        //console.log(grade);
         $('#teacherList').html('');
         fetchData()
+    }
+});
+//侧边栏子菜单点击事件
+$('#left-side>li.subLi>ul>li').click(function () {
+   //console.log($(this).html());
+    pageNum=1;
+    isEnd = false;
+    isLoading=false;
+    subject=$(this).html();
+    $('#teacherList').html('');
+    fetchData();
+});
+
+//搜索教师
+$('#search-btn').click(function () {
+   //console.log($(this).prev().val());
+    var tname=$(this).prev().val();
+    if(tname!==''){
+        $.ajax({
+            type:"POST",
+            url:"../admin/data/selectTeacher.php",
+            data:{tname:tname},
+            success: function (data) {
+                var html="";
+                for(var i=0;i<data.length;i++){
+                    html+=`
+                <li>
+                <input type="hidden" value="${data[i].tid}"/>
+                <div class="preview">
+                    <img alt=" " src="../images/${data[i].photo_sm}">
+                    <div class="overlay">
+                        <span>更多介绍</span>
+                    </div>
+                    <div class="links">
+                        <input type="hidden" value="${data[i].grade}"/>
+                        <a data-toggle="modal" href="#modal-teacher"></a>
+                    </div>
+                </div>
+                <div class="desc">
+                	<h5>${data[i].tname}</h5>
+                    <p>${data[i].grade}${data[i].subject}名师</p>
+                </div>
+            </li>
+            `;
+                }
+                $('#teacherList').html('');
+                $('#teacherList').append(html);
+            }
+        });
     }
 });

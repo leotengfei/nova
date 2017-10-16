@@ -1,4 +1,7 @@
 /*名师介绍页面*/
+#teacherList{
+ min-height: 470px;
+}
 #left-side{
     background-color: #34495E;
     color:#fff;
