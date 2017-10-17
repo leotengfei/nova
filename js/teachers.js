@@ -140,6 +140,7 @@ $('#left-side>li').click(function () {
     pageNum=1;
     isEnd = false;
     isLoading=false;
+    subject='all';
    $(this).next().toggleClass('active');
     $(this).next().siblings().removeClass('active');
     //console.log($(this).children('span').html());
