@@ -83,7 +83,7 @@ var getMapDetail= function (city,sid) {
             var html='';
             for(var i=0;i<data.length;i++){
                 html+=`
-                <li><b>${data[i].tab}:</b>${data[i].address}  电话：${data[i].tel}</li>
+                <li><b>${data[i].tab}：</b>${data[i].address}  电话：${data[i].tel}</li>
                 `;
             }
             $('#'+sid).html(html);
