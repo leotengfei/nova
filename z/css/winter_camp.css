@@ -1,0 +1,32 @@
+/*寒假魔鬼训练营*/
+#winter_main{
+    margin-top: -50px;
+
+}
+body{
+    background-color: #F2F2F2;
+}
+.hot{
+    font-weight: bold;
+    font-size: 18px;
+    color:#3A87AD;
+    border:2px solid #3A87AD;
+    padding:5px 5px;
+    border-radius: 5px;
+}
+.msg_card{
+    background-color: #fff;
+    padding:15px 10px;
+    border-radius: 5px;
+    margin-bottom:10px;
+    box-shadow:4px 4px 10px #728CC7;
+}
+.msg_card>div>b{
+    font-size: 21px;
+}
+.msg_card>div>span.badge{
+    font-size: 16px;
+    line-height: 18px;
+    position:relative;
+    top:-2px;
+}
