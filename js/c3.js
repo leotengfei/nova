@@ -38,7 +38,7 @@ $(function () {
     selectClass('g1bdj','中考','北大街');
     selectClass('g1ca','中考','长安');
     selectClass('g1jd','中考','交大');
-    //selectClass('g1bj','中考','北郊');
+    selectClass('g1bj','中考','北郊');
     selectClass('g1tm','中考','土门');
     //selectClass('g1gx2','中考','高新');
     selectClass('g1wn','中考','渭南');
@@ -46,7 +46,7 @@ $(function () {
     selectClass('g1bj2','中考','宝鸡');
     selectClass('g1xy','中考','咸阳');
     //selectClass('g1hh','中考','黄河');
-    //selectClass('g1yl','中考','阎良');
+    selectClass('g1yl','中考','阎良');
     selectClass('g1fp','中考','富平');
 
 
