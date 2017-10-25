@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>期中冲刺预约试听</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Loading Bootstrap -->
+    <link href="css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="css/flat-ui.min.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="js/vendor/html5shiv.js"></script>
+      <script src="js/vendor/respond.min.js"></script>
+    <![endif]-->
+    <style>
+      input{
+        color:#000;
+      }
+    </style>
+  </head>
+  <body class="btn-primary">
+    <div class="container">
+        <h3>期中冲刺<small class="text-warning">&nbsp;预约试听</small></h3>
+      <hr/>
+      <div class="login-form">
+        <div class="form-group">
+          <input type="text" class="form-control login-field" value="" placeholder="请输入姓名" id="uname">
+          <label class="login-field-icon fui-user" for="uname"></label>
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="form-control login-field" value="" placeholder="请输入电话" id="utel">
+          <label class="login-field-icon fui-document" for="utel"></label>
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="form-control login-field" value="" placeholder="请输入学校" id="uschool">
+          <label class="login-field-icon fui-star-2" for="uschool"></label>
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control login-field" value="" placeholder="请输入年级" id="ugrade">
+            <label class="login-field-icon fui-list-thumbnailed" for="ugrade"></label>
+        </div>
+        <button type="button" class="btn btn-primary btn-lg btn-block" id="btn-apoint">预约</button>
+      </div>
+    </div>
+
+    <!-- /.container -->
+
+    <!-- 模态框-->
+    <div id="myModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content bg-success">
+          <h4 style="color:#000;" class="text-center" id="msg"></h4>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
+    <script src="js/vendor/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/vendor/video.js"></script>
+    <script src="js/flat-ui.min.js"></script>
+    <script src="js/index.js"></script>
+
+  </body>
+</html>
