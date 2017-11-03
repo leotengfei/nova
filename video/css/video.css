@@ -110,6 +110,7 @@ body {
     border-top: solid 1px #ccc;
     top: 1em;
     margin-bottom:30px;
+    margin-top:30px;
 }
 .major h2 {
     background: #fdfdfd url('../img/bg02.png');
@@ -123,19 +124,19 @@ body {
 #teachers>section{
     margin-bottom:50px;
 }
-#teachers>section>div>div{
+#teachers>section>div>div>div{
     background-color: #fff;
     padding:0 0 15px 0;
 }
-#teachers>section>div>div:hover{
+#teachers>section>div>div>div:hover{
     box-shadow:10px 10px 5px #888888;
     transition: all 0.5s;
 }
 
-#teachers>section>div>div>div{
+#teachers>section>div>div>div>div{
     padding:15px;
 }
-#teachers>section>div{
+#teachers>section>div>div{
     margin-top:5px;
 }
 #videoFooter .erweima{
@@ -223,6 +224,7 @@ body {
 #videoIntro>ul>li{
     border-top:2px solid transparent;
     border-bottom:1px solid #ddd;
+    cursor: pointer;
 }
 #videoIntro>ul>li:first-child{
     border-right:1px solid #ddd;

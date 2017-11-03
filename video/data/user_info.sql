@@ -26,7 +26,10 @@ CREATE TABLE class_info(
     project VARCHAR(10) NOT NULL DEFAULT '',--学科
     teacher VARCHAR(100) NOT NULL DEFAULT '',--主讲教师
     cPrice INT NOT NULL DEFAULT 0,--课程价格（单位：分）
-    imgUrl VARCHAR(200) NOT NULL DEFAULT ''--图片路径
+    imgUrl VARCHAR(200) NOT NULL DEFAULT '',--图片路径
+    is_free VARCHAR(10) NOT NULL DEFAULT '',--是否免费
+    tag VARCHAR(100) NOT NULL DEFAULT '',--视频标签分类
+    intro VARCHAR(100) NOT NULL DEFAULT ''--视频简介（总课程简介）
 );
 CREATE TABLE class_detail(
     cdid INT PRIMARY KEY AUTO_INCREMENT,--课程细节编号

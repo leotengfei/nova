@@ -13,6 +13,7 @@ $(function () {
            //console.log(data[0].cPrice);
            $('#videoDetail>div>p>img').attr('src','img/'+data[0].imgUrl);
            $('#videoCname>h2').html(data[0].cname);
+           $('#videoCname>p').html("简介："+data[0].intro);
            $('#videoPrice').html("￥"+fixNum(data[0].cPrice));
            $('#total').html(data[0].total);
            $('#videoDetailTeacher').html(data[0].teacher);
@@ -114,9 +115,6 @@ $('#videoIntro>ul>li:nth-child(2)').click(function () {
 //点击跳转
 $('#viewVideo').click(function () {
     //window.location.href='player.html';
-    if(sessionStorage['episode']==1){//第一节课不用付款
-        window.location.href='player.html';
-    }else{
         //判断是否登陆
         $.ajax({
             url: 'data/logininfo.php',
@@ -124,25 +122,27 @@ $('#viewVideo').click(function () {
                 if(result.utel===null||result.uid===null){
                     location.href='login.html';
                 }else{
-                    //判断是否已经付过款
-                    $.ajax({
-                        type: "POST",
-                        data: {uid:sessionStorage['uid'],cid:sessionStorage['cid']},
-                        url: 'data/isPayed.php',
-                        success: function (data) {
-                            //如果支付成功自动跳转播放页；
-                            if(data.code==1){
-                                window.location.href='player.html';
-                            }else{
-                                window.location.href='pay.html';
+                    if(sessionStorage['is_free']==='1'){//判断是否为免费视频
+                        window.location.href='player.html';
+                    }else{
+                        //判断是否已经付过款
+                        $.ajax({
+                            type: "POST",
+                            data: {uid:sessionStorage['uid'],cid:sessionStorage['cid']},
+                            url: 'data/isPayed.php',
+                            success: function (data) {
+                                //如果支付成功自动跳转播放页；
+                                if(data.code==1){
+                                    window.location.href='player.html';
+                                }else{
+                                    window.location.href='pay.html';
+                                }
                             }
-                        }
-                    });
+                        });
+                    }
                 }
             }
         });
-
-    }
 });
 
 //默认集数选择第一节
