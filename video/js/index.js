@@ -30,10 +30,10 @@ $(function () {
             }
         })
     };
-
-
-    selectClassInfo('十一营','mingshikecheng');
+    selectClassInfo('高中期中冲刺','gaozhong_qizhong');
     selectClassInfo('初中期中冲刺','chuzhong_qizhong');
+    selectClassInfo('十一营','mingshikecheng');
+
 
 });
 //观看按钮点击事件

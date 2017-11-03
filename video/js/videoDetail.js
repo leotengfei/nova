@@ -19,10 +19,10 @@ $(function () {
            $('#videoDetailTeacher').html(data[0].teacher);
            $('#dPageName').html(data[0].cname);
            var html='';
-           html+=`<li class="active">1</li>`;
+           html+=`<li class="active btn">1</li>`;
            for(var i=2;i<=data[0].total;i++){
                html+=`
-               <li>${i}</li>
+               <li class="btn">${i}</li>
                `;
            }
            $('#chooseClass').html(html);
