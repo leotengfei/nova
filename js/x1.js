@@ -35,10 +35,9 @@ $(function () {
 
     //selectClass('g1bdj','一年级','北大街');
     //selectClass('g1ca','一年级','长安');
-    //selectClass('g1jd','一年级','交大');
     //selectClass('g1bj','一年级','北郊');
     //selectClass('g1tm','一年级','土门');
-    //selectClass('g1gx2','一年级','高新');
+    //selectClass('g1gx3','一年级','高新');
     //selectClass('g1wn','一年级','渭南');
     //selectClass('g1pc','一年级','蒲城');
     //selectClass('g1bj2','一年级','宝鸡');

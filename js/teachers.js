@@ -14,9 +14,10 @@ var subject='all';
 
 function fetchData() {
     var distance = portfolio.getBoundingClientRect().bottom - window.innerHeight;
-    //console.log(distance);
+    console.log(distance);
     if ( !isLoading && !isEnd && distance < triggerDistance ) {
         isLoading = true;
+        console.log(1);
         $.ajax({
             type:"POST",
             url:"../sql/selectTeacher.php",
@@ -159,6 +160,7 @@ $('#left-side>li.subLi>ul>li').click(function () {
     isEnd = false;
     isLoading=false;
     subject=$(this).html();
+    //console.log(grade);
     $('#teacherList').html('');
     fetchData();
 });

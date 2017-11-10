@@ -10,13 +10,15 @@ $sql="INSERT INTO xiaoxue VALUES";
 for($x=0;$x<$arrlength;$x++){
 	$arr[$x]=json_decode($arr[$x],true);
 	$sql=$sql."(".$arr[$x]['gid'].",";
-	$sql=$sql."'".$arr[$x]['classnum']."',";
 	$sql=$sql."'".$arr[$x]['classname']."',";
+	$sql=$sql."'".$arr[$x]['classtitle']."',";
+	$sql=$sql."'".$arr[$x]['grade']."',";
+	$sql=$sql."'".$arr[$x]['project']."',";
 	$sql=$sql."'".$arr[$x]['gbegin']."',";
 	$sql=$sql."'".$arr[$x]['gend']."',";
 	$sql=$sql."'".$arr[$x]['gtime']."',";
 	$sql=$sql."'".$arr[$x]['location']."',";
-	$sql=$sql."'".$arr[$x]['grade']."',";
+	$sql=$sql."'".$arr[$x]['teacher']."',";
 	$sql=$sql."'".$arr[$x]['money']."'),";
 }
 $sql=chop($sql,',');

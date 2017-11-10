@@ -31,18 +31,17 @@ $(function () {
     };
 
 
-    //selectClass('g1bdj','六年级','北大街');
+    selectClass('g1bdj','六年级','北大街');
     selectClass('g1ca','六年级','长安');
-    //selectClass('g1jd','六年级','东区');
     //selectClass('g1bj','六年级','北郊');
     selectClass('g1tm','六年级','土门');
-    selectClass('g1gx3','六年级','高新');
+    //selectClass('g1gx3','六年级','高新');
     //selectClass('g1wn','六年级','渭南');
     //selectClass('g1pc','六年级','蒲城');
     selectClass('g1bj2','六年级','宝鸡');
     selectClass('g1xy','六年级','咸阳');
-    //selectClass('g1hh','六年级','黄河');
-    //selectClass('g1yl','六年级','阎良');
+    selectClass('g1hh','六年级','黄河');
+    selectClass('g1yl','六年级','阎良');
     selectClass('g1fp','六年级','富平');
 
 

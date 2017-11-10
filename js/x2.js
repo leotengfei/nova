@@ -30,10 +30,8 @@ $(function () {
         });
     };
 
-
     //selectClass('g1bdj','二年级','北大街');
     selectClass('g1ca','二年级','长安');
-    selectClass('g1jd','二年级','东区');
     //selectClass('g1bj','二年级','北郊');
     selectClass('g1tm','二年级','土门');
     selectClass('g1gx3','二年级','高新');
@@ -41,7 +39,7 @@ $(function () {
     //selectClass('g1pc','二年级','蒲城');
     selectClass('g1bj2','二年级','宝鸡');
     selectClass('g1xy','二年级','咸阳');
-    //selectClass('g1hh','二年级','黄河');
+    selectClass('g1hh','二年级','黄河');
     //selectClass('g1yl','二年级','阎良');
     selectClass('g1fp','二年级','富平');
 
