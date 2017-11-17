@@ -20,7 +20,7 @@ module.exports = {
     //webpack打包
     webpack: {
         entry: {
-            index : './js/index.js'
+            index : './js/login(备用).js'
         },
         output: {
             filename: '[name].bundle.js'

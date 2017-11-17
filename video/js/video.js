@@ -13,7 +13,7 @@ var isLanded= function () {
         url: 'data/logininfo.php',
         success: function(result){
             if(result.utel===null||result.uid===null||sessionStorage['uid']===undefined){
-                location.href='login.html';
+                location.href='shenfen.html';
             }
         }
     });
