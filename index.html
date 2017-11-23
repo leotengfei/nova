@@ -28,6 +28,7 @@
             window.open('http://www.wxxk.org/c/newsList.html');
         }
     </script>
+
 </head>
 
 <body>
@@ -97,20 +98,6 @@
      <div id="slider" class="sl-slider-wrapper">
         <!--Slider Items-->
         <div class="sl-slider">
-            <!--Slider Item3-->
-            <div class="sl-slide item3" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="30" data-slice1-scale="2" data-slice2-scale="2">
-                <div class="sl-slide-inner">
-                    <div class="container">
-                        <img class="pull-right simg" src="images/sample/slider/2017hj.jpg" alt="" />
-                        <h2>寒春联报</h2>
-                        <h3 class="gap">2018无线星空初中<br />寒春联报</h3>
-                        <a class="btn btn-large btn-transparent" href="http://www.wxxk.org/c/c3.html">查看详情</a>
-                    </div>
-                </div>
-            </div>
-
-            <!--Slider Item3-->
-
             <!--&lt;!&ndash;Slider Item0&ndash;&gt;-->
             <!--<div class="sl-slide item0" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="30" data-slice1-scale="2" data-slice2-scale="2">-->
                 <!--<div class="sl-slide-inner">-->
@@ -632,7 +619,7 @@
                 <div id="modal-9" class="modal hide fade">
                     <a class="close-modal" href="javascript:;" data-dismiss="modal" aria-hidden="true" style="float:right; background-color:#2DCC70; color:#fff; padding:1px 5px;">&nbsp;X&nbsp;</a>
                     <div class="modal-body">
-                        <img src="images/cc114.jpg" alt="英语名师：王娓薇" width="300px" style="max-height:450px"><p><h3>王娓薇<br />中考英语名师</h3>简介：无线星空初中部英语项目负责人。原新东方初中英语项目主管,专业英语八级，获剑桥大学颁发"英语教学能力优秀"TKT证书。中国家庭教育高级指导培训师。从事英语教育14年，获西安外国语大学优秀教师，担任陕西世园会志愿者英文面试官，2013年赴美国参加联合国世界青年领袖大会，同期在哈佛大学、麻省理工学院、哥伦比亚大学和耶鲁大学进行学术交流。</p>
+                        <img src="images/cc114.jpg" alt="英语名师：王娓薇" width="300px" style="max-height:450px"><p><h3>王娓薇<br />中考英语名师</h3>简介：无线星空教育助理副总裁、初中部经理。中国家庭教育高级指导培训师。剑桥大学外语考试部认可“英语教学能力优秀”优秀教师。从事英语教育行业近20年，培养优质学员逾万。2003年荣获西安外国语大学优秀教师荣誉证书。2004年担任“第四届全国青少年英语口语大赛”陕西省评委。2011年担任陕西世园会志愿者英文面试官。2013年赴美国参加联合国世界青年领袖大会，同期在哈佛大学、麻省理工学院、哥伦比亚大学和耶鲁大学进行学术交流。2014年获国际游学部金牌领队荣誉称号及荣誉证书。2016年获得无线星空优秀高管奖杯。</p>
 
 <table width="100%" cellpadding="0" cellspacing="0" class="table table-bordered table-hover">
   </table>
@@ -935,33 +922,42 @@
 </section>
 <!--/bottom-->
 
+<div id="pad1">
+    <div class="container">
+        <div class="row-fluid">
+            <div class="span6"><p><img src="images/ganen2017.png"></p></div>
+            <div class="span5">
+                <p style="padding-left:30px;">感恩节活动大优惠，请预约:</p>
+                <form action="http://1.xaxdf.sinaapp.com/wxxk/in.php" method="post">
+                <ul style="list-style-type:none;">
+                    <li>
+                      <input type="text" placeholder="我的姓名" name="name">
+                    </li>
+                    <li>
+                      <input type="text" placeholder="我的电话" name="phone">
+                    </li>
+                    <li style="display:none;">
+                      <input type="text" style="display:none;" value="首页预约" name="bumen">
+                    </li>
+                    <li>
+                      <input class="btn btn-success" type="submit" value="我要预约"> 
+                    </li> 
+                </ul>
+                </form>
+            </div>
+            <div id="pcpad1" class="span1"><p>X</p></div>    
+        </div>
+    </div>
+</div>
+
+<!--div id="dakai"><i class="icon-arrow-left icon-white"></i></div-->
+
 <!--Footer-->
 <footer id="footer">
     <div class="container">
         <div class="row-fluid">
             <div class="span11 cp">
                 <p style="text-align:center;">Copy Right &copy; 2017 无线星空教育</p>
-
-            <!--/Copyright-->
-            
-    
-
-
-                <!--/links
-                <ul class="social pull-right">
-                    <li><a href="#"><i class="icon-facebook"></i></a></li>
-                    <li><a href="#"><i class="icon-twitter"></i></a></li>
-                    <li><a href="#"><i class="icon-pinterest"></i></a></li>
-                    <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                    <li><a href="#"><i class="icon-google-plus"></i></a></li>                       
-                    <li><a href="#"><i class="icon-youtube"></i></a></li>
-                    <li><a href="#"><i class="icon-tumblr"></i></a></li>                        
-                    <li><a href="#"><i class="icon-dribbble"></i></a></li>
-                    <li><a href="#"><i class="icon-rss"></i></a></li>
-                    <li><a href="#"><i class="icon-github-alt"></i></a></li>
-                    <li><a href="#"><i class="icon-instagram"></i></a></li>                   
-                </ul>
-                -->
             </div>
 
             
@@ -1068,4 +1064,21 @@ $(document).ready(function(){
 
 });
 */
+</script>
+
+<script lang="javascript">
+
+$(document).ready(function(){
+
+  $("#pad1").animate({left:'0px'},1200);
+  //$("#pad1").fadeIn("5000");
+
+  $("#pcpad1").click(function(){
+    var cc=document.getElementById("pad1").clientWidth;
+    cc=-cc-5;
+    $("#pad1").animate({left:cc+"px"});
+  });
+
+});
+
 </script>

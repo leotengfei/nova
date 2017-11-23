@@ -1,0 +1,178 @@
+body{
+    background-color: #fbfbfb;
+}
+input{
+    margin: 0;
+     padding: 0;
+     outline: 0;
+}
+
+/*导航条样式*/
+#header{
+    background-color: #404068;
+    height:60px;
+}
+#header img{
+    height:50px;
+}
+#header .navbar-brand{
+    padding:5px 0;
+}
+#header .navbar-header{
+    float:left;
+}
+/*主体内容*/
+#main{
+    border:1px dotted #ddd;
+}
+.tip{
+    border-left:3px solid #EC9F1E;
+}
+/*选择地区界面*/
+.rain_container{
+    position:relative;
+}
+.rain_container>img{
+    width:100%;
+}
+.rain{
+    border-radius:50%;
+    animation: rain 1s ease infinite;
+    position: absolute;
+}
+.area{
+    position:absolute;
+    cursor: pointer;
+    font-weight: bold;
+}
+.area_xian{
+    top:28%;
+    left:24%;
+}
+.area_xianyang{
+    top:19%;
+    left:40%;
+}
+.area_weinan{
+    top:39%;
+    left:44%;
+}
+.area_baoji{
+    top:21%;
+    left:69%;
+}
+.rain1{
+    background-color:#FBA50C;
+    top:37%;
+    left:25.5%;
+}
+.rain2{
+    background-color:#00BDCF;
+    top:27%;
+    left:41.7%;
+}
+.rain3{
+    background-color:#00CF97;
+    top:47%;
+    left:45.7%;
+}
+.rain4{
+    background-color:#00CF97;
+    top:30%;
+    left:71%;
+}
+@keyframes rain {
+    0%{
+        width:0;
+        height:0;
+        opacity:1;
+        margin-top:0;
+        margin-left:0;
+    }
+    100%{
+        width:50px;
+        height:30px;
+        opacity:0;
+        margin-top:-15px;
+        margin-left:-25px;
+    }
+}
+/*选择身份页面*/
+#shenfen>div>div{
+    font-size: 30px;
+    line-height: 48px;
+    font-weight: normal;
+    color: #09f;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 100px;
+    margin-bottom:15px;
+    padding-bottom:15px;
+    cursor:pointer;
+}
+#shenfen>div>div:hover{
+    background-color: #ddd;
+}
+
+
+/*登陆注册页面*/
+#login_box{
+    border:1px solid #ddd;
+    text-align:center;
+    background-color: #fff;
+    border-radius: 5px;
+    padding:5px 25px;
+    padding-bottom:30px;
+}
+.login_input{
+    display: inline-block;
+    border: none;
+    outline: none;
+    height: 58px;
+    line-height: 58px;
+    padding-left: 3px;
+    background: #fafafa;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+#login_box>ul{
+    border:1px solid #ddd;
+    border-radius: 5px;
+    background: #fafafa;
+    text-align:left;
+    padding-bottom:10px;
+}
+#login_box>ul>li{
+    padding:0 15px;
+}
+
+/*学生注册页*/
+.baoming tr>td:first-child{
+    padding-left:20px;
+    padding-right:20px;
+}
+.baoming input{
+    border:none;
+}
+.baoming{
+    margin:0 auto;
+}
+
+/*考试页面*/
+.q_title>p>span{
+    display:inline-block;
+    width:60px;
+    height:40px;
+    background: url("../img/q_tag.png") no-repeat center center;
+    /*position:relative;*/
+    /*top:10px;*/
+    line-height: 40px;
+    color:#fff;
+    font-size:24px;
+    margin-right:15px;
+}
+
+#title_area img{
+    display:inline-block;
+    vertical-align: top;
+}

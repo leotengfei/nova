@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.min.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="header">
+</div>
+
+<div class="container">
+    <h3 class="tip">请开始答题：</h3>
+    <div class="panel panel-default">
+        <!-- 试卷基本信息-->
+        <div class="panel-heading" id="paper_info"></div>
+        <div class="panel-body">
+            完成进度：<div class="progress" id="title_progress">
+            <div class="progress-bar" role="progressbar" style="width: 0;">
+                0%
+            </div>
+        </div>
+            <div id="test_timer" class="text-center">
+                剩余时间：<span style="color:red;padding-right: 15px">30:00</span>
+            </div>
+        </div>
+    </div>
+    <div id="title_area">
+        <!-- 试题显示区域-->
+    </div>
+
+
+    <button type="button" class="btn btn-info center-block" id="submit_paper">交卷</button>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/main.js"></script>
+<script src="js/test.js"></script>
+</body>
+</html>

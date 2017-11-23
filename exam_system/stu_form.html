@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.min.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="header">
+</div>
+
+<div class="container">
+    <h3 class="tip">学生报名页面：</h3>
+    <table class="table-bordered baoming" id="stu_form">
+        <tr>
+            <td><b style="color:red">*</b>姓&nbsp;&nbsp;&nbsp;&nbsp;名</td>
+            <td><input type="text" class="login_input" id="uname"/></td>
+        </tr>
+        <tr>
+            <td><b style="color:red">*</b>学&nbsp;&nbsp;&nbsp;&nbsp;校</td>
+            <td><input type="text" class="login_input" id="school"/></td>
+        </tr>
+        <tr>
+            <td><b style="color:red">*</b>报名科目</td>
+            <td>
+                <select name="subject" id="subject" class="login_input">
+                    <option value="0">数学</option>
+                    <option value="1">物理</option>
+                    <option value="2">英语</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <div class="checkbox text-right">
+        <label>
+            <input type="checkbox" value="" id="has_others">
+            我还有队友
+        </label>
+    </div>
+    <div id="others" style="display: none">
+        <h5 class="tip">&nbsp;队友一</h5>
+        <table class="table-bordered baoming" id="stumate1_form">
+            <tr>
+                <td><b style="color:red">*</b>姓&nbsp;&nbsp;&nbsp;&nbsp;名</td>
+                <td><input type="text" class="login_input" id="mate1_uname"/></td>
+            </tr>
+            <tr>
+                <td><b style="color:red">*</b>学&nbsp;&nbsp;&nbsp;&nbsp;校</td>
+                <td><input type="text" class="login_input" id="mate1_school"/></td>
+            </tr>
+            <tr>
+                <td><b style="color:red">*</b>电&nbsp;&nbsp;&nbsp;&nbsp;话</td>
+                <td><input type="text" class="login_input" id="mate1_utel"/></td>
+            </tr>
+            <tr>
+                <td><b style="color:red">*</b>报名科目</td>
+                <td>
+                    <select name="mate1_subject" id="mate1_subject" class="login_input">
+                        <option value="1">物理</option>
+                        <option value="2">英语</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <h5 class="tip">&nbsp;队友二</h5>
+        <table class="table-bordered baoming" id="stumate2_form">
+            <tr>
+                <td><b style="color:red">*</b>姓&nbsp;&nbsp;&nbsp;&nbsp;名</td>
+                <td><input type="text" class="login_input" id="mate2_uname"/></td>
+            </tr>
+            <tr>
+                <td><b style="color:red">*</b>学&nbsp;&nbsp;&nbsp;&nbsp;校</td>
+                <td><input type="text" class="login_input" id="mate2_school"/></td>
+            </tr>
+            <tr>
+                <td><b style="color:red">*</b>电&nbsp;&nbsp;&nbsp;&nbsp;话</td>
+                <td><input type="text" class="login_input" id="mate2_utel"/></td>
+            </tr>
+            <tr>
+                <td><b style="color:red">*</b>报名科目</td>
+                <td>
+                    <select name="mate2_subject" id="mate2_subject" class="login_input">
+                        <option value="2">英语</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br/>
+    <button type="button" class="btn btn-info center-block" id="btn_submit">提交</button>
+</div>
+
+
+
+
+
+
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/main.js"></script>
+<script src="js/stu_form.js"></script>
+</body>
+</html>
