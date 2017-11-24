@@ -21,8 +21,7 @@ $('#getcode').click(function () {
    //console.log(1);
     $('#getcode').addClass('disabled');
     $('#getcode').prop('disabled',true);
-    //alert(valiutel);
-    if((sessionStorage['utel']!==undefined&&valiutel)){//确保电话号码不为空而且可用
+    if(valiutel){//确保电话号码不为空而且可用
         var checkcode=$('#checkcode').val().toLowerCase();//不区分大小写
         //console.log(checkcode);
         $.ajax({

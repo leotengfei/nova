@@ -74,7 +74,7 @@ $('#check_mate').click(function () {
             console.log(data);
             var html="";
             for(var i=0;i<data.length;i++){
-                if(data[i].score>=20){
+                if(data[i].score>=50){
                     html+=`
                 <div class="panel panel-default">
             <div class="panel-heading">姓名：${data[i].uname}</div>

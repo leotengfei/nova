@@ -23,8 +23,23 @@ $(function () {
                 $('#utel').html((result.utel).slice(0,3)+"***");
                 sessionStorage['utel']=result.utel;
                 sessionStorage['uid']=result.uid;
+                $('#esc_land').css("display","block");
                 //console.log(sessionStorage['utel']);
             }
         }
     });
+});
+$('#header').on("click","#esc_land",function () {
+   $.ajax({
+       type:'GET',
+       url:'data/esc_land.php',
+       success: function (data) {
+           if(data.code=='1'){
+               $('#esc_land').css("display","none");
+               sessionStorage['utel']=null;
+               sessionStorage['uid']=null;
+               location.replace("index.html");
+           }
+       }
+   })
 });
