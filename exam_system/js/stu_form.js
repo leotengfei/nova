@@ -1,7 +1,8 @@
 /**
  * Created by Administrator on 2017/11/16 0016.
  */
-isLanded();
+//isLanded();
+sessionStorage['area']="西安";
 
 //是否有其他队友
 $('#has_others').change(function () {

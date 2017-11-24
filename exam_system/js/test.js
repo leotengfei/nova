@@ -26,10 +26,12 @@ $.ajax({
     data:{uid:sessionStorage['uid']},
     success: function (data) {
         //console.log(data[0].paperID);
+        //alert('ajax请求成功！');
         paperID=data[0].paperID;
         var html='';
         if(data[0].title.substring(0,7)=="http://"){
-            console.log(1);
+            //console.log(1);
+            //alert("请求url数据成功！");
             for(var i=0;i<data.length;i++){
                 html+=`
     <div class="q_title">
@@ -63,6 +65,7 @@ $.ajax({
             `;
             }
         }else{
+            //alert('请求英语数据成功');
             for(var i=0;i<data.length;i++){
                 html+=`
     <div class="q_title">

@@ -6,7 +6,6 @@ isLanded();
 $.ajax({
     type:"GET",
     url:"data/get_score.php",
-    data:{uid:sessionStorage['uid']},
     success: function (data) {
         var html="";
         for(var i=0;i<data.length;i++){
@@ -62,7 +61,7 @@ $.ajax({
 $('#score_area').on("click","button", function (e) {
     //console.log(e.target);
     localStorage[sessionStorage['uid']+'start_time']=new Date().getTime();
-    location.href="test.html";
+    location.replace('test.html');
 });
 
 //查看队友成绩点击事件

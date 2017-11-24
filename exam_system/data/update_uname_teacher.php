@@ -26,34 +26,37 @@ $result=mysqli_query($conn,$sql);
 	$sql_isExist="SELECT uid FROM test_user WHERE utel='$mate1_utel'";
 	$result_isExist=mysqli_query($conn,$sql_isExist);
 	$row_isExist=mysqli_fetch_assoc($result_isExist);
-	if($row_isExist['uid']==null){
-		$sql2="INSERT INTO test_user VALUES(null,'$mate1_uname','$mate1_utel','$area','学生','$mate1_school','$mate1_subject','$team_id')";
-		$result2=mysqli_query($conn,$sql2);
-	}else{
-		echo '{"code":"-20","msg":"学生一电话号码已存在！"}';
-		return;
-	}
 	//学生二验证
 	$sql2_isExist="SELECT uid FROM test_user WHERE utel='$mate2_utel'";
 	$result2_isExist=mysqli_query($conn,$sql2_isExist);
 	$row2_isExist=mysqli_fetch_assoc($result2_isExist);
-	if($row2_isExist['uid']==null){
-		$sql3="INSERT INTO test_user VALUES(null,'$mate2_uname','$mate2_utel','$area','学生','$mate2_school','$mate2_subject','$team_id')";
-		$result3=mysqli_query($conn,$sql3);
-	}else{
-		echo '{"code":"-21","msg":"学生二电话号码已存在！"}';
-		return;
-	}
 	//学生三验证
 	$sql3_isExist="SELECT uid FROM test_user WHERE utel='$mate3_utel'";
 	$result3_isExist=mysqli_query($conn,$sql3_isExist);
 	$row3_isExist=mysqli_fetch_assoc($result3_isExist);
+	if($row_isExist['uid']!=null){
+		echo '{"code":"-20","msg":"学生一电话号码已存在！"}';
+		return;
+	}
+	if($row2_isExist['uid']!=null){
+		echo '{"code":"-21","msg":"学生二电话号码已存在！"}';
+		return;
+	}
+	if($row3_isExist['uid']!=null){
+		echo '{"code":"-22","msg":"学生三电话号码已存在！"}';
+		return;
+	}
+	if($row_isExist['uid']==null){
+		$sql2="INSERT INTO test_user VALUES(null,'$mate1_uname','$mate1_utel','$area','学生','$mate1_school','$mate1_subject','$team_id')";
+		$result2=mysqli_query($conn,$sql2);
+	}
+	if($row2_isExist['uid']==null){
+		$sql3="INSERT INTO test_user VALUES(null,'$mate2_uname','$mate2_utel','$area','学生','$mate2_school','$mate2_subject','$team_id')";
+		$result3=mysqli_query($conn,$sql3);
+	}
 	if($row3_isExist['uid']==null){
 		$sql4="INSERT INTO test_user VALUES(null,'$mate3_uname','$mate3_utel','$area','学生','$mate3_school','$mate3_subject','$team_id')";
 		$result4=mysqli_query($conn,$sql4);
-	}else{
-		echo '{"code":"-22","msg":"学生三电话号码已存在！"}';
-		return;
 	}
 	if($result===true){
 		echo '{"code":"1","msg":"信息更新成功！"}';

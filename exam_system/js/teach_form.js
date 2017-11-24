@@ -61,7 +61,7 @@ $('#btn_submit').click(function () {
             //console.log(data);
             if (data.code == '1') {
                 location.href = 'score.html';
-            } else if (data.code == '-20' || data.code == '-21'||data.code=='22') {
+            } else if (data.code == '-20' || data.code == '-21'||data.code=='-22') {
                 alert(data.msg);
             }
         }
