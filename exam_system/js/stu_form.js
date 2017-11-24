@@ -1,8 +1,8 @@
 /**
  * Created by Administrator on 2017/11/16 0016.
  */
-//isLanded();
-sessionStorage['area']="西安";
+isLanded();
+
 
 //是否有其他队友
 $('#has_others').change(function () {
@@ -55,6 +55,10 @@ $('#btn_submit').click(function () {
         //console.log(mate1_utel,mate2_utel,valimate1_utel,valimate2_utel);
         if (!valimate1_utel || !valimate2_utel) {//验证电话号码
             alert('请检查电话号码是否正确！');
+            return;
+        }
+        if(mate1_utel===mate2_utel){
+            alert("队友一和队友二的电话号码不能相同！");
             return;
         }
         var salt_arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];

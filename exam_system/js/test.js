@@ -192,7 +192,7 @@ $('#submit_paper').click(function () {
     }else{
         console.log("交卷");
         submit_answer();
-        location.replace("score.html");
+        //location.replace("score.html");
     }
 });
     var start_time;//localStorage中存储时间信息防止刷新页面时间刷新
@@ -219,7 +219,7 @@ $('#submit_paper').click(function () {
             test_seconds=0;
             alert('时间到！自动提交试卷！');
             submit_answer();
-            location.replace("score.html");
+            //location.replace("score.html");
         }
     },200);
 

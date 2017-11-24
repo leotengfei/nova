@@ -18,7 +18,7 @@ for ($x=0; $x<count($user_arr); $x++) {
 	$correct_count++;
   }
 } 
-echo $correct_count;
+//echo $correct_count;
 $score=$correct_count*10;//考试分数
 session_start();
 $uid=$_SESSION['uid'];//用户id;

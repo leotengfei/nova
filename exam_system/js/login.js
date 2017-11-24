@@ -4,7 +4,7 @@
 function changing(){
     document.getElementById('checkpic').src="img/checkcode.php?"+Math.random();
 }
-var valiutel;
+var valiutel=true;
 $('#utel').blur(function () {
     var regtel=/^[1][3,4,5,7,8][0-9]{9}$/ig;
     valiutel=regtel.test($(this).val());
@@ -21,7 +21,8 @@ $('#getcode').click(function () {
    //console.log(1);
     $('#getcode').addClass('disabled');
     $('#getcode').prop('disabled',true);
-    if(sessionStorage['utel']!==undefined&&valiutel){//确保电话号码不为空而且可用
+    //alert(valiutel);
+    if((sessionStorage['utel']!==undefined&&valiutel)){//确保电话号码不为空而且可用
         var checkcode=$('#checkcode').val().toLowerCase();//不区分大小写
         //console.log(checkcode);
         $.ajax({
@@ -30,6 +31,8 @@ $('#getcode').click(function () {
             data:{checkcode:checkcode},
             success: function (data) {
                 //如果data.code=1图片验证通过发送短信验证码
+                $('#getcode').addClass('disabled');
+                $('#getcode').prop('disabled',true);
                 if(data.code=="1"){
                     $.ajax({
                         type:'POST',
@@ -38,8 +41,6 @@ $('#getcode').click(function () {
                         success: function (data) {
                             //console.log(data);
                             var second=60;
-                            $('#getcode').addClass('disabled');
-                            $('#getcode').prop('disabled',true);
                             var timmer=setInterval(function () {
                                 $('#getcode').html(second+"秒！");
                                 second--;
@@ -53,7 +54,6 @@ $('#getcode').click(function () {
                                     $('#getcode').html("获取验证码");
                                 }
                             },1000);
-
                         }
                     })
 
@@ -67,6 +67,8 @@ $('#getcode').click(function () {
         })
     }else{
         alert("请检查电话号码！");
+        $('#getcode').removeClass('disabled');
+        $('#getcode').prop('disabled',false);
     }
 
 });

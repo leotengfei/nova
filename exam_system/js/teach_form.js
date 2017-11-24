@@ -3,7 +3,6 @@
  */
 isLanded();
 
-
 $('#btn_submit').click(function () {
     var regtel = /^[1][3,4,5,7,8][0-9]{9}$/ig;
     var uname = $('#uname').val();
@@ -29,6 +28,10 @@ $('#btn_submit').click(function () {
     //console.log(has_mates);
     if (!valimate1_utel || !valimate2_utel||!valimate3_utel) {//验证电话号码
         alert('请检查电话号码是否正确！');
+        return;
+    }
+    if(mate1_utel===mate2_utel||mate2_utel===mate3_utel||mate1_utel===mate3_utel){
+        alert('队友电话不能重复！');
         return;
     }
     var salt_arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
@@ -63,6 +66,8 @@ $('#btn_submit').click(function () {
                 location.href = 'score.html';
             } else if (data.code == '-20' || data.code == '-21'||data.code=='-22') {
                 alert(data.msg);
+            }else{
+                alert('请完整填写信息！');
             }
         }
     })
