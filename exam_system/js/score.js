@@ -12,7 +12,7 @@ $.ajax({
             //console.log(data[i].score);
             if(data[i].score==null){
                 html+="<h3 class='text-center'>请点击查看队员成绩！</h3>";
-            }else if(data[i].score>=20){
+            }else if(data[i].score>=50){
                 html+=`
                 <div class="panel panel-default">
             <div class="panel-heading">姓名：${data[i].uname}</div>
