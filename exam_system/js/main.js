@@ -20,7 +20,7 @@ $(function () {
         url: 'data/logininfo.php',
         success: function(result){
             if(result.utel!==null&&result.uid!==null){
-                $('#utel').html((result.utel).slice(0,3)+"***");
+                $('#headerutel').html((result.utel).slice(0,3)+"***");
                 sessionStorage['utel']=result.utel;
                 sessionStorage['uid']=result.uid;
                 $('#esc_land').css("display","block");
