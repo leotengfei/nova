@@ -1,5 +1,5 @@
 body{
-    font-family: SimSun, Arial, sans-serif;
+    font-family:"Microsoft YaHei";
     background-color: #eee;
 }
 .platform{
@@ -23,6 +23,7 @@ body{
     line-height: 15px;
     padding:1px;
     color:#fff;
+    font-size: 12px;
 }
 #seat:after{
     content:"";

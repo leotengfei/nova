@@ -57,3 +57,10 @@ $('#recent-works>div.container>ul>li div.links>a').click(function () {
         }
     })
 });
+//首页学霸三人行广告关闭
+setTimeout(function () {
+    $('#xb').addClass('zoomOutDown') ;
+},5000);
+$('#xb>span').click(function () {
+   $('#xb').addClass('zoomOutDown') ;
+});

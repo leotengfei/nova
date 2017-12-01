@@ -17,7 +17,7 @@ var refresh= function () {
     })
 };
 
-//年级按钮的点击事件
+//城市按钮的点击事件
 $('#city').on('click','button', function (e) {
     //console.log(sessionStorage['grade']);
     sessionStorage['city']=$(e.target).html();

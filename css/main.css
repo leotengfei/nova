@@ -116,15 +116,16 @@ ul.faq li>div h3{margin-top:0}#error{text-align:center;margin-top:150px;margin-b
 	margin-top:45px;
 }
 #pad1{
-	background-color: #0c4869;
-    background-color:rgba(12,72,105,0.8); /* IE6和部分IE7内核的浏览器(如QQ浏览器)会读懂，但解析为透明 */
-	height: 100px;
+	background-color: #000;
+    background-color:rgba(0,0,0,0.8); /* IE6和部分IE7内核的浏览器(如QQ浏览器)会读懂，但解析为透明 */
+	height: 120px;
 	width: 100%;
 	bottom: 0;
 	/*display: none;*/
 	left: -2000px;
     position:fixed; /* IE6、7、8只能设置position:static(默认属性) ，否则会导致子元素继承Alpha值 */
     *zoom:1; /* 激活IE6、7的haslayout属性，让它读懂Alpha */
+    z-index: 1000;
 }
 #pad1 p{
 	color: #FFFFFF;
@@ -133,7 +134,7 @@ ul.faq li>div h3{margin-top:0}#error{text-align:center;margin-top:150px;margin-b
 	padding-top: 20px;
 }
 #pad1 p img{
-	top: -70px;
+	top: -180px;
 	position: relative;
 }
 #pad1 .span1 p{
@@ -405,7 +406,10 @@ section.ptitle2{
 	color:#ccc;
 	text-decoration:none;
 	}
-
+#services div.span3{
+	max-height: 270px;
+	overflow: hidden;
+}
 @media(min-width:980px){
 	.ppp2016sumh{ display:table-cell;}
 	#plzjl,#plzjl2,#plzjl3{color: #fff;padding: 100px 20px 0 20px;text-align: center;}
@@ -511,6 +515,98 @@ section.ptitle2{
 	margin:auto;
 	width:85px;
 	height:22px;
+}
+/*学霸三人行弹出广告*/
+#xb>span{
+	position:absolute;
+	top:30px;
+	right:0;
+	border:1px solid #fff;
+	color:#fff;
+	padding:5px 10px;
+	cursor:pointer;
+	background-color: #646A75;
+}
+#xb>a{
+	display:block;
+}
+@keyframes bounceInDown {
+	from, 60%, 75%, 90%, to {
+		animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+	}
+
+	0% {
+		opacity: 0;
+		transform: translate3d(0, -3000px, 0);
+	}
+
+	60% {
+		opacity: 1;
+		transform: translate3d(0, 25px, 0);
+	}
+
+	75% {
+		transform: translate3d(0, -10px, 0);
+	}
+
+	90% {
+		transform: translate3d(0, 5px, 0);
+	}
+
+	to {
+		transform: none;
+	}
+}
+.animated {
+	animation-duration: 1s;
+	animation-fill-mode: both;
+}
+.bounceInDown {
+	animation-name: bounceInDown;
+}
+@media all and (min-width:768px){
+	#xb{
+		position:fixed;
+		width:500px;
+		height:574px;
+		margin:auto;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		z-index: 999;
+	}
+}
+@media all and (max-width:767px){
+	#xb{
+		position:fixed;
+		width:100%;
+		height:430px;
+		margin:auto;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		z-index: 999;
+	}
+}
+@keyframes zoomOutDown {
+	40% {
+		opacity: 1;
+		transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0);
+		animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+	}
+
+	to {
+		opacity: 0;
+		transform: scale3d(.1, .1, .1) translate3d(0, 2000px, 0);
+		transform-origin: center bottom;
+		animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+	}
+}
+
+.zoomOutDown {
+	animation-name: zoomOutDown;
 }
 
 
