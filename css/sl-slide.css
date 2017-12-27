@@ -112,14 +112,14 @@
 	background: #677CB5;
 }
 .item2 .sl-slide-inner {
-	background: #e94419;
+	background: #0078bd;
 }
 .item3 .sl-slide-inner {
 	background: #0F1217;
 }
 .item4 .sl-slide-inner {
-	background: #010101;
-	/*background-image: linear-gradient(to right,#253e98 50%,#3c2a5c 81.25%);*/
+	/*background: #2c4b8d;*/
+	background-image: linear-gradient(to right,#253e98 50%,#3c2a5c 81.25%);
 }
 .item5 .sl-slide-inner {
 	background: #228ab7;

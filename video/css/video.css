@@ -104,6 +104,20 @@ body {
 #teachers{
     padding-top:88px;
 }
+#teachers>section>div{
+    position:relative;
+}
+#teachers .getMore{
+    position:absolute;
+    top:42px;
+    right:17px;
+    color:#999;
+    font-size:20px;
+    text-decoration: none;
+}
+#teachers .getMore:hover{
+    color:#000;
+}
 .major {
     position: relative;
     text-align: center;
@@ -333,3 +347,53 @@ body {
     margin-right:15px;
 }
 
+
+/*视频分类页面*/
+#classContainer>section{
+    margin-bottom:50px;
+}
+#classContainer>section>div>div>div{
+    background-color: #fff;
+    padding:0 0 15px 0;
+}
+#classContainer>section>div>div>div:hover{
+    box-shadow:10px 10px 5px #888888;
+    transition: all 0.5s;
+}
+
+#classContainer>section>div>div>div>div{
+    padding:15px;
+}
+#classContainer>section>div>div{
+    margin-top:5px;
+}
+
+#classContainer .breadcrumb{
+    padding:0;
+}
+
+/*选课列表*/
+#xuanke>dl>dt,dd{
+    float:left;
+    margin-right:5px;
+}
+#xuanke>dl>dd{
+    padding:0 5px;
+    /*border:1px solid #ddd;*/
+    cursor:pointer;
+}
+#xuanke>dl>dd.active{
+    background-color: #F7D145;
+}
+#xuanke>dl:after{
+    content:'';
+    display:table;
+    clear:both;
+}
+#xuanke>dl{
+    margin-bottom: 15px;
+}
+#xuanke>dl>dt{
+    font-weight: normal;
+    color:#aaa;
+}

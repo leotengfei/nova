@@ -106,7 +106,7 @@
         font-size: 16px;
         display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;
     }
-    
+
 }
 /*通用样式*/
 a{
@@ -157,7 +157,7 @@ a{
     border:1px solid #2dcc70;
     color:#2dcc70;
     box-sizing: border-box;
-    padding:1px 5px;
+    padding:0 5px;
 }
 #newsList_mid div.media span:last-child{
     color:#999;

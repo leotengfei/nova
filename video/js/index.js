@@ -26,10 +26,12 @@ $(function () {
         </div>
                `;
                 }
+                html+=`<a href='${data[0].tag}' class="getMore">观看更多》</a>`;
                 $('#'+insert_id).append(html);
             }
         })
     };
+    selectClassInfo('初中期末冲刺','chuzhong_qimo');
     selectClassInfo('高中期中冲刺','gaozhong_qizhong');
     selectClassInfo('初中期中冲刺','chuzhong_qizhong');
     selectClassInfo('十一营','mingshikecheng');
@@ -37,10 +39,18 @@ $(function () {
 
 });
 //观看按钮点击事件
-$('#teachers>section').on("click","a", function (e) {
+$('#teachers>section').on("click","p>a", function (e) {
     e.preventDefault();
     //console.log($(e.target).attr('href'));
     sessionStorage['cid']=$(e.target).attr('href');
     sessionStorage['is_free']=$(e.target).prev().val();
     location.href="detail.html";
+});
+
+//观看更多按钮点击事件
+$('#teachers>section').on("click","a.getMore", function (e) {
+    e.preventDefault();
+    sessionStorage['tag']=$(e.target).attr('href');
+   //console.log(sessionStorage['tag']);
+    location.href="selectClass.html";
 });
