@@ -110,15 +110,19 @@ $('#teacherList').on("click","li a", function (e) {
                     </tr>`;
                     for(var i=0;i<data.length;i++){
                         html+=`
-                    <tr>
-                    <td width="16%">${data[i].classname}</td>
-                    <td width="18%">${data[i].grade}${data[i].project}</td>`;
+                    <tr>`;
                     //    判断是否为小学，如果不是，改变日期格式；
                     if(data[i].grade=="一年级"||data[i].grade=="二年级"||data[i].grade=="三年级"||data[i].grade=="四年级"||data[i].grade=="五年级"||data[i].grade=="六年级"){
-                    html+=`<td width="10%">${data[i].gbegin}</td>
+                    html+=`
+							<td width="16%">${data[i].classname}</td>
+							<td width="18%">${data[i].classtitle}</td>	
+							<td width="10%">${data[i].gbegin}</td>
                             <td width="10%">${data[i].gend}</td>`;
                     }else{
-                        html+=`<td width="10%">${deldate(data[i].gbegin)}</td>
+                        html+=`
+							<td width="16%">${data[i].classname}</td>
+							<td width="18%">${data[i].grade}${data[i].project}</td>		
+							<td width="10%">${deldate(data[i].gbegin)}</td>
                             <td width="10%">${deldate(data[i].gend)}</td>`;
                     }
 

@@ -93,7 +93,9 @@ $('#btnLogin').click(function () {
                //console.log(data);
            }
        })
-   }
+   }else{
+	   $('#loginMsg').html('用户名或密码错误！');
+	   }
 });
 //点击注册
 $('#btnRegister').click(function () {

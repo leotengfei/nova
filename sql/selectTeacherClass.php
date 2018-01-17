@@ -30,7 +30,7 @@ while($row1 = mysqli_fetch_assoc($result1)) {
      $posts[] = $row2;}
  }else{
  //查询小学表
- $sql3="SELECT * FROM xiaoxue WHERE teacher LIKE '%$tname%'";
+ $sql3="SELECT * FROM xiaoxue WHERE teacher LIKE '%$tname%' AND gid=any(SELECT min(gid) FROM xiaoxue GROUP BY classname)";
  $result3=mysqli_query($conn,$sql3);
  while($row3 = mysqli_fetch_assoc($result3)) {
      $posts[] = $row3;}
