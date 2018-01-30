@@ -164,6 +164,7 @@ $('#left-side>li.subLi>ul>li').click(function () {
     isEnd = false;
     isLoading=false;
     subject=$(this).html();
+    grade=$(this).parent().parent().prev().children('span').html();
     //console.log(grade);
     $('#teacherList').html('');
     fetchData();
