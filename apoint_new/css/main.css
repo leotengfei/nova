@@ -1,0 +1,59 @@
+body{
+    font-family:"Microsoft YaHei";
+    background-color: #2B2B2D;
+    color:#fff;
+}
+.platform{
+    width:75%;
+    height:30px;
+    background-image:linear-gradient(45deg,#168364,#073127);
+    border-radius: 5px;
+    margin:7px auto;
+    color:#fff;
+    text-align: center;
+    line-height: 30px;
+}
+#seat{
+    background-color: #2B2B2D;
+}
+#seat>a{
+    display:block;
+    width:7.5%;
+    height:15px;
+    margin-left:4%;
+    margin-top:19px;
+    border-radius:1px;
+    float:left;
+    text-align: center;
+    line-height: 15px;
+    color:#fff;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+#seat:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#seat{
+    padding:10px;
+}
+#intro{
+    background-color:#2B2B2D ;
+}
+.unchecked{
+    background-color: #39393D;
+}
+.active{
+    background-color:#4DA74D;!important;
+}
+.bechecked{
+    background-color: #DE6363;!important;
+}
+#myModal{
+  color:#000;
+}
+#my_form>div{
+  background-color: #2B2B2D;
+  color:#fff;
+}
