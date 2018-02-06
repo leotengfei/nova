@@ -37,7 +37,7 @@ var refresh= function () {
 refresh();
 
 //座位点击事件
-$('#seat').on('click','a', function (e) {
+$('#seat').one('click','a', function (e) {
    e.preventDefault();
     //console.log(e.target);
     if($(e.target).hasClass('bechecked')){

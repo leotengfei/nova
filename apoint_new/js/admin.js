@@ -25,6 +25,7 @@ function selec(){
             html+=`
                             <thead>
                                 <tr>
+                                    <th>序号</th>
                                     <th>姓名</th>
                                     <th>电话</th>
                                     <th>座位</th>
@@ -36,6 +37,7 @@ function selec(){
             for(var i=0;i<data.length;i++){
                 html+=`
                             <tr>
+                            <td>${i+1}</td>
                             <td>${data[i].sname}</td>
                             <td>${data[i].tel}</td>
                             <td>${seatdel(data[i].seat)}</td>
