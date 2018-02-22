@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>视频播放页</title>
+	<link href="css/video-js.css" rel="stylesheet">	
+	<style>
+		body{background-color: #191919}
+		.m{ width: 740px; height: 400px; margin-left: auto; margin-right: auto; margin-top: 100px; }
+		#my-video{
+			background-color: #fff;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="m" id="videoContainer">
+		<!--<video id="my-video" class="video-js" controls preload="auto" width="740" height="400"-->
+			   <!--data-setup="{}">-->
+			<!--<source src="" type="video/mp4" id="videoSource">-->
+			<!--&lt;!&ndash; <source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm">-->
+			<!--<source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg"> &ndash;&gt;-->
+			<!--<p class="vjs-no-js">-->
+				<!--To view this video please enable JavaScript, and consider upgrading to a web browser that-->
+				<!--<a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>-->
+			<!--</p>-->
+		<!--</video>-->
+		<script src="js/jquery-1.11.3.js"></script>
+		<script src="js/video.min.js"></script>
+		<script>
+			//console.log(sessionStorage['cid'],sessionStorage['episode']);
+			var cid=parseFloat(window.location.href.split('=')[1]);
+			var episode=parseFloat(window.location.href.split('=')[2]);
+			console.log('cid:'+cid+" ;episode:"+episode);
+			$.ajax({
+				type:'POST',
+				data:{cid:cid,episode:episode},
+				async:false,
+				url:'data/videoUrl.php',
+				success: function (data) {
+					//console.log(data[0].videoUrl);
+					//$('#videoSource').attr('src',data[0].videoUrl);
+//					console.log($('#videoSource').attr('src'));
+					var html=`
+					<video id="my-video" class="video-js" controls preload="auto" width="740" height="400"
+			   data-setup="{}" type="video/mp4">
+			<source src="${data[0].videoUrl}" type="video/mp4" id="videoSource">
+			<p class="vjs-no-js">
+				To view this video please enable JavaScript, and consider upgrading to a web browser that
+				<a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+			</p>
+		</video>
+				`;
+					$('#videoContainer').prepend(html);
+					var myPlayer = videojs('my-video');
+					videojs("my-video").ready(function(){
+					var myPlayer = this;
+					myPlayer.play();
+			});
+				}
+
+			})
+
+		</script>
+		<script language="javascript" type="text/javascript">
+			function nocontextmenu(){
+				event.cancelBubble = true;
+				event.returnValue = false;
+				return false;}
+			function norightclick(e){
+				if (window.Event){
+					if (e.which == 2 || e.which == 3)
+						return false;}
+				else
+				if (event.button == 2 || event.button == 3){
+					event.cancelBubble = true;
+					event.returnValue = false;
+					return false;}
+			}
+			//禁止右键
+			document.oncontextmenu = nocontextmenu; // for IE5+
+			document.onmousedown = norightclick; // for all others
+
+		</script>
+		<!--baidu tongji百度统计开始-->
+		<script>
+			var _hmt = _hmt || [];
+			(function() {
+				var hm = document.createElement("script");
+				hm.src = "//hm.baidu.com/hm.js?2e159668c85d77386e9bf64eecab0f5f";
+				var s = document.getElementsByTagName("script")[0];
+				s.parentNode.insertBefore(hm, s);
+			})();
+		</script>
+		<!--baidu tongji百度统计结束-->
+	</div>
+
+
+</body>
+</html>

@@ -18,18 +18,6 @@ var isLanded= function () {
         }
     });
 };
-//改变网站头部登陆信息
-$(function () {
-    $.ajax({
-        url: 'data/logininfo.php',
-        success: function(result){
-            if(result.utel!==null&&result.uid!==null){
-                $('#bs-example-navbar-collapse-1>ul').html(`<li>欢迎 <a href="">${result.utel}</a></li>`);
-                sessionStorage['utel']=result.utel;
-            }
-        }
-    });
-});
 //修正钱数单位
 var fixNum= function (num) {
     return (num/100).toFixed(2);

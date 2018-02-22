@@ -19,7 +19,7 @@ var valiLoginPwd;
 var valiRegisterUpwd;
 var valiRegisterUpwdAagin;
 $('#loginTel').blur(function () {
-    var regtel=/^[1][3,4,5,7,8][0-9]{9}$/ig;
+    var regtel=/^[1][3,4,5,7,8][0-9]{9}$/i;
       valiLoginTel=regtel.test($(this).val());
     if(!valiLoginTel){
         $('#loginMsg').html("<span class='glyphicon glyphicon-minus-sign'></span>请检查电话号码!");
@@ -28,7 +28,7 @@ $('#loginTel').blur(function () {
     }
 });
 $('#registerTel').blur(function () {
-    var regtel=/^[1][3,4,5,7,8][0-9]{9}$/ig;
+    var regtel=/^[1][3,4,5,7,8][0-9]{9}$/i;
      valiRegisterTel=regtel.test($(this).val());
     if(!valiRegisterTel){
         $('#loginMsg').html("<span class='glyphicon glyphicon-minus-sign'></span>请检查电话号码!");
@@ -38,7 +38,7 @@ $('#registerTel').blur(function () {
 });
 $('#loginUpwd').blur(function () {
     //密码正则验证6-12位数字或字母
-    var regpwd=/^[\d,a-z,A-Z]{6,12}$/ig;
+    var regpwd=/^[\d,a-z,A-Z]{6,12}$/i;
     valiLoginPwd=regpwd.test($(this).val());
     if(!valiLoginPwd){
         $('#loginMsg').html("<span class='glyphicon glyphicon-minus-sign'></span>请确保密码为6-12位字母或数字!");
@@ -48,7 +48,7 @@ $('#loginUpwd').blur(function () {
 });
 $('#registerUpwd').blur(function () {
     //密码正则验证6-12位数字或字母
-    var regpwd=/^[\d,a-z,A-Z]{6,12}$/ig;
+    var regpwd=/^[\d,a-z,A-Z]{6,12}$/i;
     valiRegisterUpwd=regpwd.test($(this).val());
     if(!valiRegisterUpwd){
         $('#loginMsg').html("<span class='glyphicon glyphicon-minus-sign'></span>请确保密码为6-12位字母或数字!");
@@ -81,9 +81,9 @@ $('#btnLogin').click(function () {
                }else if(data.code==200){
                    //如果从详情页跳转过来的登陆后返回详情页；
                    if(sessionStorage['cid']===undefined){
-                       location.href='index.html';
+                       location.replace('selectClass.html');
                    }else{
-                       location.href='detail.html';
+                       location.replace('detail.html');
                    }
 
                   // alert('uid'+data.uid);
@@ -113,7 +113,7 @@ $('#btnRegister').click(function () {
                 }else if(data.code==401){
                     $('#loginMsg').html('用户名已被占用！');
                 }else if(data.code==200){
-                    location.href='index.html';
+                    location.replace('selectClass.html');
                     //alert(data.uid);
                     sessionStorage['utel']=registerTel;
                     sessionStorage['uid']=data.uid;

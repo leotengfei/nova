@@ -2,28 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca9e0cd0-3ee1-42f2-af0a-c42c27026314" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/hb.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/images/bg.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/images/clound_left1.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/images/clound_left2.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/images/clound_right1.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/images/denglong.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/images/left_fu.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/images/left_tree.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/images/petal1.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/images/petal2.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/images/petal3.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/images/petal4.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/images/petal5.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/images/petal6.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/images/petal7.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/images/petal8.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/images/petal9.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/images/right_flower.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/images/right_fu.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/images/sample/slider/2018xiaoxue.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/js/hb.js" />
       <change beforePath="" afterPath="$PROJECT_DIR$/question/static/data/api_demo/SmsDemo.php" />
       <change beforePath="" afterPath="$PROJECT_DIR$/question/static/data/api_sdk/LICENSE" />
       <change beforePath="" afterPath="$PROJECT_DIR$/question/static/data/api_sdk/composer.json" />
@@ -1272,9 +1250,6 @@
       <change beforePath="" afterPath="$PROJECT_DIR$/question/static/data/api_sdk/vendor/webmozart/assert/tests/AssertTest.php" />
       <change beforePath="" afterPath="$PROJECT_DIR$/question/static/data/init.php" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
-      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change beforePath="$PROJECT_DIR$/js/index.js" afterPath="$PROJECT_DIR$/js/index.js" />
     </list>
     <ignored path="nova.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1303,11 +1278,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2360">
-              <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+            <state relative-caret-position="480">
+              <caret line="12" column="39" lean-forward="true" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
               <folding>
                 <marker date="1517973957175" expanded="true" signature="928:1252" ph="..." />
                 <marker date="1517973957175" expanded="true" signature="1360:1502" ph="..." />
@@ -1316,11 +1291,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="499">
-              <caret line="561" column="10" lean-forward="true" selection-start-line="561" selection-start-column="10" selection-end-line="561" selection-end-column="10" />
+            <state relative-caret-position="960">
+              <caret line="564" column="14" lean-forward="true" selection-start-line="564" selection-start-column="14" selection-end-line="564" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -1397,9 +1372,9 @@
         <option value="$PROJECT_DIR$/c/x4.html" />
         <option value="$PROJECT_DIR$/c/x5.html" />
         <option value="$PROJECT_DIR$/c/x6.html" />
-        <option value="$PROJECT_DIR$/js/index.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/main.css" />
+        <option value="$PROJECT_DIR$/js/index.js" />
       </list>
     </option>
   </component>
@@ -1434,6 +1409,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -1455,8 +1432,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1590,7 +1565,8 @@
       <workItem from="1508807374903" duration="25000" />
       <workItem from="1517897948156" duration="87000" />
       <workItem from="1517906005620" duration="3565000" />
-      <workItem from="1517992739553" duration="214000" />
+      <workItem from="1517992739553" duration="897000" />
+      <workItem from="1518078898280" duration="73000" />
     </task>
     <task id="LOCAL-00001" summary="最早版本">
       <created>1501464706225</created>
@@ -1739,11 +1715,18 @@
       <option name="project" value="LOCAL" />
       <updated>1517888921775</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="增加春节特效">
+      <created>1517993027683</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1517993027683</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12261000" />
+    <option name="totallyTimeSpent" value="13017000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1757,7 +1740,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12908325" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12908325" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.49789253" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44617093" sideWeight="0.50632244" order="12" side_tool="true" content_ui="tabs" />
@@ -1810,7 +1793,8 @@
     <MESSAGE value="更新小学课表为动态" />
     <MESSAGE value="预约系统v4" />
     <MESSAGE value="更新初中，高中优惠" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新初中，高中优惠" />
+    <MESSAGE value="增加春节特效" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加春节特效" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2149,17 +2133,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2360">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding>
-            <marker date="1517973957175" expanded="true" signature="928:1252" ph="..." />
-            <marker date="1517973957175" expanded="true" signature="1360:1502" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1720">
@@ -2170,9 +2143,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="561" column="10" lean-forward="true" selection-start-line="561" selection-start-column="10" selection-end-line="561" selection-end-column="10" />
+        <state relative-caret-position="960">
+          <caret line="564" column="14" lean-forward="true" selection-start-line="564" selection-start-column="14" selection-end-line="564" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="12" column="39" lean-forward="true" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+          <folding>
+            <marker date="1517973957175" expanded="true" signature="928:1252" ph="..." />
+            <marker date="1517973957175" expanded="true" signature="1360:1502" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
