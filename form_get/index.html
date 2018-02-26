@@ -2,9 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>期中冲刺预约试听</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <title>尖子生测试预约</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0">
     <!-- Loading Bootstrap -->
     <link href="css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -24,9 +23,9 @@
       }
     </style>
   </head>
-  <body class="btn-primary">
+  <body style="background:#1abc9c;color:#fff;">
     <div class="container">
-        <h3>期中冲刺<small class="text-warning">&nbsp;预约试听</small></h3>
+        <h3>尖子生<small class="text-warning">&nbsp;测试预约</small></h3>
       <hr/>
       <div class="login-form">
         <div class="form-group">
@@ -38,15 +37,59 @@
           <input type="text" class="form-control login-field" value="" placeholder="请输入电话" id="utel">
           <label class="login-field-icon fui-document" for="utel"></label>
         </div>
-
-        <div class="form-group">
-          <input type="text" class="form-control login-field" value="" placeholder="请输入学校" id="uschool">
-          <label class="login-field-icon fui-star-2" for="uschool"></label>
+        <div class="form-group" style="color:rgb(77, 75, 75);">
+          <div>请选择校区：</div>
+          <div class="row">
+              <div class="col-xs-6">
+                  <label class="radio">
+                      <input type="radio" data-toggle="radio" name="loca" id="loca1" value="北大街" data-radiocheck-toggle="radio"  checked="">
+                        北大街
+                    </label>
+                    <label class="radio">
+                      <input type="radio" data-toggle="radio" name="loca" id="loca2" value="长安" data-radiocheck-toggle="radio" required>
+                        长安
+                    </label>
+                    <label class="radio">
+                      <input type="radio" data-toggle="radio" name="loca" id="loca3" value="渭南" data-radiocheck-toggle="radio" required>
+                        渭南
+                    </label>
+              </div>
+              <div class="col-xs-6">
+                  <label class="radio">
+                      <input type="radio" data-toggle="radio" name="loca" id="loca4" value="宝鸡" data-radiocheck-toggle="radio" required>
+                        宝鸡
+                    </label>
+                    <label class="radio">
+                      <input type="radio" data-toggle="radio" name="loca" id="loca5" value="咸阳" data-radiocheck-toggle="radio" required>
+                        咸阳
+                    </label>
+              </div>
+          </div>
         </div>
-
-        <div class="form-group">
-            <input type="text" class="form-control login-field" value="" placeholder="请输入年级" id="ugrade">
-            <label class="login-field-icon fui-list-thumbnailed" for="ugrade"></label>
+        <div class="form-group" style="color:rgb(77, 75, 75);" id="sub">
+            <div>请选择科目(默认全选)</div>
+            <div class="row">
+              <div class="col-xs-6">
+                  <label class="checkbox" for="sub1">
+                      <input type="checkbox" data-toggle="checkbox" checked="checked" value="英语" name="subv" id="sub1" checked="">
+                      英语
+                    </label>
+                    <label class="checkbox" for="sub2">
+                      <input type="checkbox" data-toggle="checkbox" checked="checked" value="数学" name="subv" id="sub2" checked="">
+                      数学
+                    </label>
+              </div>
+              <div class="col-xs-6">
+                  <label class="checkbox" for="sub3">
+                      <input type="checkbox" data-toggle="checkbox" checked="checked" value="物理" name="subv" id="sub3" checked="">
+                      物理
+                    </label>
+                    <label class="checkbox" for="sub4">
+                      <input type="checkbox" data-toggle="checkbox" checked="checked" value="化学" name="subv" id="sub4" checked="">
+                      化学
+                    </label>
+              </div>
+            </div>
         </div>
         <button type="button" class="btn btn-primary btn-lg btn-block" id="btn-apoint">预约</button>
       </div>
@@ -57,7 +100,7 @@
     <!-- 模态框-->
     <div id="myModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
       <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content bg-success">
+        <div class="modal-content" style="padding:5px 15px;">
           <h4 style="color:#000;" class="text-center" id="msg"></h4>
         </div>
       </div>

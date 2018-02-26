@@ -3,7 +3,7 @@
  */
 //请求选课列表信息
 if(sessionStorage['tag']===undefined){
-    sessionStorage['tag']='all';
+    sessionStorage['tag']='高中寒假课程';
 }
 sessionStorage['grade']='all';
 sessionStorage['project']='all';

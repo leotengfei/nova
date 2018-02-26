@@ -12,8 +12,8 @@ $.ajax({
             <tr>
                 <td>${data[i].uname}</td>
                 <td>${data[i].utel}</td>
-                <td>${data[i].uschool}</td>
-                <td>${data[i].ugrade}</td>
+                <td>${data[i].loca}</td>
+                <td>${data[i].sub}</td>
             </tr>
             `;
         }
