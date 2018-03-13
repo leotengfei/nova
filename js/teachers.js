@@ -40,7 +40,7 @@ function fetchData() {
                 </div>
                 <div class="desc">
                 	<h5>${data[i].tname}</h5>
-                    <p>${data[i].grade}${data[i].subject}名师</p>
+                    <p>${data[i].grade}${data[i].subject}教师</p>
                 </div>
             </li>
             `;
@@ -77,7 +77,7 @@ $('#teacherList').on("click","li a", function (e) {
             html+=`
                 <img src="../images/${data[0].photo_lg}" alt="" width="300px" style="max-height:450px">
                 <div>
-                    <h3>${data[0].tname}<br />${data[0].grade}${data[0].subject}名师</h3>
+                    <h3>${data[0].tname}<br />${data[0].grade}${data[0].subject}教师</h3>
                     <p>简介：${data[0].introduction}</p>
                 </div>
             `;
@@ -197,7 +197,7 @@ $('#search-btn').click(function () {
                 </div>
                 <div class="desc">
                 	<h5>${data[i].tname}</h5>
-                    <p>${data[i].grade}${data[i].subject}名师</p>
+                    <p>${data[i].grade}${data[i].subject}教师</p>
                 </div>
             </li>
             `;

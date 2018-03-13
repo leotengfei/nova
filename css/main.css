@@ -62,14 +62,16 @@ ul.faq li>div h3{margin-top:0}#error{text-align:center;margin-top:150px;margin-b
     transition: all .2s linear;
 	}
 .pc1:hover{
-	/*border:1px solid #2DCC70;*/
-	color:#fff;
-	-webkit-box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-    -webkit-transform: translate3d(0, -2px, 0);
-    transform: translate3d(0, -2px, 0);
 	background-color:#fff;
 	}
+#services div.span3:hover{
+	color:#fff;
+	-webkit-box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+	box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+	-webkit-transform: translate3d(0, -2px, 0);
+	transform: translate3d(0, -2px, 0);
+	background-color:#fff;
+}
 .pc1 .pchead {
 	padding:15px;
 	}

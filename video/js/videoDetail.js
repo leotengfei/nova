@@ -92,7 +92,7 @@ $('#videoIntro>ul>li:nth-child(2)').click(function () {
                         </a>
                     </div>
                     <div class="media-body">
-                        <h4 class="media-heading">${data[0].grade}${data[0].subject}名师</h4>
+                        <h4 class="media-heading">${data[0].grade}${data[0].subject}教师</h4>
                         <p>
                             ${data[0].introduction}
                         </p>
