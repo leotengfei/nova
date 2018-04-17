@@ -4,7 +4,7 @@ header("content-type:application/json;charset=utf-8");
 require('init.php');
 @$tag=$_REQUEST['tag'] or die('{"code":-2,"msg":"tag是必须的"}');
 @$grade=$_REQUEST['grade'] or die('{"code":-3,"msg":"grade是必须的"}');
-$sql_tag="SELECT DISTINCT tag FROM class_info";
+$sql_tag="SELECT DISTINCT tag FROM class_info WHERE tag NOT LIKE '%每日一题%'";
 $result_tag=mysqli_query($conn,$sql_tag);
 $total_arr=array();
 $posts = array();

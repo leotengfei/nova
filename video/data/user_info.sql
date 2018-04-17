@@ -36,5 +36,6 @@ CREATE TABLE class_detail(
     cid INT NOT NULL DEFAULT 0,-- 课程编号
     episode INT NOT NULL DEFAULT 0,-- 课程第几集
     description VARCHAR(100) NOT NULL DEFAULT '',-- 课程描述
-    videoUrl VARCHAR(200) NOT NULL DEFAULT ''-- 视频路径
+    videoUrl VARCHAR(200) NOT NULL DEFAULT '',-- 视频路径
+    c_time VARCHAR(100) NOT NULL DEFAULT '' -- 视频日期
 );
