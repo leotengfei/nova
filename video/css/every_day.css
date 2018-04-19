@@ -1,14 +1,45 @@
-#evd_list>li{
-    border-bottom:1px solid #ddd;
-    padding:8px 0;
+#evd_list h4,h5,p{
+    color:#fff;
 }
-#evd_list>li>a>div>img{
-    width:100px;
-    margin-right:10px;
+#evd_list>div>div{
+  /* background-color:#2CAF7D; */
+  /* margin-left:-20px; */
+  margin-top:10px;
+  padding:10px;
 }
-#evd_list>li>a>div.media-body>div{
-  text-align: right;
+#evd_list>div>div>a>div.card_left{
+  background-color: #fff;
+  position:absolute;
+  top:50%;
+  margin-top:-25px;
+  text-align: center;
+  line-height: 50px;
+  width:50px;
+  height: 50px;
+  border-radius: 50%;
+  border:1px solid #ddd;
+  float:left;
 }
+#evd_list>div>div>a>div.card_left>img{
+  width:30px;
+  height: 30px;
+}
+#evd_list>div>div>a>div.card_right{
+    position: relative;
+    text-align: right;
+    float:right;
+}
+#evd_list>div>div>a>div.card_right>h5{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#evd_list>div>div>a:after{
+  content:'';
+  display: block;
+  clear:both;
+}
+
 a{
     color:#333;
     text-decoration: none;
