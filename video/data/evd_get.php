@@ -9,7 +9,7 @@ if($evd_time=='today'){
     $today=$evd_time;
 }
 // echo strtotime($today);
-$sql_getToday="SELECT i.cid,i.cname,i.imgUrl,i.tag,i.intro,d.episode,d.description,d.videoUrl,d.c_time FROM class_info i,class_detail d WHERE i.cid=d.cid AND c_time='$today'";
+$sql_getToday="SELECT i.cid,i.cname,i.imgUrl,i.tag,d.episode,d.description,d.videoUrl,d.c_time FROM class_info i,class_detail d WHERE i.cid=d.cid AND c_time='$today'";
 $result=mysqli_query($conn,$sql_getToday);
 $posts = array();
 while($row = mysqli_fetch_assoc($result)) {

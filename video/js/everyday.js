@@ -19,9 +19,8 @@ $.ajax({
                             <img class="media-object" src="img/${data[i].imgUrl}" alt="...">
                         </div>
                         <div class="media-body">
-                            <h2 class="media-heading">${data[i].cname}</h2>
+                            <h4 class="media-heading">${data[i].cname}</h4>
                             <h5>${data[i].description}</h5>
-                            ${data[i].intro}
                             <div>${delDate(data[i].c_time)}</div>
                         </div>
                     </a>

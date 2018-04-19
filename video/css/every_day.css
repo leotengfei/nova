@@ -3,7 +3,8 @@
     padding:8px 0;
 }
 #evd_list>li>a>div>img{
-    width:150px;
+    width:100px;
+    margin-right:10px;
 }
 #evd_list>li>a>div.media-body>div{
   text-align: right;

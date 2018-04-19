@@ -79,12 +79,13 @@ $('#btnLogin').click(function () {
                if(data.code==400){
                    $('#loginMsg').html('用户名或密码错误！');
                }else if(data.code==200){
-                   //如果从详情页跳转过来的登陆后返回详情页；
-                   if(sessionStorage['cid']===undefined){
-                       location.replace('selectClass.html');
-                   }else{
-                       location.replace('detail.html');
-                   }
+                   //登陆后调转回上一页
+                   var lastPage=document.referrer;
+                    if(lastPage===''||lastPage===null){
+                        location.replace('selectClass.html');
+                    }else{
+                        location.replace(lastPage);
+                    }
 
                   // alert('uid'+data.uid);
                    sessionStorage['utel']=loginTel;
@@ -113,7 +114,13 @@ $('#btnRegister').click(function () {
                 }else if(data.code==401){
                     $('#loginMsg').html('用户名已被占用！');
                 }else if(data.code==200){
-                    location.replace('selectClass.html');
+                    // 注册成功跳转回上一页
+                    var lastPage=document.referrer;
+                    if(lastPage===''||lastPage===null){
+                        location.replace('selectClass.html');
+                    }else{
+                        location.replace(lastPage);
+                    }
                     //alert(data.uid);
                     sessionStorage['utel']=registerTel;
                     sessionStorage['uid']=data.uid;
