@@ -13,7 +13,7 @@ function randomColor(){
     var r=rn(200,100);
     var g=rn(200,100);
     var b=rn(200,100);
-    return "rgb("+r+','+g+','+b+")";//所有方法的拼接都可以用ES6新特性`其他字符串{$变量名}`替换
+    return "rgb("+r+','+g+','+b+")";
 }
 $.ajax({
     type:'GET',

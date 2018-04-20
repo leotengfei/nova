@@ -2,10 +2,11 @@
     color:#fff;
 }
 #evd_list>div>div{
-  /* background-color:#2CAF7D; */
-  /* margin-left:-20px; */
   margin-top:10px;
   padding:10px;
+}
+.xiuxi_img{
+  width:100%;
 }
 #evd_list>div>div>a>div.card_left{
   background-color: #fff;

@@ -18,26 +18,34 @@ $.ajax({
     },
     url:'data/evd_get.php',
     success:function(data){
-        console.log(data[0]);
+        console.log(data.length);
         var html='';
-        for(var i=0;i<data.length;i++){
-            html+=`
-            <div class="col-xs-6 col-md-3">
-                <div style="background-color:${randomColor()};">
-                    <a href="${data[i].cid}/${data[i].episode}">
-                        <div class="card_left">
-                            <img src="img/${data[i].imgUrl}">
-                        </div>
-                        <div class="card_right">
-                            <h4>${data[i].cname}</h4>
-                            <p>${delDate(data[i].c_time)}</p>
-                            <h5>${data[i].description}</h5>
-                        </div>
-                    </a>
+        if(data.length===0){
+            html=`
+                <div class="col-xs-12 col-md-6 col-md-offset-3">
+                    <img src="img/xiuxi.jpg" class="xiuxi_img">
                 </div>
-            </div>
-            `;
-        }
+            `
+        }else{
+            for(var i=0;i<data.length;i++){
+                html+=`
+                <div class="col-xs-6 col-md-3">
+                    <div style="background-color:${randomColor()};">
+                        <a href="${data[i].cid}/${data[i].episode}">
+                            <div class="card_left">
+                                <img src="img/${data[i].imgUrl}">
+                            </div>
+                            <div class="card_right">
+                                <h4>${data[i].cname}</h4>
+                                <p>${delDate(data[i].c_time)}</p>
+                                <h5>${data[i].description}</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                `;
+            }
+        }       
         $('#evd_list').html(html);
     }
 })
