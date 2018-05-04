@@ -1,6 +1,15 @@
 /**
  * g2页面发送的ajax
  */
+// 按钮点击事件
+$('#my-btns').on('click','a',function(e){
+    e.preventDefault();
+    console.log($(this).attr('href'))
+    var area_id=$(this).attr('href');
+    $(area_id).fadeIn().siblings().hide();
+
+})
+
 $(function () {
    var selectClass=function(tabId,grade,location) {
         $.ajax({
@@ -49,6 +58,9 @@ $(function () {
     selectClass('g1pc','高二','蒲城');
     selectClass('g1xy','高二','咸阳');
     selectClass('g1bj2','高二','宝鸡');
+    selectClass('g1yl','高二','阎良');
+    selectClass('g1fp','高二','富平');
+    selectClass('g1lq','高二','礼泉');
 
     //$(window).scroll(function(){
     //    //console.log($('body').scrollTop());

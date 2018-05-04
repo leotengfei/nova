@@ -4,6 +4,14 @@
 /**
  * x6页面发送的ajax
  */
+// 按钮点击事件
+$('#my-btns').on('click','a',function(e){
+    e.preventDefault();
+    console.log($(this).attr('href'))
+    var area_id=$(this).attr('href');
+    $(area_id).fadeIn().siblings().hide();
+
+})
 $(function () {
     var selectClass=function(tabId,grade,location) {
         $.ajax({

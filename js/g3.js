@@ -1,7 +1,16 @@
 /**
  * g3页面发送的ajax
  */
-$(function () {
+// 按钮点击事件
+$('#my-btns').on('click','a',function(e){
+    e.preventDefault();
+    console.log($(this).attr('href'))
+    var area_id=$(this).attr('href');
+    $(area_id).fadeIn().siblings().hide();
+
+})
+
+ $(function () {
    var selectClass=function(tabId,grade,location) {
         $.ajax({
             type: 'POST',
@@ -49,6 +58,8 @@ $(function () {
     selectClass('g1pc','高考','蒲城');
     selectClass('g1xy','高考','咸阳');
     selectClass('g1bj2','高考','宝鸡');
+    selectClass('g1lq','高考','礼泉');
+    selectClass('g1hz','高考','汉中');
 
     //$(window).scroll(function(){
     //    //console.log($('body').scrollTop());

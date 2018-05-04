@@ -4,6 +4,13 @@
 /**
  * x3页面发送的ajax
  */
+$('#my-btns').on('click','a',function(e){
+    e.preventDefault();
+    console.log($(this).attr('href'))
+    var area_id=$(this).attr('href');
+    $(area_id).fadeIn().siblings().hide();
+
+})
 $(function () {
     var selectClass=function(tabId,grade,location) {
         $.ajax({
@@ -30,7 +37,7 @@ $(function () {
         });
     };
 
-    //selectClass('g1bdj','三年级','北大街');
+    selectClass('g1bdj','三年级','北大街');
     selectClass('g1ca','三年级','长安');
     //selectClass('g1bj','三年级','北郊');
     selectClass('g1tm','三年级','土门');
@@ -40,7 +47,7 @@ $(function () {
     selectClass('g1bj2','三年级','宝鸡');
     selectClass('g1xy','三年级','咸阳');
     selectClass('g1hh','三年级','黄河');
-    //selectClass('g1yl','三年级','阎良');
+    selectClass('g1yl','三年级','阎良');
     selectClass('g1fp','三年级','富平');
 
 

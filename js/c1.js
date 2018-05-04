@@ -1,6 +1,14 @@
 /**
  * c1页面发送的ajax
  */
+// 按钮点击事件
+$('#my-btns').on('click','a',function(e){
+    e.preventDefault();
+    console.log($(this).attr('href'))
+    var area_id=$(this).attr('href');
+    $(area_id).fadeIn().siblings().hide();
+
+})
 $(function () {
     var selectClass=function(tabId,grade,location) {
         $.ajax({
@@ -51,6 +59,8 @@ $(function () {
     selectClass('g1hh','初一','黄河');
     selectClass('g1yl','初一','阎良');
     selectClass('g1fp','初一','富平');
+    selectClass('g1lq','初一','礼泉');
+
 
 
 

@@ -1,6 +1,14 @@
 /**
  * c2页面发送的ajax
  */
+
+$('#my-btns').on('click','a',function(e){
+    e.preventDefault();
+    console.log($(this).attr('href'))
+    var area_id=$(this).attr('href');
+    $(area_id).fadeIn().siblings().hide();
+
+})
 $(function () {
     var selectClass=function(tabId,grade,location) {
         $.ajax({
@@ -38,16 +46,17 @@ $(function () {
     selectClass('g1bdj','初二','北大街');
     selectClass('g1ca','初二','长安');
     selectClass('g1jd','初二','交大');
-    //selectClass('g1bj','初一','北郊');
+    selectClass('g1bj','初二','北郊');
     selectClass('g1tm','初二','土门');
-    //selectClass('g1gx2','初一','高新');
+    selectClass('g1gx2','初二','高新');
     selectClass('g1wn','初二','渭南');
     selectClass('g1pc','初二','蒲城');
     selectClass('g1bj2','初二','宝鸡');
     selectClass('g1xy','初二','咸阳');
-    //selectClass('g1hh','初一','黄河');
-    //selectClass('g1yl','初一','阎良');
-    selectClass('g1fp','初一','富平');
+    selectClass('g1hh','初二','黄河');
+    selectClass('g1yl','初二','阎良');
+    selectClass('g1fp','初二','富平');
+    selectClass('g1lq','初二','礼泉');
 
 
 
