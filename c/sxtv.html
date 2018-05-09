@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <title>陕西卫视新闻频道报道无线星空</title>
+    <meta name="description" content="无线星空教育是由教育界资深人士联合创建，公司共有教学区22个，教学面积四万平米，员工500多名，遍布于陕西省西安地区、咸阳地区、渭南地区、宝鸡地区及汉中地区。无线星空专注于K12中小学教育，核心业务为：中小学名师班组、VIP一对一。">
+    <meta name="keywords" content="无线星空,无线星空教育,西安高中课程,陕西高中课程,西安数学课程,西安英语课程,西安高中1对1,西安大班课程">
+    <style>
+        body {
+            background: #060e1b;
+            overflow: hidden;
+        }
+        @media screen and (max-width: 768px) {
+            #video_area{
+                width: 100%;
+                position:absolute;
+                top:0;
+                left:0;
+                bottom:0;
+                right:0;
+                margin:auto;
+            }
+        }
+        @media screen and (min-width:769px){
+            #video_area{
+                width: 55%;
+                position:absolute;
+                top:0;
+                left:0;
+                bottom:0;
+                right:0;
+                margin:auto;
+            }
+        }
+    </style>
+
+</head>
+<body>
+<video controls loop id="video_area" poster="http://owvvfr97r.bkt.clouddn.com/sxtv1cover.jpg" preload="none">
+    <source src="http://owvvfr97r.bkt.clouddn.com/20180508sxtv1_clip.mp4">
+    <p style="text-align: center;margin-top:200px;">
+        <font color="#ffffff">您的浏览器是20多年前的产品！赶紧升级啊！</font><br>
+        <a href="http://chrome.360.cn/">【点击升级】</a>
+    </p>
+
+</video>
+<canvas id="canvas"></canvas>
+<script>
+    "use strict";
+
+    var canvas = document.getElementById('canvas'),
+            ctx = canvas.getContext('2d'),
+            w = canvas.width = window.innerWidth,
+            h = canvas.height = window.innerHeight,
+
+            hue = 217,
+            stars = [],
+            count = 0,
+            maxStars = 1200;
+
+    var canvas2 = document.createElement('canvas'),
+            ctx2 = canvas2.getContext('2d');
+    canvas2.width = 100;
+    canvas2.height = 100;
+    var half = canvas2.width / 2,
+            gradient2 = ctx2.createRadialGradient(half, half, 0, half, half, half);
+    gradient2.addColorStop(0.025, '#fff');
+    gradient2.addColorStop(0.1, 'hsl(' + hue + ', 61%, 33%)');
+    gradient2.addColorStop(0.25, 'hsl(' + hue + ', 64%, 6%)');
+    gradient2.addColorStop(1, 'transparent');
+
+    ctx2.fillStyle = gradient2;
+    ctx2.beginPath();
+    ctx2.arc(half, half, half, 0, Math.PI * 2);
+    ctx2.fill();
+
+    // End cache
+
+    function random(min, max) {
+        if (arguments.length < 2) {
+            max = min;
+            min = 0;
+        }
+
+        if (min > max) {
+            var hold = max;
+            max = min;
+            min = hold;
+        }
+
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function maxOrbit(x, y) {
+        var max = Math.max(x, y),
+                diameter = Math.round(Math.sqrt(max * max + max * max));
+        return diameter / 2;
+    }
+
+    var Star = function() {
+
+        this.orbitRadius = random(maxOrbit(w, h));
+        this.radius = random(60, this.orbitRadius) / 12;
+        this.orbitX = w / 2;
+        this.orbitY = h / 2;
+        this.timePassed = random(0, maxStars);
+        this.speed = random(this.orbitRadius) / 900000;
+        this.alpha = random(2, 10) / 10;
+
+        count++;
+        stars[count] = this;
+    }
+
+    Star.prototype.draw = function() {
+        var x = Math.sin(this.timePassed) * this.orbitRadius + this.orbitX,
+                y = Math.cos(this.timePassed) * this.orbitRadius + this.orbitY,
+                twinkle = random(10);
+
+        if (twinkle === 1 && this.alpha > 0) {
+            this.alpha -= 0.05;
+        } else if (twinkle === 2 && this.alpha < 1) {
+            this.alpha += 0.05;
+        }
+
+        ctx.globalAlpha = this.alpha;
+        ctx.drawImage(canvas2, x - this.radius / 2, y - this.radius / 2, this.radius, this.radius);
+        this.timePassed += this.speed;
+    }
+
+    for (var i = 0; i < maxStars; i++) {
+        new Star();
+    }
+
+    function animation() {
+        ctx.globalCompositeOperation = 'source-over';
+        ctx.globalAlpha = 0.8;
+        ctx.fillStyle = 'hsla(' + hue + ', 64%, 6%, 1)';
+        ctx.fillRect(0, 0, w, h)
+
+        ctx.globalCompositeOperation = 'lighter';
+        for (var i = 1, l = stars.length; i < l; i++) {
+            stars[i].draw();
+        };
+
+        window.requestAnimationFrame(animation);
+    }
+
+    animation();
+</script>
+</body>
+</html>
