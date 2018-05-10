@@ -24,7 +24,8 @@ $('#my-btns').on('click','a',function(e){
                     return str;
                 };
                 var html = '';
-                for (var i = 0; i < data.length; i++) {
+                if(data.length){
+                   for (var i = 0; i < data.length; i++) {
                     var shijian = data[i].gbegin + '-' + data[i].gend;
                     html += `
                <tr>
@@ -38,7 +39,16 @@ $('#my-btns').on('click','a',function(e){
                </tr>
                `;
                 }
-                $('#'+tabId+'>div>div>table td:contains("即将上新...") ').parent().replaceWith(html);
+                $('#'+tabId+'>div>div>table td:contains("即将上新...") ').parent().replaceWith(html); 
+                }else{
+                    // 不显示按钮
+                    $("[href='#"+tabId+"']").css('display','none');
+                    //console.log($("[href='#"+tabId+"']"))
+                    
+                    // 如果课表内容为空，不显示校区信息
+                    $('#'+tabId).css('display','none');
+                }
+                
             }
         });
    };
@@ -48,8 +58,8 @@ $('#my-btns').on('click','a',function(e){
     selectClass('g1bj','高考','北郊');
     selectClass('g1ca','高考','长安');
     selectClass('g1hh','高考','黄河');
-    //selectClass('g1jd','高考','交大');
-    //selectClass('g1gx2','高考','高新');
+    selectClass('g1jd','高考','交大');
+    selectClass('g1gx2','高考','高新');
     selectClass('g1tm','高考','土门');
     //selectClass('g1sd','高考','师大');
     selectClass('g1yl','高考','阎良');

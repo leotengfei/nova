@@ -24,21 +24,30 @@ $(function () {
                     return str;
                 };
                 var html = '';
-                for (var i = 0; i < data.length; i++) {
-                    var shijian = data[i].gbegin + '-' + data[i].gend;
-                    html += `
-               <tr>
-                    <td width="15%">${data[i].classname}</td>
-                    <td width="10%">${data[i].grade}${data[i].project}</td>
-                    <td width="15%">${deldate(shijian)}</td>
-                    <td width="15%">${data[i].gtime}</td>
-                    <td width="10%">${data[i].location}</td>
-                    <td width="10%">${data[i].teacher}</td>
-                    <td width="10%">${data[i].money}</td>
-               </tr>
-               `;
-                }
-                $('#'+tabId+'>div>div>table td:contains("即将上新...") ').parent().replaceWith(html);
+                if(data.length){
+                    for (var i = 0; i < data.length; i++) {
+                     var shijian = data[i].gbegin + '-' + data[i].gend;
+                     html += `
+                <tr>
+                     <td width="15%">${data[i].classname}</td>
+                     <td width="10%">${data[i].grade}${data[i].project}</td>
+                     <td width="15%">${deldate(shijian)}</td>
+                     <td width="15%">${data[i].gtime}</td>
+                     <td width="10%">${data[i].location}</td>
+                     <td width="10%">${data[i].teacher}</td>
+                     <td width="10%">${data[i].money}</td>
+                </tr>
+                `;
+                 }
+                 $('#'+tabId+'>div>div>table td:contains("即将上新...") ').parent().replaceWith(html); 
+                 }else{
+                     // 不显示按钮
+                     $("[href='#"+tabId+"']").css('display','none');
+                     //console.log($("[href='#"+tabId+"']"))
+                     
+                     // 如果课表内容为空，不显示校区信息
+                     $('#'+tabId).css('display','none');
+                 }
             }
         });
    };
@@ -49,7 +58,7 @@ $(function () {
     selectClass('g1ca','高二','长安');
     selectClass('g1hh','高二','黄河');
     selectClass('g1jd','高二','交大');
-    //selectClass('g1gx2','高一','高新');
+    selectClass('g1gx2','高一','高新');
     selectClass('g1tm','高二','土门');
     selectClass('g1sd','高一','师大');
     selectClass('g1yl','高一','阎良');
@@ -61,6 +70,7 @@ $(function () {
     selectClass('g1yl','高二','阎良');
     selectClass('g1fp','高二','富平');
     selectClass('g1lq','高二','礼泉');
+    selectClass('g1hz','高二','汉中');
 
     //$(window).scroll(function(){
     //    //console.log($('body').scrollTop());

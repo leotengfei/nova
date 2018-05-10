@@ -19,20 +19,29 @@ $(function () {
             data: {grade: grade, location: location},
             success: function (data) {
                 var html = '';
-                for (var i = 0; i < data.length; i++) {
-                    html += `
-               <tr>
-                    <td width="20%">${data[i].classname}</td>
-                    <td width="17%">${data[i].classtitle}</td>
-                    <td width="10%">${data[i].gbegin}</td>
-                    <td width="10%">${data[i].gend}</td>
-                    <td width="25%">${data[i].gtime}</td>
-                    <td width="10%">${data[i].location}</td>
-                    <td width="10%">${data[i].money}</td>
-               </tr>
-               `;
+                if(data.length){
+                    for (var i = 0; i < data.length; i++) {
+                        html += `
+                   <tr>
+                       <td width="20%">${data[i].classname}</td>
+                        <td width="17%">${data[i].classtitle}</td>
+                        <td width="10%">${data[i].gbegin}</td>
+                        <td width="10%">${data[i].gend}</td>
+                        <td width="25%">${data[i].gtime}</td>
+                        <td width="10%">${data[i].location}</td>
+                        <td width="10%">${data[i].money}</td>
+                   </tr>
+                   `;
+                    }
+                    $('#'+tabId+'>div>div>table td:contains("即将上新...") ').parent().replaceWith(html);
+                }else{
+                     // 不显示按钮
+                     $("[href='#"+tabId+"']").css('display','none');
+                     //console.log($("[href='#"+tabId+"']"))
+                     
+                     // 如果课表内容为空，不显示校区信息
+                     $('#'+tabId).css('display','none');
                 }
-                $('#'+tabId+'>div>div>table td:contains("即将上新...") ').parent().replaceWith(html);
             }
         });
     };

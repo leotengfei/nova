@@ -22,21 +22,30 @@ $(function () {
                     return str;
                 };
                 var html = '';
-                for (var i = 0; i < data.length; i++) {
-                    var shijian = data[i].gbegin + '-' + data[i].gend;
-                    html += `
-               <tr>
-                    <td width="20%">${data[i].classname}</td>
-                    <td width="15%">${data[i].grade}${data[i].project}</td>
-                    <td width="10%">${deldate(data[i].gbegin)}</td>
-                    <td width="10%">${deldate(data[i].gend)}</td>
-                    <td width="25%">${data[i].gtime}</td>
-                    <td width="10%">${data[i].teacher}</td>
-                    <td width="10%">${data[i].money}</td>
-               </tr>
-               `;
+                if(data.length){
+                    for (var i = 0; i < data.length; i++) {
+                        var shijian = data[i].gbegin + '-' + data[i].gend;
+                        html += `
+                   <tr>
+                        <td width="20%">${data[i].classname}</td>
+                        <td width="15%">${data[i].grade}${data[i].project}</td>
+                        <td width="10%">${deldate(data[i].gbegin)}</td>
+                        <td width="10%">${deldate(data[i].gend)}</td>
+                        <td width="25%">${data[i].gtime}</td>
+                        <td width="10%">${data[i].teacher}</td>
+                        <td width="10%">${data[i].money}</td>
+                   </tr>
+                   `;
+                    }
+                    $('#'+tabId+'>div>div>table td:contains("即将上新...") ').parent().replaceWith(html);
+                }else{
+                    // 不显示按钮
+                    $("[href='#"+tabId+"']").css('display','none');
+                    //console.log($("[href='#"+tabId+"']"))
+                    
+                    // 如果课表内容为空，不显示校区信息
+                    $('#'+tabId).css('display','none');
                 }
-                $('#'+tabId+'>div>div>table td:contains("即将上新...") ').parent().replaceWith(html);
             }
         });
     };

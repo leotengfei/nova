@@ -25,21 +25,30 @@ $(function () {
                     return str;
                 };
                 var html = '';
-                for (var i = 0; i < data.length; i++) {
-                    var shijian = data[i].gbegin + '-' + data[i].gend;
-                    html += `
-               <tr>
-                    <td width="15%">${data[i].classname}</td>
-                    <td width="10%">${data[i].grade}${data[i].project}</td>
-                    <td width="15%">${deldate(shijian)}</td>
-                    <td width="15%">${data[i].gtime}</td>
-                    <td width="10%">${data[i].location}</td>
-                    <td width="10%">${data[i].teacher}</td>
-                    <td width="10%">${data[i].money}</td>
-               </tr>
-               `;
-                }
-                $('#'+tabId+'>div>div>table td:contains("即将上新...") ').parent().replaceWith(html);
+                if(data.length){
+                    for (var i = 0; i < data.length; i++) {
+                     var shijian = data[i].gbegin + '-' + data[i].gend;
+                     html += `
+                <tr>
+                     <td width="15%">${data[i].classname}</td>
+                     <td width="10%">${data[i].grade}${data[i].project}</td>
+                     <td width="15%">${deldate(shijian)}</td>
+                     <td width="15%">${data[i].gtime}</td>
+                     <td width="10%">${data[i].location}</td>
+                     <td width="10%">${data[i].teacher}</td>
+                     <td width="10%">${data[i].money}</td>
+                </tr>
+                `;
+                 }
+                 $('#'+tabId+'>div>div>table td:contains("即将上新...") ').parent().replaceWith(html); 
+                 }else{
+                     // 不显示按钮
+                     $("[href='#"+tabId+"']").css('display','none');
+                     //console.log($("[href='#"+tabId+"']"))
+                     
+                     // 如果课表内容为空，不显示校区信息
+                     $('#'+tabId).css('display','none');
+                 }
             }
         });
    };
