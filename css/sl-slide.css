@@ -115,7 +115,7 @@
 	background: #8EC21F;
 }
 .item3 .sl-slide-inner {
-	background: #c11616;
+	background: #2a1f04;
 }
 .item4 .sl-slide-inner {
 	background: #3a4c6b;
@@ -124,8 +124,7 @@
 	background: #ffa801;
 }
 .item6 .sl-slide-inner {
-	/* background: #576065; */
-	background-image: linear-gradient(0deg,#303741 0%,#494F4F 50%,#555C62 100%);
+	background: #576065;
 }
 
 .sl-slider h2 {

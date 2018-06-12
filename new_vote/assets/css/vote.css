@@ -1,0 +1,68 @@
+html,body{
+    width:100%;
+    height:100%
+}
+#vote_navbar>ul{
+    background-color: #47B3C0;
+}
+body{
+    width: 100%;
+    height:auto;
+    background:url("../img/bg3.jpg") no-repeat fixed;
+    background-size: cover;
+}
+body:before {
+    content: ' ';
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url(../img/bg3.jpg) center 0 no-repeat;
+    background-size: cover;
+  }
+#vote_title>div{
+    margin-top:50px;
+}
+#my-tips{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    z-index: 999;
+}
+.gonggao{
+    background-color:rgba(255, 255,255, .5);
+    padding:15px;
+    border-radius: 15px;
+}
+.gonggao>input{
+    display: inline-block;
+    width:68%;
+}
+.vote_area{
+    padding:5px 15px;
+}
+.vote_item{
+    background-color: #47B3C0;
+    color:#fff;
+}
+.vote_item>figure{
+    margin:0;
+}
+.vote_item>figure>img{
+    margin:0;
+    padding:0;
+    width:100%;
+    /* height:100px; */
+}
+.vote_item h3{
+    color:#fff;
+}
+
+/* 介绍css */
+#jieshao>div{
+    background-color:rgba(255, 255,255, .5);
+    padding-top:50px;
+}

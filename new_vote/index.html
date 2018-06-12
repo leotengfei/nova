@@ -1,0 +1,77 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>游学</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="icon" type="image/png" href="assets/i/favicon.png">
+  <link rel="stylesheet" href="assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="stylesheet" href="assets/css/vote.css">
+</head>
+<body>
+<!-- 头图 -->
+<div class="am-g" id="vote_title">
+    <div class="am-u-sm-10 am-u-sm-centered">
+        <img src="assets/img/title1.png"  class="am-img-responsive  am-animation-fade am-animation-delay-1" alt="">
+        <div class="gonggao">
+            <input type="text" class="am-form-field am-round" placeholder="搜索姓名" id="uname"/>
+            <button type="button" class="am-btn am-round am-btn-sm am-btn-success" id="search_name">搜索</button>
+        </div>
+    </div>
+</div>
+<!-- 投票区域 -->
+<div class="vote_area">
+  <div class="am-g  am-text-center" id="vote_area">
+      
+  </div>
+</div>
+
+<!-- 模态框 -->
+<div class="am-modal am-modal-alert" tabindex="-1" id="my-alert">
+  <div class="am-modal-dialog">
+    <div class="am-modal-hd">消息</div>
+    <div class="am-modal-bd">
+      Hello world！
+    </div>
+    <div class="am-modal-footer">
+      <span class="am-modal-btn">否</span><a href="baoming.html" class="am-btn am-round am-btn-sm am-btn-success">是</a>
+    </div>
+  </div>
+</div>
+
+<!-- Navbar -->
+<div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default "
+     id="vote_navbar">
+  <ul class="am-navbar-nav am-cf am-avg-sm-4">
+    <li>
+      <a href="index.html">
+        <span class="am-icon-paint-brush"></span>
+        <span class="am-navbar-label">投票</span>
+      </a>
+    </li>
+    <li>
+      <a href="baoming.html">
+        <span class="am-icon-phone"></span>
+        <span class="am-navbar-label">报名</span>
+      </a>
+    </li>
+    <li>
+      <a href="fuli.html">
+        <span class="am-icon-location-arrow"></span>
+        <span class="am-navbar-label">排名</span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/amazeui.min.js"></script>
+<script src="assets/js/vote.js"></script>
+</body>
+</html>

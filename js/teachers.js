@@ -14,6 +14,7 @@ var subject='all';
 
 function fetchData() {
     var distance = portfolio.getBoundingClientRect().bottom - window.innerHeight;
+    console.log(portfolio)
     console.log(distance);
     if ( !isLoading && !isEnd && distance < triggerDistance ) {
         isLoading = true;
