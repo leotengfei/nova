@@ -36,6 +36,11 @@ body:before {
     background-color:rgba(255, 255,255, .5);
     padding:15px;
     border-radius: 15px;
+    text-align: center;
+    margin-top:15px;
+}
+.myslider{
+    box-shadow: none;
 }
 .gonggao>input{
     display: inline-block;
@@ -47,6 +52,8 @@ body:before {
 .vote_item{
     background-color: #47B3C0;
     color:#fff;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
 }
 .vote_item>figure{
     margin:0;

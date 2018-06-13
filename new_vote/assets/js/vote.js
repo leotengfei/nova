@@ -80,16 +80,16 @@ $('#vote_area').on('click', 'div>div>div>p>a', function (e) {
             //console.log(data.code);
             if (data.code == '1') {
                 console.log('插入成功！');
-                $('#my-alert div.am-modal-bd').html('投票成功！<br/>是否免费试听期末冲刺总复习课程？')
+                $('#my-alert div.am-modal-bd').html('<b>投票成功！<br/>是否免费试听期末冲刺总复习？</b>')
                 $('#vote_area').html('');
                 pageNum = 1;
                 fetchData();
             } else if (data.code == '-1') {
                 console.log('插入失败')
-                $('#my-alert div.am-modal-bd').html('投票失败！<br/>是否免费试听期末冲刺总复习课程？')
+                $('#my-alert div.am-modal-bd').html('<b>投票失败！<br/>是否免费试听期末冲刺总复习？</b>')
             } else if (data.code == '-2') {
                 console.log('没人每天只能投一次票哦！');
-                $('#my-alert div.am-modal-bd').html('每天只能投一次票哦！<br/>是否免费试听期末冲刺总复习课程？')
+                $('#my-alert div.am-modal-bd').html('<b>每天只能投一次票哦！<br/>是否免费试听期末冲刺总复习？</b>')
             }
             $('#my-alert').modal();
         }
