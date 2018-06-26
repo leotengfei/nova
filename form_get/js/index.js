@@ -145,7 +145,8 @@ $('#btn-apoint').click(function () {
                     success: function (data) {
                         console.log(data.msg);
                         var html = `
-                            <h4 style="color:#000;" class="text-center">预约成功！</h4>
+                            <h4 style="color:rgb(8, 156, 94);" class="text-center">预约成功！请截屏保存结果</h4>
+                            <img src="img/biaoge.png" alt="" class="chart">
                             `;
                         $('#msg').parent().html(html);
                         $('#myModal').modal('show');
