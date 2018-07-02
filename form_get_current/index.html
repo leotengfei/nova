@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>新初三预约</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0">
+    <!-- Loading Bootstrap -->
+    <link href="css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="css/flat-ui.min.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="js/vendor/html5shiv.js"></script>
+      <script src="js/vendor/respond.min.js"></script>
+    <![endif]-->
+    <style>
+      input{
+        color:#000;
+      }
+      .title{
+        color:#FFF9C4;
+        margin-top:10px;
+      }
+      .logo{
+        margin:15px;
+        text-align: center;
+      }
+      .logo>img{
+        width:50%;
+        max-height: 100px;
+      }
+      .chart{
+        width:100%;
+      }
+    </style>
+  </head>
+  <body style="background:#3498DB;color:#fff;">
+    <div class="container">
+      <div class="logo">
+        <img src="img/logo.png" alt="">
+      </div>
+        <h3 class="text-center title">2018<small style="color:#FFF9C4">新初三预约</small></h3>
+      <hr/>
+      <div style="text-align: center;">
+        <p style="font-size: 16px;">详解五大名校、重点高中最新招生政策</p>
+        <p style="font-size: 16px;">深度剖析中考志愿填报流程、录取规则</p>
+        <p style="font-size: 16px;">领先新高一，如何顺利度过“陡坡效应”</p>
+      </div>
+      <div class="login-form">
+        <div class="form-group">
+          <input type="text" class="form-control login-field" value="" placeholder="姓名" id="uname">
+          <label class="login-field-icon fui-user" for="uname"></label>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control login-field" value="" placeholder="电话" id="utel">
+          <label class="login-field-icon fui-document" for="utel"></label>
+        </div>
+        <div class="form-group" style="color:rgb(77, 75, 75);">
+          <div class="row">
+              <div class="col-xs-7">
+                <input type="text" class="form-control login-field" value="" placeholder="短信验证码" id="msgcode">
+              </div>
+              <div class="col-xs-5" style="padding-left:0;">
+                <button type="button" class="btn btn-info" id="sendcode">发送验证码</button>
+              </div>
+          </div>
+        </div>
+        <div class="form-group">
+            <select class="form-control select select-info" data-toggle="select">
+                <option value="0">Choose hero</option>
+                <option value="1">Spider Man</option>
+                <option value="2">Wolverine</option>
+                <option value="3">Captain America</option>
+                <option value="4" selected>X-Men</option>
+                <option value="5">Crocodile</option>
+              </select>
+        </div>
+        <button type="button" class="btn btn-info btn-lg btn-block" id="btn-apoint">预约</button>
+      </div>
+      <h5 class="text-center">讲座时间场次安排</h5>
+      <table>
+        <thead>
+            <tr>
+                <th>讲座日期</th>
+                <th>讲座时间</th>
+                <th>校区</th>
+              </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>7月8日</td>
+            <td>18:30-20:30</td>
+            <td>长安、黄河</td>
+          </tr>
+          <tr>
+            <td>7月13日</td>
+            <td>18:30-20:30</td>
+            <td>宝鸡、阎良、渭南、礼泉、蒲城</td>
+          </tr>
+          <tr>
+            <td>7月14日</td>
+            <td>18:30-20:30</td>
+            <td>北大街、咸阳、富平、北郊</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <hr>
+    </div>
+    
+<div>
+
+</div>
+    <!-- /.container -->
+
+    <!-- 模态框-->
+    <div id="myModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" style="padding:5px 15px;">
+          <h4 style="color:rgb(8, 156, 94);" class="text-center" id="msg"></h4>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
+    <script src="js/vendor/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/vendor/video.js"></script>
+    <script src="js/flat-ui.min.js"></script>
+    <script src="js/application.js"></script>
+    <script src="js/index.js"></script>
+
+  </body>
+</html>

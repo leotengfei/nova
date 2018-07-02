@@ -1,0 +1,6 @@
+CREATE TABLE form_get_current(
+    fid INT PRIMARY KEY AUTO_INCREMENT,
+    mycode VARCHAR(50) NOT NULL DEFAULT '',
+    uname VARCHAR(10) NOT NULL DEFAULT '',
+    utel VARCHAR(32) NOT NULL DEFAULT ''
+)
