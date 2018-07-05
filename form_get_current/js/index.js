@@ -69,6 +69,9 @@ $('#btn-apoint').click(function () {
     var utel = $('#utel').val();
     var mycode = $('#mycode').val();
     var msgcode = $('#msgcode').val();
+    if(!mycode){
+        mycode="默认";
+    }
 
 
     //定义正则
@@ -77,11 +80,6 @@ $('#btn-apoint').click(function () {
     console.log(vali_uname, vali_utel);
     if (!vali_uname || !vali_utel) {
         $('#msg').html('请检查姓名或者电话格式！');
-        $('#myModal').modal('show');
-        return;
-    }
-    if (!mycode) {
-        $('#msg').html('请填写预约号');
         $('#myModal').modal('show');
         return;
     }
@@ -107,7 +105,7 @@ $('#btn-apoint').click(function () {
                         console.log(data.msg);
                         var html = `
                             <h4 style="color:rgb(8, 156, 94);" class="text-center">预约成功！请截屏保存结果</h4>
-                            <img src="img/biaoge.png" alt="" class="chart">
+                            <img src="img/xinchusan.png" alt="" class="chart">
                             `;
                         $('#msg').parent().html(html);
                         $('#myModal').modal('show');
@@ -115,7 +113,6 @@ $('#btn-apoint').click(function () {
                         $('#uname').val('');
                         $('#mycode').val('');
                         $('#utel').val('');
-                        $('#checkcode').val('');
                         $('#msgcode').val('');
 
                     }

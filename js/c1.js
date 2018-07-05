@@ -70,6 +70,7 @@ $(function () {
     selectClass('g1yl','初一','阎良');
     selectClass('g1fp','初一','富平');
     selectClass('g1lq','初一','礼泉');
+    selectClass('g1hz','初一','汉中');
 
 
 

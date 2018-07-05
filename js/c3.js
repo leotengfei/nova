@@ -61,7 +61,7 @@ $(function () {
     selectClass('g1pc','中考','蒲城');
     selectClass('g1bj2','中考','宝鸡');
     selectClass('g1xy','中考','咸阳');
-    //selectClass('g1hh','中考','黄河');
+    selectClass('g1hh','中考','黄河');
     selectClass('g1yl','中考','阎良');
     selectClass('g1fp','中考','富平');
     selectClass('g1lq','中考','礼泉');
