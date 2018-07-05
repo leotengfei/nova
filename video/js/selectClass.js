@@ -2,8 +2,15 @@
  * Created by Administrator on 2017/12/25 0025.
  */
 //请求选课列表信息
-if(sessionStorage['tag']===undefined){
-    sessionStorage['tag']='高中寒假课程';
+console.log(window.location.href.split('=')[1])
+var evd_time=window.location.href.split('=')[1];
+console.log(decodeURI(evd_time));
+if(evd_time){
+    sessionStorage['tag']=decodeURI(evd_time);
+}else{
+    if(sessionStorage['tag']===undefined){
+        sessionStorage['tag']='初中暑假课程';
+    }
 }
 sessionStorage['grade']='all';
 sessionStorage['project']='all';
