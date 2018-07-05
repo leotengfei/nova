@@ -82,7 +82,7 @@ var change_class=function(){//改变页面课程方法
             <div>
                 <img src="img/${data[i].imgUrl}" alt="..." class="img-responsive">
                 <div>
-                    <h3>${data[i].cname}</h3>
+                    <h4 class="hide_word">${data[i].cname}</h4>
                     <p>${data[i].teacher}</p>
                     <p>
                     <input type="hidden" value="${data[i].is_free}"/>
