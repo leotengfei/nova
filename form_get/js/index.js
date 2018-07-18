@@ -190,7 +190,7 @@ $('#btn-apoint').click(function () {
             console.log(data.msg);
             var html = `
                 <h4 style="color:rgb(8, 156, 94);" class="text-center">报名成功！</h4>
-                <h6 style="text-align:center;color:#333;">具体结果请关注无线星空官网wxxk.org</h6>
+                <h6 style="text-align:center;color:#333;">活动进程请关注无线星空官网wxxk.org</h6>
                 <h6 style="text-align:center;color:#333;">或官方微信公众号</h6>
                 <p style="text-align:center;"><img src="img/wx.jpg" style="width:100%;"></p>
                 `;

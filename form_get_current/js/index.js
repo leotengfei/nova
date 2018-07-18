@@ -23,6 +23,13 @@ $('#sendcode').click(function () {
             success: function (data) {
                 if (data.code == 1) {
                     // 电话号码可用
+                    $('#msg').html('短信验证码已经成功发送！请耐心等待！');
+                    $('#myModal').modal('show');
+                    var timeout=setTimeout(function(){
+                        $('#myModal').modal('hide');
+                    },2000)
+
+
                     $('#sendcode').addClass('disabled');
                     $('#sendcode').prop('disabled', true);
                     $.ajax({
@@ -104,8 +111,8 @@ $('#btn-apoint').click(function () {
                     success: function (data) {
                         console.log(data.msg);
                         var html = `
-                            <h4 style="color:rgb(8, 156, 94);" class="text-center">预约成功！请截屏保存结果</h4>
-                            <img src="img/xinchusan.png" alt="" class="chart">
+                            <h4 style="color:rgb(8, 156, 94);" class="text-center">预约成功！</h4>
+                            <p style="color:#333;text-align:center;"></p>
                             `;
                         $('#msg').parent().html(html);
                         $('#myModal').modal('show');
