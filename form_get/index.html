@@ -2,11 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>新初一预约</title>
+    <title>暑期中学生笔记大赛</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0">
-    <!-- Loading Bootstrap -->
-    <link href="css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    <!-- 上传组件 -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/fileinput.css" media="all" rel="stylesheet" type="text/css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" media="all" rel="stylesheet" type="text/css"/>
+    <link href="themes/explorer-fa/theme.min.css" media="all" rel="stylesheet" type="text/css"/>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins/sortable.min.js" type="text/javascript"></script>
+    <script src="js/fileinput.min.js" type="text/javascript"></script>
+    <script src="js/locales/zh.js" type="text/javascript"></script>
+    <script src="themes/explorer-fa/theme.min.js" type="text/javascript"></script>
+    <script src="themes/fa/theme.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" type="text/javascript"></script>
     <!-- Loading Flat UI -->
     <link href="css/flat-ui.min.css" rel="stylesheet">
 
@@ -43,12 +53,10 @@
       <div class="logo">
         <img src="img/logo.png" alt="">
       </div>
-        <h3 class="text-center title"><small style="color:#FFF9C4">《初中三年学习技巧与规划》</small></h3>
+        <h4 class="text-center title">无线星空<small style="color:#FFF9C4">暑期笔记大赛</small></h4>
       <hr/>
       <div style="text-align: center;">
-        <p style="font-size: 16px;">领先新初一，掌握初中三年知识构架</p>
-        <p style="font-size: 16px;">快速适应初中学习节奏，提前了解初中重点知识</p>
-        <p style="font-size: 16px;">凡到场即送《领先新初一知识宝典》一本</p>
+        <p style="font-size: 16px;">最淡的墨水胜过最强的记忆</p>
       </div>
       <div class="login-form">
         <div class="form-group">
@@ -59,7 +67,7 @@
           <input type="text" class="form-control login-field" value="" placeholder="电话" id="utel">
           <label class="login-field-icon fui-document" for="utel"></label>
         </div>
-        <div class="form-group" style="color:rgb(77, 75, 75);">
+        <!-- <div class="form-group" style="color:rgb(77, 75, 75);">
           <div class="row">
               <div class="col-xs-7">
                 <input type="text" class="form-control login-field" value="" placeholder="短信验证码" id="msgcode">
@@ -68,17 +76,35 @@
                 <button type="button" class="btn btn-primary" id="sendcode">发送验证码</button>
               </div>
           </div>
-        </div>
+        </div> -->
         <div class="form-group">
-          <input type="text" class="form-control login-field" value="" placeholder="推荐码(询问工作人员)" id="mycode">
-          <label class="login-field-icon fui-heart" for="mycode"></label>
+          <input type="text" class="form-control login-field" value="" placeholder="校区" id="loca">
+          <label class="login-field-icon fui-heart" for="loca"></label>
         </div>
-        <button type="button" class="btn btn-primary btn-lg btn-block" id="btn-apoint">预约</button>
+        <p style="font-size: 16px;color:red;">参赛笔记不得少于两页,先点击“选择”选取照片,再点击“上传”,确保上传成功</p>
+        <form enctype="multipart/form-data">
+          <div class="file-loading">
+              <input id="file-fr" name="image[]" type="file" multiple>
+          </div>
+        </form>
+        <hr>
+        <button type="button" class="btn btn-primary btn-lg btn-block" id="btn-apoint">报名</button>
       </div>
-      <h5 class="text-center">讲座时间场次安排</h5>
-      <img src="img/biaoge.png" alt="" class="chart">
       <br>
       <hr>
+
+      <div style="text-align: center;">
+        <h6>参与对象</h6>
+        <p style="font-size: 16px;">无线星空暑期班在读初、高中学员</p>
+        <h6>参与时间</h6>
+        <p style="font-size: 16px;">7月20日-8月20日</p>
+        <h6>参与方式</h6>
+        <p style="font-size: 16px;">1.本班老师推荐</p>
+        <p style="font-size: 16px;">2.学生自行报名参与</p>
+        <h6>注意事项：</h6>
+        <p style="font-size: 16px;color:red;">参赛笔记不得少于两页</p>
+
+      </div>
     </div>
     
 <div>
@@ -95,12 +121,6 @@
       </div>
     </div>
 
-
-    <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
-    <script src="js/vendor/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/vendor/video.js"></script>
-    <script src="js/flat-ui.min.js"></script>
     <script src="js/index.js"></script>
 
   </body>
