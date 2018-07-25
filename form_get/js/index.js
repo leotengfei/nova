@@ -19,7 +19,7 @@ $('#file-fr').fileinput({
     uploadUrl: 'https://mokey.club/adminUploads/upload',
     maxFilesNum: 10,
     dropZoneEnabled: false,//是否显示拖拽区域
-    browseClass: "btn btn-primary btn-block",
+    browseClass: "btn btn-inverse btn-block",
     uploadClass:"btn btn-warning btn-block",
     allowedFileExtensions: ['bmp','jpeg','jpg', 'png', 'gif','tiff','webp','svg']
 });
@@ -157,6 +157,8 @@ $('#btn-apoint').click(function () {
     var uname = $('#uname').val();
     var utel = $('#utel').val();
     var loca = $('#loca').val();
+    var grade = $('.myradio input[name="grade"]:checked ').val();
+    console.log(grade)
     var imgArr = arr.join(',')
     console.log(uname,utel,loca)
     console.log(imgArr)
@@ -167,6 +169,11 @@ $('#btn-apoint').click(function () {
     console.log(vali_uname, vali_utel);
     if (!vali_uname || !vali_utel) {
         $('#msg').html('请检查姓名或者电话格式！');
+        $('#myModal').modal('show');
+        return;
+    }
+    if (!grade) {
+        $('#msg').html('请选择年级');
         $('#myModal').modal('show');
         return;
     }
@@ -183,6 +190,7 @@ $('#btn-apoint').click(function () {
             uname: uname,
             utel: utel,
             loca:loca,
+            grade:grade,
             img:imgArr
         },
         url: 'data/insert.php',
