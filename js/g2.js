@@ -58,11 +58,9 @@ $(function () {
     selectClass('g1ca','高二','长安');
     selectClass('g1hh','高二','黄河');
     selectClass('g1jd','高二','交大');
-    selectClass('g1gx2','高一','高新');
+    selectClass('g1gx2','高二','高新');
     selectClass('g1tm','高二','土门');
-    selectClass('g1sd','高一','师大');
-    selectClass('g1yl','高一','阎良');
-    selectClass('g1fp','高一','富平');
+    selectClass('g1sd','高二','师大');
     selectClass('g1wn','高二','渭南');
     selectClass('g1pc','高二','蒲城');
     selectClass('g1xy','高二','咸阳');

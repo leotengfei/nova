@@ -5,10 +5,36 @@
 //初始化姓名，电话判断布尔值
 var vali_uname = false;
 var vali_utel = false;
+var canPhoneUse = false;
 var regname = /^[\u3e00-\u9fa5]{2,5}$/i;
 var regtel = /^[1][3,4,5,7,8,9][0-9]{9}$/i;
 var arr=[];
 var fileSelectNum = 0;
+
+$('#utel').blur(function(){
+    var num = $(this).val()
+    if(!regtel.test(num)){
+        alert('请填入正确电话号码！')
+    }else{
+        $.ajax({
+            type:'POST',
+            url:'data/isphonerepeat.php',
+            data:{
+                utel:num
+            },
+            success:function(res){
+                console.log(res)
+                if(res.code===1){
+                    // 电话号码不重复，可以使用
+                    canPhoneUse = true;
+                }else{
+                    // 电话号码重复，不可以使用
+                    alert('该电话号码已经报过名，请勿重复报名!')
+                }
+            }
+        })
+    }
+})
 
 
 $('#file-fr').fileinput({
@@ -30,6 +56,11 @@ $("#file-fr").on("filebatchselected", function(event, files) {
 $("#file-fr").on("fileuploaded", function (event, data, previewId, index) {
     //console.log(data.response)
     arr=arr.concat(data.response)
+    for(var i=0;i<arr.length;i++){
+        var j=arr[i].split('/').length;
+        arr[i]=arr[i].split('/')[j-1]
+        console.log(arr[i])
+    }
     console.log(arr)
 });
 
@@ -177,8 +208,18 @@ $('#btn-apoint').click(function () {
         $('#myModal').modal('show');
         return;
     }
+    if (!loca) {
+        $('#msg').html('请填写校区');
+        $('#myModal').modal('show');
+        return;
+    }
     if (arr.length===0) {
         $('#msg').html('请上传自己的笔记图片！');
+        $('#myModal').modal('show');
+        return;
+    }
+    if (!canPhoneUse) {
+        $('#msg').html('相同电话号码，请勿重复报名！');
         $('#myModal').modal('show');
         return;
     }
@@ -196,7 +237,8 @@ $('#btn-apoint').click(function () {
         url: 'data/insert.php',
         success: function (data) {
             console.log(data.msg);
-            var html = `
+            if(data.code===1){
+                var html = `
                 <h4 style="color:rgb(8, 156, 94);" class="text-center">报名成功！</h4>
                 <h6 style="text-align:center;color:#333;">活动进程请关注无线星空官网wxxk.org</h6>
                 <h6 style="text-align:center;color:#333;">或官方微信公众号</h6>
@@ -208,6 +250,9 @@ $('#btn-apoint').click(function () {
             $('#uname').val('');
             $('#utel').val('');
             $('#loca').val('');
+            }else{
+                alert('报名失败，请刷新网页后重试！')
+            }
         }
     })
 });

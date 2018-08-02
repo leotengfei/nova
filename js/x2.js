@@ -1,6 +1,14 @@
 /**
  * Created by Administrator on 2017/8/2 0002.
  */
+// 按钮点击事件
+$('#my-btns').on('click','a',function(e){
+    e.preventDefault();
+    console.log($(this).attr('href'))
+    var area_id=$(this).attr('href');
+    $(area_id).fadeIn().siblings().hide();
+
+})
 /**
  * x2页面发送的ajax
  */
