@@ -582,7 +582,7 @@ a.petersmall:hover{
 	margin-top: -150px;
 }
 .teac_intro{
-	padding: 10px 10px 10px 150px;
+	padding: 10px;
 	min-height: 200px;	
 }
 .teac_intro > p {
@@ -594,7 +594,7 @@ a.petersmall:hover{
 	margin-right:20px;
 }
 .teac_level{
-	padding: 10px 20px 10px 150px;
+	padding: 10px 20px;
 	min-height: 200px;
 }
 .teac_level p.fleft span{
@@ -741,6 +741,15 @@ hr.teac_hr{
 	margin-top:10px;
 	opacity: 0.3;
 }
+@media (max-width: 767px) { 
+	.teac_video div.teac_video_img{
+		width: 110px;
+		height: 110px;
+		background: url('../images/video.jpg') no-repeat center center;
+		margin-top:10px;
+		opacity: 0.3;
+	}
+ }
 .teac_video div.teac_video_num{
 	vertical-align: middle;
 	min-width: 70px;
