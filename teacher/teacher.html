@@ -17,9 +17,65 @@
 	<link href="fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
 	<link href="css/animations.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/loading.css">
+	<script src="js/loading.js"></script>
 </head>
 
 <body class="no-trans">
+	<!-- 加载动画 -->
+	<div class="loading_container">
+		<div class="canvas">
+			<div class="scrolling-area">
+				<div class="rabbit-main rabbit-floor rabbit-jump">
+					<div class="rabbit-body-part rabbit-body"></div>
+					<div class="rabbit-body-part rabbit-tail"></div>
+					<div class="rabbit-body-part rabbit-foot">
+						<div class="foot-cover"></div>
+					</div>
+					<div class="rabbit-body-part rabbit-head"></div>
+					<div class="rabbit-body-part rabbit-ear  rabbit-ear-1">
+						<div class="ear-cover"></div>
+					</div>
+					<div class="rabbit-body-part rabbit-ear  rabbit-ear-2">
+						<div class="ear-cover"></div>
+					</div>
+				</div>
+				<div class="egg-outer egg-1">
+					<div class="egg-line egg-line-1"></div>
+					<div class="egg-line egg-line-2"></div>
+					<div class="egg-line egg-line-3"></div>
+					<div class="egg-line egg-line-4"></div>
+					<div class="egg-line egg-line-5"></div>
+				</div>
+				<div class="egg-outer egg-2">
+					<div class="egg-line egg-line-1"></div>
+					<div class="egg-line egg-line-2"></div>
+					<div class="egg-line egg-line-3"></div>
+					<div class="egg-line egg-line-4"></div>
+					<div class="egg-line egg-line-5"></div>
+				</div>
+				<div class="egg-outer egg-3">
+					<div class="egg-line egg-line-1"></div>
+					<div class="egg-line egg-line-2"></div>
+					<div class="egg-line egg-line-3"></div>
+					<div class="egg-line egg-line-4"></div>
+					<div class="egg-line egg-line-5"></div>
+				</div>
+				<div class="egg-outer egg-4">
+					<div class="egg-line egg-line-1"></div>
+					<div class="egg-line egg-line-2"></div>
+					<div class="egg-line egg-line-3"></div>
+					<div class="egg-line egg-line-4"></div>
+					<div class="egg-line egg-line-5"></div>
+				</div>
+			</div>
+			<div class="ground">
+			</div>
+		</div>
+		<div class="loading" id="loading">
+			<h1>LOADING</h1>
+		</div>
+	</div>
 	<!-- scrollToTop -->
 	<div class="scrollToTop">
 		<i class="icon-up-open-big"></i>
@@ -70,13 +126,13 @@
 												<a href="#banner">首页</a>
 											</li>
 											<li>
-												<a href="#gz">高中教师</a>
+												<a href="gz.html">高中教师</a>
 											</li>
 											<li>
-												<a href="#cz">初中教师</a>
+												<a href="cz.html">初中教师</a>
 											</li>
 											<li>
-												<a href="#xx">小学教师</a>
+												<a href="xx.html">小学教师</a>
 											</li>
 											<li>
 												<a href="#contact">联系我们</a>
@@ -119,7 +175,7 @@
 
 	<section class="section secPadding">
 		<div class="container">
-			<div class="teac_pic cube">
+			<div class="teac_pic cube" id="teac_pic">
 				<!-- <img src="images/tl.jpg" width="300" height="300"> -->
 				<!--立方体的六个面-->
 				<div class="plane-front"></div>
@@ -131,14 +187,14 @@
 			</div>
 			<div class="row teac_info">
 				<div class="col-xs-12 col-md-5 col-md-offset-1">
-					<div class="teac_intro">
+					<div class="teac_intro" id="teac_intro">
 						<p>
 							<strong>田露</strong>高中英语</p>
 						<p>韩国庆熙大学国际商务学硕士。英语四六级、雅思高分获得者。专业知识扎实，教学态度严谨，利用有趣味的总结帮助孩子们记住枯燥的内容。善于运用启发式教学方法，调动学生的主观能动性。对于英语学习方法颇有见解，能够循循善诱，提高学生兴趣。</p>
 					</div>
 				</div>
 				<div class="col-xs-12 col-md-5 col-md-offset-1">
-					<div class="teac_level">
+					<div class="teac_level" id="teac_level">
 						<p class="fleft">
 							<span>关注度：33,882</span>
 							<img src="images/heart2.png">
@@ -167,67 +223,8 @@
 					<span class="teac_title_right"></span>
 				</div>
 				<div class="col-xs-12">
-					<div class="row">
-						<div class="teac_course col-xs-12 col-sm-12 col-md-6">
-							<div class="teac_course_img hidden-xs"></div>
-							<div class="teac_course_detail">
-								<p class="teac_course_detail_title">高一英语
-									<span class="course">提高班</span>
-									<span class="season">暑假班</span>
-								</p>
-								<p class="teac_course_detail_body">2018年8月6日至2018年8月18日
-									<br />每天10：10-12:00</p>
-							</div>
-							<div class="teac_course_num">北大街</div>
-						</div>
-						<div class="teac_course col-xs-12 col-sm-12 col-md-6">
-							<div class="teac_course_img hidden-xs"></div>
-							<div class="teac_course_detail">
-								<p class="teac_course_detail_title">高一英语
-									<span class="course">提高班</span>
-									<span class="season">暑假班</span>
-								</p>
-								<p class="teac_course_detail_body">2018年8月6日至2018年8月18日
-									<br />每天10：10-12:00</p>
-							</div>
-							<div class="teac_course_num">北郊</div>
-						</div>
-						<div class="teac_course col-xs-12 col-sm-12 col-md-6">
-							<div class="teac_course_img hidden-xs"></div>
-							<div class="teac_course_detail">
-								<p class="teac_course_detail_title">高一英语
-									<span class="course">提高班</span>
-									<span class="season">暑假班</span>
-								</p>
-								<p class="teac_course_detail_body">2018年8月6日至2018年8月18日
-									<br />每天10：10-12:00</p>
-							</div>
-							<div class="teac_course_num">长安</div>
-						</div>
-						<div class="teac_course col-xs-12 col-sm-12 col-md-6">
-							<div class="teac_course_img hidden-xs"></div>
-							<div class="teac_course_detail">
-								<p class="teac_course_detail_title">高一英语
-									<span class="course">提高班</span>
-									<span class="season">暑假班</span>
-								</p>
-								<p class="teac_course_detail_body">2018年8月6日至2018年8月18日
-									<br />每天10：10-12:00</p>
-							</div>
-							<div class="teac_course_num">咸阳</div>
-						</div>
-						<div class="teac_course col-xs-12 col-sm-12 col-md-6">
-							<div class="teac_course_img hidden-xs"></div>
-							<div class="teac_course_detail">
-								<p class="teac_course_detail_title">高一英语
-									<span class="course">提高班</span>
-									<span class="season">暑假班</span>
-								</p>
-								<p class="teac_course_detail_body">2018年8月6日至2018年8月18日
-									<br />每天10：10-12:00</p>
-							</div>
-							<div class="teac_course_num">咸阳</div>
-						</div>
+					<div class="row" id="course_container">
+						<!-- 课程 -->
 					</div>
 				</div>
 
@@ -239,85 +236,7 @@
 					</div>
 				</div>
 				<div class="col-xs-12">
-					<div class="row">
-						<div class="teac_video col-xs-12 col-sm-12 col-md-6">
-							<div class="teac_video_img"></div>
-							<div class="teac_video_detail">
-								<p class="teac_video_detail_title">高一英语
-									<br class="visible-xs">
-									<span class="course">提高班</span>
-									<span class="season">词汇</span>
-								</p>
-								<p class="teac_video_detail_body">高一英语必考词汇讲解
-									<br />
-									<span class="number">共1节</span>
-								</p>
-							</div>
-							<div class="teac_video_num hidden-xs">观看</div>
-						</div>
-						<div class="teac_video col-xs-12 col-sm-12 col-md-6">
-							<div class="teac_video_img"></div>
-							<div class="teac_video_detail">
-								<p class="teac_video_detail_title">高一英语
-									<br class="visible-xs">
-									<span class="course">提高班</span>
-									<span class="season2">语法</span>
-									<span class="season3">北师大</span>
-								</p>
-								<p class="teac_video_detail_body">高一英语语法讲解，北师大版
-									<br />
-									<span class="number">共2节</span>
-								</p>
-							</div>
-							<div class="teac_video_num hidden-xs">观看</div>
-						</div>
-						<div class="teac_video col-xs-12 col-sm-12 col-md-6">
-							<div class="teac_video_img"></div>
-							<div class="teac_video_detail">
-								<p class="teac_video_detail_title">高一英语
-									<br class="visible-xs">
-									<span class="course">提高班</span>
-									<span class="season">词汇</span>
-								</p>
-								<p class="teac_video_detail_body">高一英语必考词汇讲解
-									<br />
-									<span class="number">共1节</span>
-								</p>
-							</div>
-							<div class="teac_video_num hidden-xs">观看</div>
-						</div>
-						<div class="teac_video col-xs-12 col-sm-12 col-md-6">
-							<div class="teac_video_img"></div>
-							<div class="teac_video_detail">
-								<p class="teac_video_detail_title">高一英语
-									<br class="visible-xs">
-									<span class="course">提高班</span>
-									<span class="season2">语法</span>
-									<span class="season3">北师大</span>
-								</p>
-								<p class="teac_video_detail_body">高一英语语法讲解，北师大版
-									<br />
-									<span class="number">共2节</span>
-								</p>
-							</div>
-							<div class="teac_video_num hidden-xs">观看</div>
-						</div>
-						<div class="teac_video col-xs-12 col-sm-12 col-md-6">
-							<div class="teac_video_img"></div>
-							<div class="teac_video_detail">
-								<p class="teac_video_detail_title">高一英语
-									<br class="visible-xs">
-									<span class="course">提高班</span>
-									<span class="season2">语法</span>
-									<span class="season3">北师大</span>
-								</p>
-								<p class="teac_video_detail_body">高一英语语法讲解，北师大版
-									<br />
-									<span class="number">共2节</span>
-								</p>
-							</div>
-							<div class="teac_video_num hidden-xs">观看</div>
-						</div>
+					<div class="row" id="videos_container">
 					</div>
 				</div>
 
@@ -404,12 +323,12 @@
 	<script type="text/javascript" src="plugins/jquery.min.js"></script>
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="plugins/modernizr.js"></script>
-	<script type="text/javascript" src="plugins/isotope/isotope.pkgd.min.js"></script>
 	<script type="text/javascript" src="plugins/jquery.backstretch.min.js"></script>
 	<script type="text/javascript" src="plugins/jquery.appear.js"></script>
 
 	<!-- Custom Scripts -->
 	<script type="text/javascript" src="js/custom.js"></script>
+	<script src="js/teacher.js"></script>
 	<!--baidu tongji百度统计开始-->
 	<script>
 		var _hmt = _hmt || [];
