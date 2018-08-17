@@ -148,11 +148,6 @@ a:active {
 .large {
 	font-size: 18px;
 }
-img {
-	display: block;
-	max-width: 100%;
-	height: auto;
-}
 section#cz {
 	background-color: #ffffff;
 }
@@ -537,6 +532,7 @@ a.petersmall_active{
   border-radius: 5px 5px 0 0;
   overflow: hidden;
   background-color: #abdbd1;
+  text-align: center;
 }
 .team-item__img > img {
   border-radius: 5px;
@@ -677,7 +673,8 @@ hr.teac_hr{
 	margin-top:10px;
 	background: url('../images/book.png') no-repeat center center;
 }
-.teac_course div.teac_course_num{
+.teac_course .teac_course_num{
+	display: inline-block;
 	vertical-align: middle;
 	min-width: 85px;
 	border: 1px solid #00aff0;
@@ -691,9 +688,10 @@ hr.teac_hr{
 	padding:15px 5px;
 
 }
-.teac_course div.teac_course_num:hover{
+.teac_course .teac_course_num:hover{
 	background: #00aff0;
 	color:#fff;
+	text-decoration: none;
 }
 .teac_course div.teac_course_detail{
 	min-width: 200px;
@@ -771,7 +769,8 @@ hr.teac_hr{
 		height: 110px;
 		background: url('../images/video.jpg') no-repeat center center;
 		margin-top:10px;
-		opacity: 0.3;
+		background-size: contain;
+		opacity: 0.8;
 	}
  }
 .teac_video div.teac_video_num{
@@ -1574,3 +1573,94 @@ transition: 1s;
 	margin-left: auto;
 	margin-right: auto;
   }
+/* video.js */
+.vjs-paused .vjs-big-play-button,
+.vjs-paused.vjs-has-started .vjs-big-play-button {
+    display: block;
+}
+.video-js .vjs-big-play-button{
+    font-size: 2.5em;
+    line-height: 2.3em;
+    height: 2.5em;
+    width: 2.5em;
+    -webkit-border-radius: 2.5em;
+    -moz-border-radius: 2.5em;
+    border-radius: 2.5em;
+    background-color: #73859f;
+    background-color: rgba(115,133,159,.5);
+    border-width: 0.15em;
+    margin-top: -1.25em;
+    margin-left: -1.75em;
+}
+/* 中间的播放箭头 */
+.vjs-big-play-button .vjs-icon-placeholder {
+    font-size: 1.63em;
+}
+/* 加载圆圈 */
+.vjs-loading-spinner {
+    font-size: 2.5em;
+    width: 2em;
+    height: 2em;
+    border-radius: 1em;
+    margin-top: -1em;
+    margin-left: -1.5em;
+}
+/* 点击屏幕播放/暂停 */
+.video-js.vjs-playing .vjs-tech {
+    pointer-events: auto;
+}
+/* 显示当前播放时间 */
+.video-js .vjs-time-control{display:block;}
+.video-js .vjs-remaining-time{display: none;}
+
+#videoModal .modal-body{
+	padding:0;
+	position: relative;
+	overflow: hidden;
+}
+#videoPlayList{
+	position: absolute;
+	top:0;
+	right:-30%;
+	width:30%;
+	height:100%;
+	background-color:rgba(58, 58, 58, 0.75);
+	transition: all .25s ease-in;
+}
+#videoPlayList .list-group-item{
+	background-color:#626262;
+	color:#fff;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+#videoPlayList .list-group-item:hover{
+	background-color:#222;
+}
+#videoPlayList .active{
+	color:#FFC400;
+	border:1px solid #FFC400;
+}
+#videoPlayList>div.play_btn{
+	width:30px;
+	height:100px;
+	background:url(../images/arro2.png) no-repeat center center;
+	background-size: contain;
+	background-color:rgba(58, 58, 58, 0.75);
+	position: absolute;
+	top:50%;
+	margin-top:-50px;
+	left: -30px;
+    border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	cursor: pointer;
+}
+#videoPlayList>div.btnOpen{
+	background:url(../images/arro1.png) no-repeat center center;
+	background-size: contain;
+	background-color:rgba(58, 58, 58, 0.75);
+}
+#videoPlayList>div.list-group{
+	overflow-y: scroll;
+	height:100%;
+}

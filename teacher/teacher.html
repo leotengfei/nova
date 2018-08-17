@@ -16,9 +16,72 @@
 	<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
 	<link href="fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
 	<link href="css/animations.css" rel="stylesheet">
+	<!-- video.js -->
+	<link href="https://vjs.zencdn.net/7.1.0/video-js.css" rel="stylesheet">
+	<!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+	<script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
 	<link href="css/style.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/loading.css">
 	<script src="js/loading.js"></script>
+	<!-- 百度地图 -->
+	<style>
+		/* 百度地图css */
+
+		input[type=text] {
+			padding: 1px 0;
+			border: 2px solid #ddd;
+			margin: 0;
+			min-height: 0;
+		}
+
+		#allmap {
+			height: 500px;
+			width: 100%;
+			overflow: hidden;
+		}
+
+		table,
+		tr,
+		td {
+			box-sizing: content-box;
+		}
+
+
+		dl,
+		dt,
+		dd,
+		ul,
+		li {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		dt {
+			font-size: 14px;
+			font-family: "微软雅黑";
+			font-weight: bold;
+			border-bottom: 1px dotted #000;
+			padding: 5px 0 5px 5px;
+			margin: 5px 0;
+		}
+
+		dd {
+			padding: 5px 0 0 5px;
+		}
+
+		li {
+			line-height: 20px;
+		}
+
+		.tangram-suggestion-main {
+			z-index: 1060 !important;
+		}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=weM1F3oLrGszv0SQlxQaGTDlwhCoGVRn"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+	<link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+
 </head>
 
 <body class="no-trans">
@@ -123,7 +186,7 @@
 									<div class="collapse navbar-collapse scrollspy smooth-scroll" id="navbar-collapse-1">
 										<ul class="nav navbar-nav navbar-right">
 											<li class="active">
-												<a href="#banner">首页</a>
+												<a href="index.html">首页</a>
 											</li>
 											<li>
 												<a href="gz.html">高中教师</a>
@@ -239,16 +302,63 @@
 					<div class="row" id="videos_container">
 					</div>
 				</div>
-
-
-
-
-
-
 			</div>
 		</div>
 
 	</section>
+
+	<!-- 地图模态框 -->
+	<div id="mapModal" class="modal bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="gridSystemModalLabel">校区地图</h4>
+				</div>
+				<div class="modal-body">
+					<div id="allmap"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 视频模态框 -->
+	<div id="videoModal" class="modal bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close_video">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">授课视频</h4>
+				</div>
+				<div class="modal-body">
+					<video id="my-video" class="video-js vjs-big-play-centered vjs-fluid" controls preload="none" width="1920" height="1080"
+					    data-setup="{}">
+						<source id="videoMP4" src="http://owvvfr97r.bkt.clouddn.com/2017101%E8%8B%B1%E8%AF%AD1%E9%82%93%E4%BA%9A%E7%A3%8A.mp4" type="video/mp4">
+						<p class="vjs-no-js">
+							To view this video please enable JavaScript, and consider upgrading to a web browser that
+							<a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+						</p>
+					</video>
+					<div id="videoPlayList">
+						<div class="play_btn"></div>
+						<div class="list-group">
+							<a href="#" class="list-group-item active">
+								1.导数定义和一个妙算公式
+							</a>
+							<a href="#" class="list-group-item">2.三角换元求函数值域</a>
+							<a href="#" class="list-group-item">3.角余弦定理及其应用</a>
+							<a href="#" class="list-group-item">4.数列求和中的一个小技巧</a>
+							<a href="#" class="list-group-item">5.圆锥曲线中的一个小结论</a>
+							<a href="#" class="list-group-item">6.双绝对值不等式</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<!-- section start -->
 	<section class="hero-caption secPadding">
@@ -273,7 +383,7 @@
 				<div class="space"></div>
 				<div class="row">
 					<div class="col-sm-6 peterpadding">
-						<p align="center">
+						<p class="text-center">
 							<img src="images/qc.jpg" width="160">
 						</p>
 					</div>
@@ -325,6 +435,8 @@
 	<script type="text/javascript" src="plugins/modernizr.js"></script>
 	<script type="text/javascript" src="plugins/jquery.backstretch.min.js"></script>
 	<script type="text/javascript" src="plugins/jquery.appear.js"></script>
+	<!-- video.js -->
+	<script src="https://vjs.zencdn.net/7.1.0/video.js"></script>
 
 	<!-- Custom Scripts -->
 	<script type="text/javascript" src="js/custom.js"></script>
