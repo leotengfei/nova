@@ -32,9 +32,13 @@ var refresh = function (sort) {
                 }
                 str += `
         <div class="col-xs-6 col-sm-3">
-        <a class="team__item" href="teacher.html?tid=${arr[i].id}&subject=${arr[i].subject}">
+        <a class="team__item set_9_btn-corner" href="teacher.html?tid=${arr[i].id}&subject=${arr[i].subject}">
+            <span class="line1 bord" style="background-color:${colorArr[i]}"></span>
+            <span class="line2 bord" style="background-color:${colorArr[i]}"></span>
+            <span class="line3 bord" style="background-color:${colorArr[i]}"></span>
+            <span class="line4 bord" style="background-color:${colorArr[i]}"></span>
             <div class="team-item__img" style="background-color:${colorArr[idx]}">
-                <img data-original="${arr[i].simg}" width="200" class="lazy" alt="${arr[i].tname+arr[i].dept+arr[i].subject}">
+                <img data-original="${arr[i].simg}" width="200" class="lazy img-responsive" alt="${arr[i].tname+arr[i].dept+arr[i].subject}">
             </div>
             <h4>${arr[i].tname}
                 <span>${arr[i].dept}${arr[i].subject}</span>
@@ -50,6 +54,8 @@ var refresh = function (sort) {
                             <li>
                                 <img src="images/star.png">5.5</li>
                         </ul>
+                        <p class="hidden-xs text-left card_intro">${arr[i].introduction}</p>
+                            <div class="clearfix"></div>
                         <div class="clearfix"></div>
                     </div>
                 </div>

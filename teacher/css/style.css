@@ -493,7 +493,133 @@ a.petersmall_active{
 	opacity: 1 !important;
 	filter: alpha(opacity=100) !important;
 }
+/* 教师卡片边框 */
+.set_9_btn-corner {
+    padding: 0 25px;
+    border: 0;
+    background: 0 0;
+    color: #333;
+    width: auto;
+    float: left;
+    position: relative;
+    cursor: pointer;
+}
+
+.set_9_btn-corner span.bord {
+    position: absolute;
+    background-color: #ABDBD1;
+    display: block;
+    transition: all 200ms
+}
+
+.set_9_btn-corner .line1,
+.set_9_btn-corner .line3 {
+    height: 2px;
+    width: 20px
+}
+
+.set_9_btn-corner .line2,
+.set_9_btn-corner .line4 {
+    height: 20px;
+    width: 2px
+}
+
+.set_9_btn-corner .line1,
+.set_9_btn-corner .line2 {
+    top: 0;
+    right: 0
+}
+
+.set_9_btn-corner .line3,
+.set_9_btn-corner .line4 {
+    bottom: 0;
+    left: 0
+}
+
+.set_9_btn-corner.reverse .line1,
+.set_9_btn-corner.reverse .line3 {
+    width: 100%
+}
+
+.set_9_btn-corner.reverse .line2,
+.set_9_btn-corner.reverse .line4 {
+    height: 100%
+}
+
+.set_9_btn-corner:hover,
+.set_9_btn-corner:active {
+    background-color: transparent;
+    color: #333
+}
+
+.set_9_btn-corner:hover .line1,
+.set_9_btn-corner:active .line1,
+.set_9_btn-corner:hover .line3,
+.set_9_btn-corner:active .line3 {
+    width: 100%
+}
+
+.set_9_btn-corner:hover .line2,
+.set_9_btn-corner:active .line2,
+.set_9_btn-corner:hover .line4,
+.set_9_btn-corner:active .line4 {
+    height: 100%
+}
+
+.set_9_btn-corner:hover.reverse .line1,
+.set_9_btn-corner:active.reverse .line1,
+.set_9_btn-corner:hover.reverse .line3,
+.set_9_btn-corner:active.reverse .line3 {
+    width: 20px
+}
+
+.set_9_btn-corner:hover.reverse .line2,
+.set_9_btn-corner:active.reverse .line2,
+.set_9_btn-corner:hover.reverse .line4,
+.set_9_btn-corner:active.reverse .line4 {
+    height: 20px
+}
+
+
+@media (min-width: 767px) {
+	.team__item {
+		text-align: center;
+		min-height: 197px;
+		max-height: 197px;
+		overflow: hidden;
+		display: block;
+		margin-bottom: 40px;
+		background-color: #fff;
+		padding: 0px;
+		border-radius: 3px;
+		box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+		cursor: pointer;
+		transition: all 0.4s;
+	  }
+	  .team__item:hover .team-item__img {
+		border-bottom: 0;
+		border-radius: 0 0 50px 50px;
+		height: 81px;
+		display: inline-block;
+		overflow: hidden;
+		width: 109px;
+		transition: .4s
+	  }
+	  .team-item__img {
+		margin-bottom: 6px;
+		border-radius: 5px 5px 0 0;
+		background-color: #abdbd1;
+		text-align: center;
+		height: 150px;
+		overflow: hidden;
+		width: 100%;
+		transition: .4s;
+		display: inline-block;
+		vertical-align: middle
+	  }
+}
 .team__item {
+  text-align: center;
   display: block;
   margin-bottom: 40px;
   background-color: #fff;
@@ -503,6 +629,21 @@ a.petersmall_active{
   cursor: pointer;
   transition: all 0.4s;
 }
+.team__item:hover{
+	text-decoration: none;
+}
+.team__item p.card_intro{
+	padding:0 15px;
+	color:#666;
+	line-height: 20px;
+	height:60px;
+	overflow-y: scroll;
+	-ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+}
+.team__item p.card_intro::-webkit-scrollbar {
+    display: none;
+}
 .team__item:hover {
 	display:block;
 	text-decoration: none;
@@ -511,8 +652,8 @@ a.petersmall_active{
 	border-radius: 3px;
 	box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 	cursor: pointer;
-	transform: translate3d(0,-5px,0);
-	opacity: 0.7;
+	/* transform: translate3d(0,-5px,0); */
+	/* opacity: 0.7; */
 	transition: all 0.4s;
   }
 .team__item > h4{
@@ -530,9 +671,13 @@ a.petersmall_active{
 .team-item__img {
   margin-bottom: 6px;
   border-radius: 5px 5px 0 0;
-  overflow: hidden;
   background-color: #abdbd1;
   text-align: center;
+  overflow: hidden;
+  width: 100%;
+  transition: .4s;
+  display: inline-block;
+  vertical-align: middle
 }
 .team-item__img > img {
   border-radius: 5px;
