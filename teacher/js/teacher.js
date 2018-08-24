@@ -15,7 +15,6 @@ $.ajax({
         subject: subject
     },
     success: function (res) {
-        $('.loading_container').fadeOut();
         console.log(res)
         // 教师头像
         $('#teac_pic').css('background', 'url(' + res.bimg + ')');

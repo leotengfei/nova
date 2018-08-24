@@ -5,8 +5,6 @@ $.ajax({
     type: 'POST',
     url: 'https://mokey.club/wxxkTeacher/indexTeacher',
     success: function (res) {
-        // $('.loading_container').css('display','none');
-        $('.loading_container').fadeOut();
         // console.log(res.data.gao)
         var gaoArr = res.data.gao;
         var chuArr = res.data.zhong;

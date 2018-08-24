@@ -16,7 +16,6 @@ var refresh = function (sort) {
             sort: sort
         },
         success: function (res) {
-            $('.loading_container').fadeOut();
             pagecount = Math.ceil(res.num / 12)
             $("#pager").pager({
                 pagenumber: pagenumber,

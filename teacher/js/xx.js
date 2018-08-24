@@ -5,7 +5,6 @@ var sort_way = 'hot'; //默认按照热度排序
 
 var refresh = function (sort) {
     // 排序方式，
-    $('.loading_container').show();
     $.ajax({
         type: 'POST',
         url: 'https://mokey.club/wxxkTeacher/teacherDept',
@@ -16,7 +15,6 @@ var refresh = function (sort) {
             sort: sort
         },
         success: function (res) {
-            $('.loading_container').fadeOut();
             pagecount = Math.ceil(res.num / 12)
             $("#pager").pager({
                 pagenumber: pagenumber,
