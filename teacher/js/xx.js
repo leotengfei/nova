@@ -46,11 +46,11 @@ var refresh = function (sort) {
                     <div class="team-item__contact">
                         <ul>
                             <li>
-                                <img src="images/xin.png">37526</li>
+                                <img src="images/xin.png">${arr[i].hot}</li>
                             <li>
-                                <img src="images/eye.png">7101</li>
+                                <img src="images/eye.png">${arr[i].student_num}</li>
                             <li>
-                                <img src="images/star.png">5.5</li>
+                                <img src="images/star.png">${arr[i].star}</li>
                         </ul>
                         <p class="hidden-xs text-left card_intro">${arr[i].introduction}</p>
                             <div class="clearfix"></div>

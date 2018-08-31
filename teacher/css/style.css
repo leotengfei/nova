@@ -1809,3 +1809,54 @@ transition: 1s;
 	overflow-y: scroll;
 	height:100%;
 }
+.tip{
+	text-align: center;
+	font-size: 14px;
+	color:#ccc;
+}
+
+
+/* 点赞css */
+#player-praises {
+	width: 72px;
+	height: 337px;
+	position: fixed;
+	right:30px;
+	bottom:50px;
+	margin-left: -36px;
+  }
+  
+  #player-praises .bubble {
+	width: 100%;
+	height: 280px;
+	position: relative;
+  }
+  
+  #player-praises svg {
+	position: absolute;
+  }
+  
+  #player-praises .praises {
+	position: relative;
+	top: -15px;
+	display: block;
+	overflow: hidden;
+	padding: 15px;
+  }
+  
+  #player-praises .praises span {
+	width: 42px;
+	height: 42px;
+	border-radius: 50%;
+	display: block;
+	background: #f52972 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAAqCAYAAAAu9HJYAAABOUlEQVRYhe2XsUoDQRRFzyzplKSx0U40leQLVCzEWrBK7T/4XX6BlSGVIKSwFBRLRRE70WsTMcqs+3ZnkhV5B6bYmTd3z86wwy44juP8fSTVaUeS7iTdSzr+rbYtyVVJL/riVdJmimSR91EAGAJLM9cd4DAlcB6Se5G+fkpgbskC2I70L6eG5mQfWIn0P6SE5pY8Kem/SQnNKTkEDkrGLlOCg7Ww4rgYACOgG5sKrAPPkbHHEKoV6koWQO/HUB84BdasWTNchxA2qorqSBbABNhqIFMuYFjKOpI94CnJKCZgkGz64uxO20JoupKf85K/EOa5kgulbcl3S1HbkleWorYlR5YilzRwbilqU/J22irpNLzBDulnpGmrobmkaZsqGGfI+I6kIOlC6bxJOpPUzf5L6ziO4zj/nw+Y7wb0HfppjAAAAABJRU5ErkJggg==) no-repeat;
+	box-shadow: 1px 4px 14px rgba(0,0,0,0.6);
+  }
+  
+  #player-praises .praises:hover span {
+	background-color: #fa4179;
+  }
+  
+  #player-praises .praises:active span {
+	background-color: #d81e60;
+  }

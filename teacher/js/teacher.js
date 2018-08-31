@@ -26,29 +26,35 @@ $.ajax({
             <p>${res.introduction}</p>`
         );
         // 教师信息
-        $('#teac_level').html(
-            `
-            <p class="fleft">
-				<span>关注度：${res.hot}</span>
-				<img src="images/heart2.png">
-			</p>
-			<p class="fclear"></p>
-			<p class="fleft">
-				<span>教师星级：</span>
-				<img src="images/star2.png">
-				<img src="images/star2.png">
-				<img src="images/star2.png">
-				<img src="images/star2.png">
-				<img src="images/star2.png">
-			</p>
-			<p class="fclear"></p>
-			<p>教师教龄：7年</p>
-			<p>授课时长：33,882小时</p>
-			<p>教授学生：7,233人次</p>
-            `
-        )
+        var teacher_info=`
+                        <p class="fleft">
+                            <span id="teacher_hot">关注度：${res.hot}</span>
+                            <img src="images/heart2.png">
+                        </p>
+                        <p class="fclear"></p>
+                        <p class="fleft">
+                            <span>教师星级：</span>`
+                        var star='';
+                            for(var a=0;a<res.star;a++){
+                                star+="<img src='images/star_d.png'>"
+                            }
+                            for(var b=0;b<6-res.star;b++){
+                                star+="<img src='images/star2.png'>"
+                            }
+        teacher_info+=star;    
+        teacher_info+=`
+                        </p>
+                        <p class="fclear"></p>
+                        <p>教师教龄：${res.year}年</p>
+                        <p>授课时长：${res.teach_num}小时</p>
+                        <p>教授学生：${res.student_num}人次</p>
+                        `
+        $('#teac_level').html(teacher_info)
         var course = '';
         var arr = ['course', 'season', 'course'];
+        if(res.course.length===0){
+            course="<p class='tip'>暂时没有课程...</p>"
+        }else{
         for (var i = 0; i < res.course.length; i++) {
             course += `
             <div class="teac_course col-xs-12 col-sm-12 col-md-6">
@@ -73,36 +79,41 @@ $.ajax({
 				</div>
             `
         }
+        }
         $('#course_container').html(course)
         var video_html = '';
         console.log(res.video)
-        for (var j = 0; j < res.video.length; j++) {
-            video_html += `
-            <div class="teac_video col-xs-12 col-sm-12 col-md-6">
-                <a href="${res.video[j].cid}">
-                <div class="teac_video_img" style="background-image:url(http://wxxk.org/video/img/${res.video[j].imgUrl})">
-                    <div class="icon_play"></div>
+        if(res.video.length===0){
+            video_html="<p class='tip'>暂时没有视频...</p>"
+        }else{
+            for (var j = 0; j < res.video.length; j++) {
+                video_html += `
+                <div class="teac_video col-xs-12 col-sm-12 col-md-6">
+                    <a href="${res.video[j].cid}">
+                    <div class="teac_video_img" style="background-image:url(http://wxxk.org/video/img/${res.video[j].imgUrl})">
+                        <div class="icon_play"></div>
+                    </div>
+                    <div class="teac_video_detail">
+                        <p class="teac_video_detail_title">${res.video[j].cname}
+                            <br class="visible-xs">`
+                var vtagsArr = res.video[j].tag
+                var vtagsHtml = '';
+                for (var y = 0; y < vtagsArr.length; y++) {
+                    vtagsHtml += `<span class="${arr[y]}">${vtagsArr[y]}</span>`
+                }
+                video_html += vtagsHtml;
+                video_html += `
+                        </p>
+                        <p class="teac_video_detail_body">${res.video[j].intro}
+                            <br />
+                            <span class="number">共${res.video[j].total}节</span>
+                        </p>
+                    </div>
+                    <div class="teac_video_num hidden-xs">观看</div>
+                    </a>
                 </div>
-				<div class="teac_video_detail">
-					<p class="teac_video_detail_title">${res.video[j].cname}
-                        <br class="visible-xs">`
-            var vtagsArr = res.video[j].tag
-            var vtagsHtml = '';
-            for (var y = 0; y < vtagsArr.length; y++) {
-                vtagsHtml += `<span class="${arr[y]}">${vtagsArr[y]}</span>`
+                `;
             }
-            video_html += vtagsHtml;
-            video_html += `
-					</p>
-					<p class="teac_video_detail_body">${res.video[j].intro}
-						<br />
-						<span class="number">共${res.video[j].total}节</span>
-					</p>
-				</div>
-                <div class="teac_video_num hidden-xs">观看</div>
-                </a>
-			</div>
-            `;
         }
         $('#videos_container').html(video_html);
     }
@@ -229,3 +240,159 @@ $('#videoPlayList>div.list-group').on('click','a',function(e){
     video.load();
     video.play();
 })
+
+
+// 点赞js
+
+$('#player-praises>a.praises').click(function(e){
+    e.preventDefault();
+    // console.log(1)
+    $.ajax({
+        url:'https://mokey.club/wxxkTeacher/teacherLike',
+        type:'POST',
+        data:{
+            uid:1,
+            tid:tid
+        },
+        success:function(res){
+            console.log(res)
+            if(res.code===200){
+                // 点赞成功，更新热度
+                $('#teacher_hot').html("关注度："+res.num)
+            }else{
+                alert('该老师点赞量已经达到上限，明天再来哦！')
+            }
+        }
+    })
+})
+
+'use strict';
+(function($) {
+
+        // 最大心
+    var heartMax = 32,
+        // 最小心
+        heartMin = 26,
+        // 心的最多数量
+        heartMaxNum = 80,
+        // 心颜色数组
+        colors = ["FF5D31", "FF7043", "FF9800", "F9A825", "F57F17", "FFCA28"],
+        // 心svg图形
+        svgString = '<svg viewBox="-1 -1 27 27"><path class="svgpath" style="fill:$fill$;stroke: #FFF; stroke-width: 1px;" d="M11.29,2C7-2.4,0,1,0,7.09c0,4.4,4.06,7.53,7.1,9.9,2.11,1.63,3.21,2.41,4,3a1.72,1.72,0,0,0,2.12,0c0.79-.64,1.88-1.44,4-3,3.09-2.32,7.1-5.55,7.1-9.94,0-6-7-9.45-11.29-5.07A1.15,1.15,0,0,1,11.29,2Z"/></svg>',
+
+        /**
+         * [心样式及动画构造]
+         * @param  {[object]} element [装心的容器]
+         * @return {}
+         */
+        heartTemplate = function(element) {
+            // 容器宽度
+            this.width = element.width(), 
+            // 容器高度
+            this.height = element.height();
+            // 从[svgString]中取得图形随机色值
+            var _color = colors[Math.floor(Math.random() * colors.length)],
+                // 添加进svgString并取得dom
+                _svgDom = $(svgString.replace("$fill$", "#" + _color));
+
+            // 赋值svgDom
+            this.$el = _svgDom, 
+            // 初始X坐标（容器宽度的一半减去10）
+            this.startX = this.width / 2 - 10, 
+            // 初始Y坐标
+            this.y = 0, 
+            
+            this.pos = Math.random() * Math.PI, 
+            this.hz = Math.random() * 20 + 10, 
+            this.zf = Math.random() * 15 + 10,
+            // 随机初始透明度值
+            this.opacityStart = Math.random() * 10 + 10,
+            
+            // 设置svg样式
+            this.setStyle(), 
+
+            // 插入容器
+            element.append(_svgDom), 
+
+            // 运行动画
+            this.run()
+        };
+
+        /**
+         * [设置样式]
+         */
+    heartTemplate.prototype.setStyle = function() {
+
+        var _left = this.startX + Math.sin(this.pos + this.y / this.hz) * this.zf,
+            _opactiy = 1 - Math.max((this.y - this.opacityStart) / (this.height - this.opacityStart), 0),
+            _size = Math.min(this.y * 2 / this.height * (heartMax - heartMin) + heartMin, heartMax);
+
+        this.$el.css({
+            left: _left,
+            bottom: this.y,
+            opacity: _opactiy
+        }).width(_size).height(_size)
+    }, 
+    /**
+     * [动画函数]
+     * @return {}
+     */
+    heartTemplate.prototype.run = function() {
+        var that = this,
+            delay = Math.random() * 20 + 10,
+            now = $.now(),
+            timer = setInterval(function() {
+                var curNow = $.now();
+                that.y += Math.round((curNow - now) / delay), 
+                now = curNow, 
+
+                // 设置样式
+                that.setStyle(), 
+
+                // 如果y值大于等于容器高度则移除svgDom并且清除定时器
+                that.y >= that.height && (that.$el.remove(), clearTimeout(timer))
+            }, delay)
+    };
+
+    /**
+     * [点赞]
+     * @return {}
+     */
+    var praises = function() {
+        this.$root = $("#player-praises"), 
+        this.$inner = this.$root.find(".bubble");
+        var broswer = 0;
+        try {
+            broswer = navigator.userAgent.match(/MSIE (\d+)/i)[1]
+        } catch (n) {
+            broswer = 0
+        }
+        broswer == 0 ? (this.$root.show(), this.initEvent()) : this.$root.hide()
+    };
+
+    // 插入Dom
+    praises.prototype.add = function(num) {
+        num = num || 1;
+        if (this.$inner.find("svg").length + num > heartMaxNum) return;
+        for (var i = num; i > 0; i--)
+            new heartTemplate(this.$inner)
+    },
+
+    // 事件绑定
+    praises.prototype.initEvent = function() {
+        var that = this;
+
+        this.$root.find(".praises").on("click", function(event) {
+            event.preventDefault(), 
+            that.add()
+        })
+
+        this.$root.on("praise:receive", function(e) {
+            that.add(e.num)
+        })
+    }
+
+    // 执行点赞方法
+    new praises();
+
+})(jQuery)
