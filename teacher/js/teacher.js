@@ -256,14 +256,24 @@ $('#player-praises>a.praises').click(function(e){
         },
         success:function(res){
             console.log(res)
-            if(res.code===200){
+            if(res.msg==='ok'){
                 // 点赞成功，更新热度
                 $('#teacher_hot').html("关注度："+res.num)
             }else{
                 alert('该老师点赞量已经达到上限，明天再来哦！')
+                $('#player-praises>a.praises').popover({
+                    content:'该老师今日点赞量已经达到上限，明天再来哦！',
+                    placement:'left'
+                })
             }
         }
     })
+})
+
+
+// 兼容iphone  hover事件
+$('#teac_pic').mouseover(function(){
+    $('#teac_pic').addClass('cube_active')
 })
 
 'use strict';

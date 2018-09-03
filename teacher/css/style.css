@@ -6,20 +6,33 @@
 	margin:auto;
 	background:url(../images/tl.jpg);
 	transform-style:preserve-3d;/*定义3d转换*/
+	-webkit-transform-style: preserve-3d;
 	animation:rotate 15s infinite pause;/*animation：动画名字 时长 无限循环 线性速度（匀速）*/
+	-webkit-animation:rotate 15s infinite pause;
 	}
 .cube:hover{
 	transform-style:preserve-3d;/*定义3d转换*/
+	-webkit-transform-style: preserve-3d;
 	animation:rotate 15s infinite;/*animation：动画名字 时长 无限循环 线性速度（匀速）*/
+	-webkit-animation:rotate 15s infinite;
 	cursor: pointer;
+}
+.cube_active{
+	transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    animation: rotate 15s infinite;
+    -webkit-animation: rotate 15s infinite;
+    cursor: pointer;
 }
 	/*动画效果，也可以以百分百的方式。默认逆时针的方向旋转。*/
 	@keyframes rotate{
 	from{
 	transfrom: rotateY(0deg) rotateX(0deg);
+	-webkit-transform: rotateY(0deg) rotateX(0deg);
 	}
 	to{
 	transform: rotateY(360deg) rotateX(360deg);
+	-webkit-transform: rotateY(360deg) rotateX(360deg);
 	}
 	}
 	
@@ -1848,6 +1861,7 @@ transition: 1s;
 	width: 42px;
 	height: 42px;
 	border-radius: 50%;
+	background-color: #fff;
 	display: block;
 	background: #f52972 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAAqCAYAAAAu9HJYAAABOUlEQVRYhe2XsUoDQRRFzyzplKSx0U40leQLVCzEWrBK7T/4XX6BlSGVIKSwFBRLRRE70WsTMcqs+3ZnkhV5B6bYmTd3z86wwy44juP8fSTVaUeS7iTdSzr+rbYtyVVJL/riVdJmimSR91EAGAJLM9cd4DAlcB6Se5G+fkpgbskC2I70L6eG5mQfWIn0P6SE5pY8Kem/SQnNKTkEDkrGLlOCg7Ww4rgYACOgG5sKrAPPkbHHEKoV6koWQO/HUB84BdasWTNchxA2qorqSBbABNhqIFMuYFjKOpI94CnJKCZgkGz64uxO20JoupKf85K/EOa5kgulbcl3S1HbkleWorYlR5YilzRwbilqU/J22irpNLzBDulnpGmrobmkaZsqGGfI+I6kIOlC6bxJOpPUzf5L6ziO4zj/nw+Y7wb0HfppjAAAAABJRU5ErkJggg==) no-repeat;
 	box-shadow: 1px 4px 14px rgba(0,0,0,0.6);
@@ -1860,3 +1874,47 @@ transition: 1s;
   #player-praises .praises:active span {
 	background-color: #d81e60;
   }
+
+
+  /* banner文字样式 */
+  @media (min-width: 768px) { 
+    #banner_title>h1{
+		font-size:56px;
+	}
+	#banner_title>h3{
+		font-size: 42px;
+	}
+}
+
+/* Small devices (tablets, up to 768px) */
+@media (max-width: 768px) { 
+	#banner_title>h1{
+		font-size:32px;
+		margin-top:100px;
+	}
+	#banner_title>h3{
+		font-size: 20px;
+	}
+	#player-praises .bubble {
+		height: 50px;
+	}
+	#player-praises {
+		width: 72px;
+		height: 68px;
+		position: fixed;
+		right: 10px;
+		bottom: 50px;
+		margin-left: -36px;
+	}
+	.caption-data {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: 20;
+		text-align: center;
+		-webkit-transform: translate(-50%,-50%);
+		-moz-transform: translate(-50%,-50%);
+		transform: translate(-50%,-50%);
+		width: 90%;
+	}
+}
