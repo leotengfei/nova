@@ -901,13 +901,14 @@ hr.teac_hr{
 	float: left;
 }
 .teac_video div.teac_video_img{
-	width: 130px;
+	width: 115px;
 	height: 80px;
 	background: url('../images/video.jpg') no-repeat center center;
 	background-size:contain;
 	margin-top:10px;
 	opacity: 0.8;
 	position: relative;
+	background-color: #2F2F2F;
 }
 .icon_play{
 	position: absolute;
