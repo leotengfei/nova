@@ -9,9 +9,11 @@ $.ajax({
         var gaoArr = res.data.gao;
         var chuArr = res.data.zhong;
         var xiaoArr = res.data.xiao;
+        var VIPArr = res.data.VIP;
         var gaoHtml = "";
         var chuHtml = "";
         var xiaoHtml = "";
+        var VIPHtml = "";
         var changeHtml = function (arr) {
             // 生成字符串模版
             var str="";
@@ -55,10 +57,12 @@ $.ajax({
         gaoHtml=changeHtml(gaoArr);
         chuHtml=changeHtml(chuArr);
         xiaoHtml=changeHtml(xiaoArr);
+        VIPHtml=changeHtml(VIPArr);
         // console.log(gaoHtml)
         $('#teach_gao').html(gaoHtml)
         $('#teach_chu').html(chuHtml)
         $('#teach_xiao').html(xiaoHtml)
+        $('#teach_VIP').html(VIPHtml)
 
         // 图片懒加载
         $("img.lazy").lazyload({
