@@ -36,7 +36,7 @@
     	$("#yydakai").click(function(){
         	$("#shipin").fadeIn(600);
         	$("#yy").fadeIn(100);
-        	document.getElementById("yy").innerHTML = "<video src=\"http://owvvfr97r.bkt.clouddn.com/2018mkczyy.mp4\" controls=\"controls\">你的浏览器太老了，连视频都放不了</video>";
+        	document.getElementById("yy").innerHTML = "<video src=\"http://wxxk.starbaby.top/2018mkczyy.mp4\" controls=\"controls\">你的浏览器太老了，连视频都放不了</video>";
         	$('#yy>video').get(0).play(); 
     	});
     	/*英语视频窗口显示结束*/
@@ -44,43 +44,43 @@
     	$("#sxldakai").click(function(){
         	$("#shipin").fadeIn(600);
         	$("#sxl").fadeIn(100);
-        	document.getElementById("sxl").innerHTML = "<video src=\"http://owvvfr97r.bkt.clouddn.com/2018mkczsx.mp4\" controls=\"controls\">你的浏览器太老了，连视频都放不了</video>";
+        	document.getElementById("sxl").innerHTML = "<video src=\"http://wxxk.starbaby.top/2018mkczsx.mp4\" controls=\"controls\">你的浏览器太老了，连视频都放不了</video>";
         	$('#sxl>video').get(0).play(); 
     	});
     	// $("#sxwdakai").click(function(){
         // 	$("#shipin").fadeIn(600);
         // 	$("#sxw").fadeIn(100);
-        // 	document.getElementById("sxw").innerHTML = "<video src=\"http://owvvfr97r.bkt.clouddn.com/2018mksxw.mp4\" controls=\"controls\">你的浏览器太老了，连视频都放不了</video>";
+        // 	document.getElementById("sxw").innerHTML = "<video src=\"http://wxxk.starbaby.top/2018mksxw.mp4\" controls=\"controls\">你的浏览器太老了，连视频都放不了</video>";
         // 	$('#sxw>video').get(0).play(); 
     	// });
     	$("#ywdakai").click(function(){
         	$("#shipin").fadeIn(600);
         	$("#yw").fadeIn(100);
-        	document.getElementById("yw").innerHTML = "<video src=\"http://owvvfr97r.bkt.clouddn.com/2018mkczyw.mp4\" controls=\"controls\">你的浏览器太老了，连视频都放不了</video>";
+        	document.getElementById("yw").innerHTML = "<video src=\"http://wxxk.starbaby.top/2018mkczyw.mp4\" controls=\"controls\">你的浏览器太老了，连视频都放不了</video>";
         	$('#yw>video').get(0).play(); 
     	});
     	$("#wldakai").click(function(){
         	$("#shipin").fadeIn(600);
         	$("#wl").fadeIn(100);
-        	document.getElementById("wl").innerHTML = "<video src=\"http://owvvfr97r.bkt.clouddn.com/2018mkczwl.mp4\" controls=\"controls\">你的浏览器太老了，连视频都放不了</video>";
+        	document.getElementById("wl").innerHTML = "<video src=\"http://wxxk.starbaby.top/2018mkczwl.mp4\" controls=\"controls\">你的浏览器太老了，连视频都放不了</video>";
         	$('#wl>video').get(0).play(); 
     	});
     	$("#hxdakai").click(function(){
         	$("#shipin").fadeIn(600);
         	$("#hx").fadeIn(100);
-        	document.getElementById("hx").innerHTML = "<video src=\"http://owvvfr97r.bkt.clouddn.com/2018mkczhx.mp4\" controls=\"controls\">你的浏览器太老了，连视频都放不了</video>";
+        	document.getElementById("hx").innerHTML = "<video src=\"http://wxxk.starbaby.top/2018mkczhx.mp4\" controls=\"controls\">你的浏览器太老了，连视频都放不了</video>";
         	$('#hx>video').get(0).play(); 
     	});
     	// $("#swdakai").click(function(){
         // 	$("#shipin").fadeIn(600);
         // 	$("#sw").fadeIn(100);
-        // 	document.getElementById("sw").innerHTML = "<video src=\"http://owvvfr97r.bkt.clouddn.com/2018mksw.mp4\" controls=\"controls\">你的浏览器太老了，连视频都放不了</video>";
+        // 	document.getElementById("sw").innerHTML = "<video src=\"http://wxxk.starbaby.top/2018mksw.mp4\" controls=\"controls\">你的浏览器太老了，连视频都放不了</video>";
         // 	$('#sw>video').get(0).play(); 
     	// });
     	// $("#wzdakai").click(function(){
         // 	$("#shipin").fadeIn(600);
         // 	$("#wz").fadeIn(100);
-        // 	document.getElementById("wz").innerHTML = "<video src=\"http://owvvfr97r.bkt.clouddn.com/2018mkwz.mp4\" controls=\"controls\">你的浏览器太老了，连视频都放不了</video>";
+        // 	document.getElementById("wz").innerHTML = "<video src=\"http://wxxk.starbaby.top/2018mkwz.mp4\" controls=\"controls\">你的浏览器太老了，连视频都放不了</video>";
         // 	$('#wz>video').get(0).play(); 
     	// });
     	/*全部视频窗口显示结束*/
